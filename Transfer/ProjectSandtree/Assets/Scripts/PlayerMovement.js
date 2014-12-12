@@ -1,6 +1,7 @@
 ﻿#pragma strict
 
-var alive	: boolean;
+var animator	: Animator;
+var alive		: boolean;
 
 var camTrans		: Transform;
 var grounded		: boolean;
@@ -13,6 +14,7 @@ var maxSlope		: float;
 var moveSpeed			: float;
 var maxVelocityChange	: float;
 var movementMultiplyer	: float;
+var velocityDenom		: float;
 
 var lookPoint	: Vector3;
 var lookTime	: float;
@@ -21,6 +23,7 @@ var jumpVel		: float;
 function Start ()
 {
 	camTrans	= GameObject.Find ("CamObj").transform;
+	velocityDenom	= moveSpeed;
 }
 
 function Update ()
@@ -31,7 +34,7 @@ function Update ()
 		RotationFunc ();
 		MovementUpdate ();
 	}
-//	Debug.Log (Input.GetAxis ("Vertical"));
+	AnimationFunc ();
 }
 
 function FixedUpdate ()
@@ -43,7 +46,7 @@ function RotationFunc ()
 {
 	var targQuatRelPos	= lookPoint - transform.position;
 	var targQuat		= Quaternion.LookRotation (targQuatRelPos);
-	targQuat	= targQuat * Quaternion.Euler (0,270,0);
+	targQuat	= targQuat * Quaternion.Euler (0,0,0);
 	targQuat.eulerAngles.x	= 0;
 	targQuat.eulerAngles.z	= 0;
 	transform.rotation	= Quaternion.Slerp (transform.rotation, targQuat, lookTime / Time.deltaTime);
@@ -114,4 +117,18 @@ function OnCollisionStay (collision : Collision)
 function OnCollisionExit	()
 {
 	groundContact	= false;
+}
+
+function AnimationFunc ()
+{
+	var horVel	= rigidbody.velocity;
+	horVel.y	= 0;
+//	var inputVector	= Vector3 (Input.GetAxis ("Horizontal"), 0, Input.GetAxis ("Vertical")).normalized;
+	var lookVelDif	= Vector3.Angle (transform.forward, horVel.normalized);
+	Debug.DrawRay	(transform.position + Vector3.up, horVel.normalized * 5, Color.red);
+	Debug.DrawRay	(transform.position + Vector3.up, transform.forward * 5, Color.green);
+	animator.SetBool	("Grounded", grounded);
+	animator.SetFloat 	("VelocityHor", (horVel / velocityDenom).magnitude);
+	animator.SetFloat	("LookVelDif", lookVelDif);
+//	Debug.Log	(lookVelDif);
 }
