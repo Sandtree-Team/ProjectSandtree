@@ -60,6 +60,22 @@ public class SavedGame
 }
 
 
+[XmlRoot ( "Equipment" )]
+public class Equipment
+{
+	
+	[XmlElement ( "Helmet" )]
+	public List<Helmet> helmets;
+}
+
+
+public class Helmet
+{
+	
+	
+}
+
+
 public class InformationManager : MonoBehaviour
 {
 	
