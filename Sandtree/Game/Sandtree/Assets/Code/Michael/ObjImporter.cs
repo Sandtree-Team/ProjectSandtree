@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 //This is a modified version of el anónimo ObjImporter, licensed under Creative Commons Attribution Share Alike ( http://creativecommons.org/licenses/by-sa/3.0/ ).
-public class ObjImporter {
+public class ObjImporter
+{
+ 
  
     private struct meshStruct
     {
@@ -21,8 +23,11 @@ public class ObjImporter {
         public string fileName;
     }
  
+ 
     // Use this for initialization
-	public Mesh ImportFile (string filePath) {
+	public Mesh ImportFile ( string filePath )
+	{
+		
         meshStruct newMesh = createMeshStruct(filePath);
         populateMeshStruct(ref newMesh);
  
@@ -35,62 +40,79 @@ public class ObjImporter {
          */
         foreach (Vector3 v in newMesh.faceData)            
         {
+			
             newVerts[i] = newMesh.vertices[(int)v.x - 1];
+			
             if (v.y >= 1)
+			{
                 newUVs[i] = newMesh.uv[(int)v.y - 1];
+			}
  
             if (v.z >= 1)
+			{
+				
                 newNormals[i] = newMesh.normals[(int)v.z - 1];
+			}
+			
             i++;
         }
- 
-		Mesh mesh = new Mesh();
- 
-        mesh.vertices = newVerts;     
-        mesh.uv = newUVs;        
-        mesh.normals = newNormals;
-        mesh.triangles = newMesh.triangles;
- 
-        mesh.RecalculateBounds();
-        mesh.Optimize();
- 
+		
+		Mesh mesh = new Mesh ();
+		
+		mesh.vertices = newVerts;
+		mesh.uv = newUVs;
+		mesh.normals = newNormals;
+		mesh.triangles = newMesh.triangles;
+		
+		mesh.RecalculateNormals (); //This line was added due to a suggestion by user "Po0ka", from Stack Exchange
+		mesh.RecalculateBounds ();
+		mesh.Optimize();
+		
 		return mesh;
 	}
+	
  
-    private static meshStruct createMeshStruct(string filename)
+    private static meshStruct createMeshStruct ( string filename )
     {
+		
         int triangles = 0;
         int vertices = 0;
         int vt = 0;
         int vn = 0;
         int face = 0;
-        meshStruct mesh = new meshStruct();
+        meshStruct mesh = new meshStruct ();
         mesh.fileName = filename;
-        StreamReader stream = File.OpenText(filename);
-        string entireText = stream.ReadToEnd();
-        stream.Close();
-        using (StringReader reader = new StringReader(entireText))
+		
+        StreamReader stream = File.OpenText ( filename );
+        string entireText = stream.ReadToEnd ();
+        stream.Close ();
+		
+        using ( StringReader reader = new StringReader ( entireText ))
         {
-            string currentText = reader.ReadLine();
+            string currentText = reader.ReadLine ();
             char[] splitIdentifier = { ' ' };
             string[] brokenString;
-            while (currentText != null)
+			
+            while ( currentText != null )
             {
-                if (!currentText.StartsWith("f ") && !currentText.StartsWith("v ") && !currentText.StartsWith("vt ")
-                    && !currentText.StartsWith("vn "))
+				
+                if ( !currentText.StartsWith ( "f " ) && !currentText.StartsWith ( "v " ) && !currentText.StartsWith ( "vt " ) && !currentText.StartsWith ( "vn " ))
                 {
-                    currentText = reader.ReadLine();
-                    if (currentText != null)
+					
+                    currentText = reader.ReadLine ();
+                    if ( currentText != null )
                     {
-                        currentText = currentText.Replace("  ", " ");
+						
+                        currentText = currentText.Replace ( "  ", " " );
                     }
                 }
                 else
                 {
-                    currentText = currentText.Trim();                           //Trim the current line
-                    brokenString = currentText.Split(splitIdentifier, 50);      //Split the line into an array, separating the original line by blank spaces
-                    switch (brokenString[0])
+                    currentText = currentText.Trim ();                           //Trim the current line
+                    brokenString = currentText.Split ( splitIdentifier, 50 );      //Split the line into an array, separating the original line by blank spaces
+                    switch ( brokenString[0] )
                     {
+						
                         case "v":
                             vertices++;
                             break;
@@ -102,19 +124,22 @@ public class ObjImporter {
                             break;
                         case "f":
                             face = face + brokenString.Length - 1;
-                            triangles = triangles + 3 * (brokenString.Length - 2); /*brokenString.Length is 3 or greater since a face must have at least
+                            triangles = triangles + 3 * ( brokenString.Length - 2 ); /*brokenString.Length is 3 or greater since a face must have at least
                                                                                      3 vertices.  For each additional vertice, there is an additional
                                                                                      triangle in the mesh (hence this formula).*/
                             break;
                     }
-                    currentText = reader.ReadLine();
-                    if (currentText != null)
+					
+                    currentText = reader.ReadLine ();
+                    if ( currentText != null )
                     {
-                        currentText = currentText.Replace("  ", " ");
+						
+                        currentText = currentText.Replace ( "  ", " " );
                     }
                 }
             }
         }
+		
         mesh.triangles = new int[triangles];
         mesh.vertices = new Vector3[vertices];
         mesh.uv = new Vector2[vt];
@@ -123,14 +148,16 @@ public class ObjImporter {
         return mesh;
     }
  
-    private static void populateMeshStruct(ref meshStruct mesh)
+    private static void populateMeshStruct ( ref meshStruct mesh )
     {
-        StreamReader stream = File.OpenText(mesh.fileName);
-        string entireText = stream.ReadToEnd();
-        stream.Close();
-        using (StringReader reader = new StringReader(entireText))
+		
+        StreamReader stream = File.OpenText ( mesh.fileName );
+        string entireText = stream.ReadToEnd ();
+        stream.Close ();
+        using ( StringReader reader = new StringReader ( entireText ))
         {
-            string currentText = reader.ReadLine();
+			
+            string currentText = reader.ReadLine ();
  
             char[] splitIdentifier = { ' ' };
             char[] splitIdentifier2 = { '/' };
@@ -143,25 +170,28 @@ public class ObjImporter {
             int vt = 0;
             int vt1 = 0;
             int vt2 = 0;
+			
             while (currentText != null)
-            {
-                if (!currentText.StartsWith("f ") && !currentText.StartsWith("v ") && !currentText.StartsWith("vt ") &&
-                    !currentText.StartsWith("vn ") && !currentText.StartsWith("g ") && !currentText.StartsWith("usemtl ") &&
-                    !currentText.StartsWith("mtllib ") && !currentText.StartsWith("vt1 ") && !currentText.StartsWith("vt2 ") &&
-                    !currentText.StartsWith("vc ") && !currentText.StartsWith("usemap "))
+			{
+				
+                if ( !currentText.StartsWith ( "f " ) && !currentText.StartsWith ( "v " ) && !currentText.StartsWith ( "vt " ) && !currentText.StartsWith ( "vn " ) && !currentText.StartsWith ( "g " ) && !currentText.StartsWith ( "usemtl " ) && !currentText.StartsWith ( "mtllib " ) && !currentText.StartsWith ( "vt1 " ) && !currentText.StartsWith ( "vt2 " ) && !currentText.StartsWith ( "vc " ) && !currentText.StartsWith ( "usemap " ))
                 {
-                    currentText = reader.ReadLine();
-                    if (currentText != null)
+					
+                    currentText = reader.ReadLine ();
+                    if ( currentText != null )
                     {
-                        currentText = currentText.Replace("  ", " ");
+						
+                        currentText = currentText.Replace ( "  ", " " );
                     }
                 }
                 else
                 {
-                    currentText = currentText.Trim();
-                    brokenString = currentText.Split(splitIdentifier, 50);
-                    switch (brokenString[0])
+					
+                    currentText = currentText.Trim ();
+                    brokenString = currentText.Split ( splitIdentifier, 50 );
+                    switch ( brokenString[0] )
                     {
+						
                         case "g":
                             break;
                         case "usemtl":
@@ -171,25 +201,23 @@ public class ObjImporter {
                         case "mtllib":
                             break;
                         case "v":
-                            mesh.vertices[v] = new Vector3(System.Convert.ToSingle(brokenString[1]), System.Convert.ToSingle(brokenString[2]),
-                                                     System.Convert.ToSingle(brokenString[3]));
+                            mesh.vertices[v] = new Vector3 ( System.Convert.ToSingle ( brokenString[1] ), System.Convert.ToSingle ( brokenString[2] ), System.Convert.ToSingle ( brokenString[3] ));
                             v++;
                             break;
                         case "vt":
-                            mesh.uv[vt] = new Vector2(System.Convert.ToSingle(brokenString[1]), System.Convert.ToSingle(brokenString[2]));
+                            mesh.uv[vt] = new Vector2 ( System.Convert.ToSingle ( brokenString[1] ), System.Convert.ToSingle ( brokenString[2] ));
                             vt++;
                             break;
                         case "vt1":
-                            mesh.uv[vt1] = new Vector2(System.Convert.ToSingle(brokenString[1]), System.Convert.ToSingle(brokenString[2]));
+                            mesh.uv[vt1] = new Vector2 ( System.Convert.ToSingle ( brokenString[1] ), System.Convert.ToSingle ( brokenString[2] ));
                             vt1++;
                             break;
                         case "vt2":
-                            mesh.uv[vt2] = new Vector2(System.Convert.ToSingle(brokenString[1]), System.Convert.ToSingle(brokenString[2]));
+                            mesh.uv[vt2] = new Vector2 ( System.Convert.ToSingle ( brokenString[1] ), System.Convert.ToSingle ( brokenString[2] ));
                             vt2++;
                             break;
                         case "vn":
-                            mesh.normals[vn] = new Vector3(System.Convert.ToSingle(brokenString[1]), System.Convert.ToSingle(brokenString[2]),
-                                                    System.Convert.ToSingle(brokenString[3]));
+                            mesh.normals[vn] = new Vector3 ( System.Convert.ToSingle ( brokenString[1] ), System.Convert.ToSingle ( brokenString[2] ), System.Convert.ToSingle ( brokenString[3] ));
                             vn++;
                             break;
                         case "vc":
@@ -197,33 +225,39 @@ public class ObjImporter {
                         case "f":
  
                             int j = 1;
-                            List<int> intArray = new List<int>();
-                            while (j < brokenString.Length && ("" + brokenString[j]).Length > 0)
+                            List<int> intArray = new List<int> ();
+                            while ( j < brokenString.Length && ( "" + brokenString[j] ).Length > 0 )
                             {
-                                Vector3 temp = new Vector3();
-                                brokenBrokenString = brokenString[j].Split(splitIdentifier2, 3);
-                                temp.x = System.Convert.ToInt32(brokenBrokenString[0]);
-								if (brokenBrokenString.Length == 2)
+								
+                                Vector3 temp = new Vector3 ();
+                                brokenBrokenString = brokenString[j].Split ( splitIdentifier2, 3 );
+                                temp.x = System.Convert.ToInt32 ( brokenBrokenString[0] );
+								
+								if ( brokenBrokenString.Length == 2 ) //This line was added due to a suggestion from "Tiles" on StackExchange
 								{
-								    temp.y = System.Convert.ToInt32(brokenBrokenString[1]);
+									
+								    temp.y = System.Convert.ToInt32 ( brokenBrokenString[1] );
 								}
 
-								if (brokenBrokenString.Length == 3)
+								if ( brokenBrokenString.Length == 3 )
 								{
-								    if (brokenBrokenString[1] != "")
+									
+								    if ( brokenBrokenString[1] != "" )
 								    {
-								        temp.y = System.Convert.ToInt32(brokenBrokenString[1]);
+										
+								        temp.y = System.Convert.ToInt32 ( brokenBrokenString[1] );
 								    }
-								    temp.z = System.Convert.ToInt32(brokenBrokenString[2]);
+								    temp.z = System.Convert.ToInt32 ( brokenBrokenString[2] );
 								}
                                 j++;
  
                                 mesh.faceData[f2] = temp;
-                                intArray.Add(f2);
+                                intArray.Add ( f2 );
                                 f2++;
                             }
+							
                             j = 1;
-                            while (j + 2 < brokenString.Length)
+                            while ( j + 2 < brokenString.Length )
                             {
                                 mesh.triangles[f] = intArray[0];
                                 f++;
@@ -233,13 +267,15 @@ public class ObjImporter {
                                 f++;
  
                                 j++;
-                            }
-                            break;
+							}
+						break;
                     }
-                    currentText = reader.ReadLine();
-                    if (currentText != null)
+						
+                    currentText = reader.ReadLine ();
+                    if ( currentText != null )
                     {
-                        currentText = currentText.Replace("  ", " ");       //Some .obj files insert double spaces, this removes them.
+						
+                        currentText = currentText.Replace ( "  ", " " );
                     }
                 }
             }

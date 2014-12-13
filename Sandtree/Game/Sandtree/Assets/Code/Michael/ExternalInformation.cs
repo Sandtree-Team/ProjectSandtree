@@ -84,6 +84,19 @@ public class ExternalInformation : MonoBehaviour
 		}// else { UnityEngine.Debug.Log ( "Read SavedGames Successfully" ); }
 #endregion
 		
+		
+		UnityEngine.Debug.Log ( "Begin Loading OBJ" );
+		
+		ObjImporter objImporter = new ObjImporter ();
+		GameObject tempGameObject = new GameObject ();
+		tempGameObject.AddComponent <MeshFilter> ();
+		tempGameObject.AddComponent <MeshRenderer> ();
+		
+		Material tempMaterial = new Material ( Shader.Find ( " Diffuse" ));
+		
+		tempGameObject.GetComponent <MeshFilter> ().mesh = objImporter.ImportFile ( "/Users/michaelbethke/Desktop/FishHelmet1.obj" );
+		tempGameObject.GetComponent <MeshRenderer> ().material = tempMaterial;
+		
 	}
 	
 	
