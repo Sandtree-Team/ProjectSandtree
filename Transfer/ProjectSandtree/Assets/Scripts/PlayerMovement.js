@@ -1,4 +1,4 @@
-﻿#pragma strict
+#pragma strict
 
 var animator	: Animator;
 var alive		: boolean;

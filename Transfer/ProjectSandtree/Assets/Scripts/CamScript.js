@@ -8,11 +8,13 @@ var rayHit		: RaycastHit;
 var rayMask		: LayerMask;
 var camera1		: Camera;
 var pointVector	: Vector3;
+var groundPlane	: GameObject;
 
 function Start ()
 {
 	followTarg	= GameObject.Find (targString).transform;
 	playerMovement	= followTarg.GetComponent (PlayerMovement);
+	groundPlane.SetActive (true);
 }
 
 function Update ()
