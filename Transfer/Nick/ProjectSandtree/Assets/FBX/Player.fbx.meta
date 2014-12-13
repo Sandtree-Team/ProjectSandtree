@@ -1,0 +1,1174 @@
+fileFormatVersion: 2
+guid: cdf0ad001e6f4a1499d9abef15177fc9
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: ArmatureNonIK
+    100002: BaseShieldObj
+    100004: BaseSwordObj
+    100006: Chest
+    100008: Eyes
+    100010: Foot_l
+    100012: Foot_r
+    100014: Hair
+    100016: Hand_l
+    100018: Hand_r
+    100020: Head
+    100022: LowerArm_l
+    100024: LowerArm_r
+    100026: LowerLeg_l
+    100028: LowerLeg_r
+    100030: Mesh
+    100032: Neck
+    100034: Pelvis
+    100036: //RootNode
+    100038: Stomach
+    100040: UpperArm_l
+    100042: UpperArm_r
+    100044: UpperLeg_l
+    100046: UpperLeg_r
+    100048: HelmetCat
+    400000: ArmatureNonIK
+    400002: BaseShieldObj
+    400004: BaseSwordObj
+    400006: Chest
+    400008: Eyes
+    400010: Foot_l
+    400012: Foot_r
+    400014: Hair
+    400016: Hand_l
+    400018: Hand_r
+    400020: Head
+    400022: LowerArm_l
+    400024: LowerArm_r
+    400026: LowerLeg_l
+    400028: LowerLeg_r
+    400030: Mesh
+    400032: Neck
+    400034: Pelvis
+    400036: //RootNode
+    400038: Stomach
+    400040: UpperArm_l
+    400042: UpperArm_r
+    400044: UpperLeg_l
+    400046: UpperLeg_r
+    400048: HelmetCat
+    4300000: BaseSwordObj
+    4300002: BaseShieldObj
+    4300004: Mesh
+    4300006: Hair
+    4300008: HelmetCat
+    7400000: Default Take
+    7400002: FightSwordAndShieldStance
+    7400004: Idle
+    7400006: IdleCrouch
+    7400008: InAir
+    7400010: Killed
+    7400012: RunBackSwordAndShield
+    7400014: RunSwordAndShield
+    7400016: StanceBow
+    7400018: TPose
+    7400020: Walk
+    9500000: //RootNode
+    13700000: BaseShieldObj
+    13700002: BaseSwordObj
+    13700004: Hair
+    13700006: Mesh
+    13700008: HelmetCat
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 3
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Default Take
+      takeName: Default Take
+      firstFrame: 0
+      lastFrame: 28
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ArmatureNonIK
+        weight: 1
+      - path: ArmatureNonIK/Pelvis
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/Neck
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/Neck/Head
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/Neck/Head/Eyes
+        weight: 0
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_l/LowerArm_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_l/LowerArm_l/Hand_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_r
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_r/LowerArm_r
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_r/LowerArm_r/Hand_r
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_l/LowerLeg_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_l/LowerLeg_l/Foot_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_r
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_r/LowerLeg_r
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_r/LowerLeg_r/Foot_r
+        weight: 1
+      - path: BaseShieldObj
+        weight: 0
+      - path: BaseSwordObj
+        weight: 0
+      - path: Mesh
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: FightSwordAndShieldStance
+      takeName: FightSwordAndShieldStance
+      firstFrame: 0
+      lastFrame: 9
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ArmatureNonIK
+        weight: 1
+      - path: ArmatureNonIK/Pelvis
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/Neck
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/Neck/Head
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/Neck/Head/Eyes
+        weight: 0
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_l/LowerArm_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_l/LowerArm_l/Hand_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_r
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_r/LowerArm_r
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_r/LowerArm_r/Hand_r
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_l/LowerLeg_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_l/LowerLeg_l/Foot_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_r
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_r/LowerLeg_r
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_r/LowerLeg_r/Foot_r
+        weight: 1
+      - path: BaseShieldObj
+        weight: 0
+      - path: BaseSwordObj
+        weight: 0
+      - path: Mesh
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Idle
+      takeName: Idle
+      firstFrame: 0
+      lastFrame: 4
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ArmatureNonIK
+        weight: 1
+      - path: ArmatureNonIK/Pelvis
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/Neck
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/Neck/Head
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/Neck/Head/Eyes
+        weight: 0
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_l/LowerArm_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_l/LowerArm_l/Hand_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_r
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_r/LowerArm_r
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_r/LowerArm_r/Hand_r
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_l/LowerLeg_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_l/LowerLeg_l/Foot_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_r
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_r/LowerLeg_r
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_r/LowerLeg_r/Foot_r
+        weight: 1
+      - path: BaseShieldObj
+        weight: 0
+      - path: BaseSwordObj
+        weight: 0
+      - path: Mesh
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: IdleCrouch
+      takeName: IdleCrouch
+      firstFrame: 0
+      lastFrame: 4
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ArmatureNonIK
+        weight: 1
+      - path: ArmatureNonIK/Pelvis
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/Neck
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/Neck/Head
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/Neck/Head/Eyes
+        weight: 0
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_l/LowerArm_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_l/LowerArm_l/Hand_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_r
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_r/LowerArm_r
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_r/LowerArm_r/Hand_r
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_l/LowerLeg_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_l/LowerLeg_l/Foot_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_r
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_r/LowerLeg_r
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_r/LowerLeg_r/Foot_r
+        weight: 1
+      - path: BaseShieldObj
+        weight: 0
+      - path: BaseSwordObj
+        weight: 0
+      - path: Mesh
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: InAir
+      takeName: InAir
+      firstFrame: 0
+      lastFrame: 4
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ArmatureNonIK
+        weight: 1
+      - path: ArmatureNonIK/Pelvis
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/Neck
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/Neck/Head
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/Neck/Head/Eyes
+        weight: 0
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_l/LowerArm_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_l/LowerArm_l/Hand_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_r
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_r/LowerArm_r
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_r/LowerArm_r/Hand_r
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_l/LowerLeg_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_l/LowerLeg_l/Foot_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_r
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_r/LowerLeg_r
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_r/LowerLeg_r/Foot_r
+        weight: 1
+      - path: BaseShieldObj
+        weight: 0
+      - path: BaseSwordObj
+        weight: 0
+      - path: Mesh
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Killed
+      takeName: Killed
+      firstFrame: 0
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ArmatureNonIK
+        weight: 1
+      - path: ArmatureNonIK/Pelvis
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/Neck
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/Neck/Head
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/Neck/Head/Eyes
+        weight: 0
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_l/LowerArm_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_l/LowerArm_l/Hand_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_r
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_r/LowerArm_r
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_r/LowerArm_r/Hand_r
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_l/LowerLeg_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_l/LowerLeg_l/Foot_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_r
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_r/LowerLeg_r
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_r/LowerLeg_r/Foot_r
+        weight: 1
+      - path: BaseShieldObj
+        weight: 0
+      - path: BaseSwordObj
+        weight: 0
+      - path: Mesh
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: RunBackSwordAndShield
+      takeName: RunBackSwordAndShield
+      firstFrame: 0
+      lastFrame: 29
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ArmatureNonIK
+        weight: 1
+      - path: ArmatureNonIK/Pelvis
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/Neck
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/Neck/Head
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/Neck/Head/Eyes
+        weight: 0
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_l/LowerArm_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_l/LowerArm_l/Hand_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_r
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_r/LowerArm_r
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_r/LowerArm_r/Hand_r
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_l/LowerLeg_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_l/LowerLeg_l/Foot_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_r
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_r/LowerLeg_r
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_r/LowerLeg_r/Foot_r
+        weight: 1
+      - path: BaseShieldObj
+        weight: 0
+      - path: BaseSwordObj
+        weight: 0
+      - path: Mesh
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: RunSwordAndShield
+      takeName: RunSwordAndShield
+      firstFrame: 0
+      lastFrame: 29
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ArmatureNonIK
+        weight: 1
+      - path: ArmatureNonIK/Pelvis
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/Neck
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/Neck/Head
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/Neck/Head/Eyes
+        weight: 0
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_l/LowerArm_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_l/LowerArm_l/Hand_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_r
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_r/LowerArm_r
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_r/LowerArm_r/Hand_r
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_l/LowerLeg_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_l/LowerLeg_l/Foot_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_r
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_r/LowerLeg_r
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_r/LowerLeg_r/Foot_r
+        weight: 1
+      - path: BaseShieldObj
+        weight: 0
+      - path: BaseSwordObj
+        weight: 0
+      - path: Mesh
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: StanceBow
+      takeName: StanceBow
+      firstFrame: 0
+      lastFrame: 4
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ArmatureNonIK
+        weight: 1
+      - path: ArmatureNonIK/Pelvis
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/Neck
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/Neck/Head
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/Neck/Head/Eyes
+        weight: 0
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_l/LowerArm_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_l/LowerArm_l/Hand_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_r
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_r/LowerArm_r
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_r/LowerArm_r/Hand_r
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_l/LowerLeg_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_l/LowerLeg_l/Foot_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_r
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_r/LowerLeg_r
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_r/LowerLeg_r/Foot_r
+        weight: 1
+      - path: BaseShieldObj
+        weight: 0
+      - path: BaseSwordObj
+        weight: 0
+      - path: Mesh
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: TPose
+      takeName: TPose
+      firstFrame: 0
+      lastFrame: 4
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ArmatureNonIK
+        weight: 1
+      - path: ArmatureNonIK/Pelvis
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/Neck
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/Neck/Head
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/Neck/Head/Eyes
+        weight: 0
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_l/LowerArm_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_l/LowerArm_l/Hand_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_r
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_r/LowerArm_r
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_r/LowerArm_r/Hand_r
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_l/LowerLeg_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_l/LowerLeg_l/Foot_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_r
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_r/LowerLeg_r
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_r/LowerLeg_r/Foot_r
+        weight: 1
+      - path: BaseShieldObj
+        weight: 0
+      - path: BaseSwordObj
+        weight: 0
+      - path: Mesh
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Walk
+      takeName: Walk
+      firstFrame: 0
+      lastFrame: 29
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ArmatureNonIK
+        weight: 1
+      - path: ArmatureNonIK/Pelvis
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/Neck
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/Neck/Head
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/Neck/Head/Eyes
+        weight: 0
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_l/LowerArm_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_l/LowerArm_l/Hand_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_r
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_r/LowerArm_r
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_r/LowerArm_r/Hand_r
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_l/LowerLeg_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_l/LowerLeg_l/Foot_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_r
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_r/LowerLeg_r
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_r/LowerLeg_r/Foot_r
+        weight: 1
+      - path: BaseShieldObj
+        weight: 0
+      - path: BaseSwordObj
+        weight: 0
+      - path: Mesh
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human:
+    - boneName: Pelvis
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: UpperLeg_l
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: UpperLeg_r
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: LowerLeg_l
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: LowerLeg_r
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Foot_l
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Foot_r
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Stomach
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Chest
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Neck
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Head
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: UpperArm_l
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: UpperArm_r
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: LowerArm_l
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: LowerArm_r
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hand_l
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hand_r
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: Player(Clone)
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: ArmatureNonIK
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: -.707106888, y: 0, z: -0, w: .707106769}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Pelvis
+      position: {x: -0, y: .088829495, z: .896862984}
+      rotation: {x: .521056831, y: .521056712, z: -.478016615, w: .478016555}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Stomach
+      position: {x: -.132199258, y: 9.98077532e-09, z: -7.4505806e-09}
+      rotation: {x: -3.48488287e-11, y: -.00383115467, z: -6.26988572e-10, w: .999992669}
+      scale: {x: .99999994, y: 1, z: .99999994}
+      transformModified: 1
+    - name: Chest
+      position: {x: -.227063313, y: 1.71428081e-08, z: 7.4505806e-09}
+      rotation: {x: 1.47775427e-08, y: -.0956132635, z: -1.35107729e-08, w: .995418549}
+      scale: {x: .999999881, y: 1, z: .999999881}
+      transformModified: 1
+    - name: Neck
+      position: {x: -.271364927, y: 2.04874908e-08, z: -7.4505806e-09}
+      rotation: {x: -1.83146849e-08, y: .120359004, z: 1.7670077e-08, w: .992730439}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Head
+      position: {x: -.0797127336, y: 6.01813799e-09, z: 7.4505806e-09}
+      rotation: {x: 6.10758732e-08, y: .049562946, z: 5.79932991e-09, w: .998771012}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Eyes
+      position: {x: -.114194304, y: 4.64292693e-09, z: .0667481124}
+      rotation: {x: .782764554, y: -3.26033174e-08, z: -.62231797, w: -1.33319933e-08}
+      scale: {x: .999999881, y: 1, z: .999999881}
+      transformModified: 1
+    - name: UpperArm_l
+      position: {x: -.21101059, y: -.18494451, z: -.00685377372}
+      rotation: {x: .069111675, y: .0109154722, z: .705260575, w: .705487192}
+      scale: {x: 1.00000024, y: 1, z: 1.00000036}
+      transformModified: 1
+    - name: LowerArm_l
+      position: {x: -.280974329, y: 6.41778257e-08, z: 3.4924601e-09}
+      rotation: {x: 3.50352792e-07, y: .0807360858, z: 1.36309727e-05, w: .996735513}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: Hand_l
+      position: {x: -.278699458, y: 1.02937847e-07, z: 1.98488124e-08}
+      rotation: {x: -.000690159621, y: -.00573826162, z: .0120638097, w: .999910533}
+      scale: {x: .99999994, y: .99999994, z: 1}
+      transformModified: 1
+    - name: UpperArm_r
+      position: {x: -.21101056, y: .18494454, z: -.00685372995}
+      rotation: {x: -.0691113994, y: .0109157478, z: -.705260575, w: .705487132}
+      scale: {x: 1.00000012, y: .999999881, z: 1.00000024}
+      transformModified: 1
+    - name: LowerArm_r
+      position: {x: -.280974388, y: 6.4323209e-09, z: 1.16415003e-10}
+      rotation: {x: -3.34601594e-07, y: .0807360858, z: -1.3631131e-05, w: .996735513}
+      scale: {x: 1, y: 1.00000012, z: 1}
+      transformModified: 1
+    - name: Hand_r
+      position: {x: -.278699428, y: 5.7896048e-09, z: 1.61235221e-08}
+      rotation: {x: .000690158864, y: -.00573826395, z: -.0120638097, w: .999910533}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: UpperLeg_l
+      position: {x: .012070897, y: -.0934419632, z: -.00626621442}
+      rotation: {x: -.0411986858, y: -.00155158492, z: .998552144, w: .034552969}
+      scale: {x: .99999994, y: .999999821, z: 1}
+      transformModified: 1
+    - name: LowerLeg_l
+      position: {x: -.400212407, y: 4.97904296e-08, z: -5.39330403e-09}
+      rotation: {x: .00111540977, y: -.0310782343, z: .0320978649, w: .999000847}
+      scale: {x: .999999821, y: 1, z: .999999821}
+      transformModified: 1
+    - name: Foot_l
+      position: {x: -.442689896, y: 3.35347075e-08, z: -1.05500997e-10}
+      rotation: {x: -.00156588398, y: .682945609, z: .00191299838, w: .730465055}
+      scale: {x: .999999821, y: .999999762, z: .999999881}
+      transformModified: 1
+    - name: UpperLeg_r
+      position: {x: .0120709119, y: .0934419632, z: -.00626619114}
+      rotation: {x: -.0411991477, y: .00155147363, z: .998552144, w: -.034553092}
+      scale: {x: .99999994, y: .999999821, z: .999999881}
+      transformModified: 1
+    - name: LowerLeg_r
+      position: {x: -.400212318, y: 1.97009236e-08, z: -8.34370439e-09}
+      rotation: {x: -.00111542142, y: -.031078238, z: -.0320978686, w: .999000847}
+      scale: {x: .999999881, y: .99999994, z: .999999881}
+      transformModified: 1
+    - name: Foot_r
+      position: {x: -.442689896, y: 3.55376528e-08, z: -7.47968443e-09}
+      rotation: {x: .00156627153, y: .682945609, z: -.00191326439, w: .730465055}
+      scale: {x: .999999821, y: .999999821, z: .999999881}
+      transformModified: 1
+    - name: BaseShieldObj
+      position: {x: -.687524199, y: .10047929, z: 1.51870155}
+      rotation: {x: .00643057423, y: -.05364329, z: .728956461, w: .682424724}
+      scale: {x: 1, y: 1.00000024, z: 1}
+      transformModified: 1
+    - name: BaseSwordObj
+      position: {x: .849757969, y: .0902857333, z: 1.44209206}
+      rotation: {x: -.505090654, y: -.494093478, z: .520164609, w: -.479774803}
+      scale: {x: 1, y: 1.00000012, z: 1}
+      transformModified: 1
+    - name: Mesh
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 3
+  additionalBone: 0
+  userData: 
