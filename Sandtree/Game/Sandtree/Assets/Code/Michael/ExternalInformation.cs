@@ -35,13 +35,13 @@ public class ExternalInformation : MonoBehaviour
 		supportPath = sandtreePath + Path.DirectorySeparatorChar + "Support" + Path.DirectorySeparatorChar;
 		savedGamesPath = sandtreePath + Path.DirectorySeparatorChar + "Saved Games" + Path.DirectorySeparatorChar;
 
-#region support
 		if ( Directory.Exists ( supportPath ) == false )
 		{
 			
 			Directory.CreateDirectory ( supportPath );
 		}
 		
+#region preferences 
 		if ( ReadPreferences () != true )
 		{
 			
@@ -58,8 +58,10 @@ public class ExternalInformation : MonoBehaviour
 				} else { UnityEngine.Debug.Log ( "New Preferences File Created" ); }
 			}
 		}// else { UnityEngine.Debug.Log ( "Read Preferences Successfully" ); }
+		
 #endregion
-#region savedGames
+#region savedGames 
+
 		if ( Directory.Exists ( savedGamesPath ) == false )
 		{
 			
@@ -83,19 +85,29 @@ public class ExternalInformation : MonoBehaviour
 			}
 		}// else { UnityEngine.Debug.Log ( "Read SavedGames Successfully" ); }
 #endregion
-		
+#region equipment 
 		
 		UnityEngine.Debug.Log ( "Begin Loading OBJ" );
 		
-		ObjImporter objImporter = new ObjImporter ();
-		GameObject tempGameObject = new GameObject ();
-		tempGameObject.AddComponent <MeshFilter> ();
-		tempGameObject.AddComponent <MeshRenderer> ();
+		try
+		{
+			
+			ObjImporter objImporter = new ObjImporter ();
+			GameObject tempGameObject = new GameObject ();
+			tempGameObject.AddComponent <MeshFilter> ();
+			tempGameObject.AddComponent <MeshRenderer> ();
+			
+			Material tempMaterial = new Material ( Shader.Find ( " Diffuse" ));
+			
+			tempGameObject.GetComponent <MeshFilter> ().mesh = objImporter.ImportFile ( Environment.GetFolderPath ( Environment.SpecialFolder.Desktop ) + Path.DirectorySeparatorChar + "FishHelmet1.obj" );
+			tempGameObject.GetComponent <MeshRenderer> ().material = tempMaterial;
+		} catch ( Exception error )
+		{
+				
+			UnityEngine.Debug.Log ( "Error in importing OBJ, " + error );
+		}
 		
-		Material tempMaterial = new Material ( Shader.Find ( " Diffuse" ));
-		
-		tempGameObject.GetComponent <MeshFilter> ().mesh = objImporter.ImportFile ( Environment.GetFolderPath ( Environment.SpecialFolder.Desktop ) + Path.DirectorySeparatorChar + "FishHelmet1.obj" );
-		tempGameObject.GetComponent <MeshRenderer> ().material = tempMaterial;
+#endregion
 		
 	}
 	
@@ -200,6 +212,13 @@ public class ExternalInformation : MonoBehaviour
 			UnityEngine.Debug.LogError ( "Unable to Write SavedGames, " + error );
 			return false;
 		}
+		return true;
+	}
+	
+	
+	bool ReadEquipmentXML ()
+	{
+		
 		return true;
 	}
 }
