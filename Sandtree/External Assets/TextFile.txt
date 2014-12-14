@@ -1,0 +1,1 @@
+Store external assets here, until I setup a system for identifying and downloading assets from our server.
