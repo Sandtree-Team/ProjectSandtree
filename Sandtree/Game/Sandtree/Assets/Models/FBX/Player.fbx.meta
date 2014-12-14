@@ -67,6 +67,8 @@ ModelImporter:
     7400018: TPose
     7400020: Walk
     7400022: FightSwordAndShieldStab
+    7400024: FightSwordAndShieldOverheadBackhand
+    7400026: FightSwordAndShieldSpinBack
     9500000: //RootNode
     13700000: BaseShieldObj
     13700002: BaseSwordObj
@@ -100,10 +102,10 @@ ModelImporter:
       loop: 0
       loopTime: 0
       loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
       loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
+      keepOriginalOrientation: 1
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 0
       heightFromFeet: 0
@@ -918,6 +920,150 @@ ModelImporter:
       keepOriginalOrientation: 1
       keepOriginalPositionY: 1
       keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ArmatureNonIK
+        weight: 1
+      - path: ArmatureNonIK/Pelvis
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/Neck
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/Neck/Head
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/Neck/Head/Eyes
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_l/LowerArm_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_l/LowerArm_l/Hand_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_r
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_r/LowerArm_r
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_r/LowerArm_r/Hand_r
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_l/LowerLeg_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_l/LowerLeg_l/Foot_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_r
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_r/LowerLeg_r
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_r/LowerLeg_r/Foot_r
+        weight: 1
+      - path: BaseShieldObj
+        weight: 1
+      - path: BaseSwordObj
+        weight: 1
+      - path: Mesh
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: FightSwordAndShieldOverheadBackhand
+      takeName: FightSwordAndShieldOverheadBackhand
+      firstFrame: 0
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: ArmatureNonIK
+        weight: 1
+      - path: ArmatureNonIK/Pelvis
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/Neck
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/Neck/Head
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/Neck/Head/Eyes
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_l/LowerArm_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_l/LowerArm_l/Hand_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_r
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_r/LowerArm_r
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/Stomach/Chest/UpperArm_r/LowerArm_r/Hand_r
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_l/LowerLeg_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_l/LowerLeg_l/Foot_l
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_r
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_r/LowerLeg_r
+        weight: 1
+      - path: ArmatureNonIK/Pelvis/UpperLeg_r/LowerLeg_r/Foot_r
+        weight: 1
+      - path: BaseShieldObj
+        weight: 1
+      - path: BaseSwordObj
+        weight: 1
+      - path: Mesh
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: FightSwordAndShieldSpinBack
+      takeName: FightSwordAndShieldSpinBack
+      firstFrame: 0
+      lastFrame: 19
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
       heightFromFeet: 0
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000

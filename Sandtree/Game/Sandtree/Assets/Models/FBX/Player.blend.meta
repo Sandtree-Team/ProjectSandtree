@@ -1,0 +1,126 @@
+fileFormatVersion: 2
+guid: a651c3e4b0d02ac408dc5d1f76a462da
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: ArmatureNonIK
+    100002: BaseShieldObj
+    100004: BaseSwordObj
+    100006: Chest
+    100008: Eyes
+    100010: Foot_l
+    100012: Foot_r
+    100014: Hand_l
+    100016: Hand_r
+    100018: Head
+    100020: LowerArm_l
+    100022: LowerArm_r
+    100024: LowerLeg_l
+    100026: LowerLeg_r
+    100028: Mesh
+    100030: Neck
+    100032: Pelvis
+    100034: //RootNode
+    100036: Stomach
+    100038: UpperArm_l
+    100040: UpperArm_r
+    100042: UpperLeg_l
+    100044: UpperLeg_r
+    400000: ArmatureNonIK
+    400002: BaseShieldObj
+    400004: BaseSwordObj
+    400006: Chest
+    400008: Eyes
+    400010: Foot_l
+    400012: Foot_r
+    400014: Hand_l
+    400016: Hand_r
+    400018: Head
+    400020: LowerArm_l
+    400022: LowerArm_r
+    400024: LowerLeg_l
+    400026: LowerLeg_r
+    400028: Mesh
+    400030: Neck
+    400032: Pelvis
+    400034: //RootNode
+    400036: Stomach
+    400038: UpperArm_l
+    400040: UpperArm_r
+    400042: UpperLeg_l
+    400044: UpperLeg_r
+    4300000: BaseSwordObj
+    4300002: BaseShieldObj
+    4300004: Mesh
+    7400000: Default Take
+    7400002: FightSwordAndShieldOverheadBackhand
+    7400004: FightSwordAndShieldStab
+    7400006: FightSwordAndShieldStance
+    7400008: Idle
+    7400010: IdleCrouch
+    7400012: InAir
+    7400014: Killed
+    7400016: RunBackSwordAndShield
+    7400018: RunSwordAndShield
+    7400020: StanceBow
+    7400022: TPose
+    7400024: Walk
+    7400026: FightSwordAndShieldSpinBack
+    9500000: //RootNode
+    13700000: BaseShieldObj
+    13700002: BaseSwordObj
+    13700004: Mesh
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 

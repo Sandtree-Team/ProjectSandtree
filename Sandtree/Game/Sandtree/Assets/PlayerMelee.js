@@ -30,7 +30,7 @@ function Update ()
 function AttackFunc ()
 {
 //	Debug.Log ("AttackFunc");
-	attackInt	= 1;
+	attackInt	= Random.Range (1,4);
 	animator.SetInteger	("AttackInt", attackInt);
 	VarAssign	();
 	
@@ -45,7 +45,7 @@ function AttackFunc ()
 	rigidbody.velocity.y	= velYStore;
 	
 	yield WaitForSeconds (attackTime * 0.5);
-	//Put second attack here
+	//Put second attack stuff here
 	
 	yield WaitForSeconds (attackTime * 0.5);
 	animator.SetInteger ("AttackInt", 0);
@@ -60,7 +60,13 @@ function VarAssign ()
 	{
 		case (1):
 			attackTime	= 0.66;
-			attackVelocity	= 5;
+			attackVelocity	= 3;
 			break;
+		case (2):
+			attackTime	= 0.8;
+			attackVelocity	= 3;
+		case (3):
+			attackTime	= 0.75;
+			attackVelocity	= 3;
 	}
 }
