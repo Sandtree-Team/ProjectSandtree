@@ -94,7 +94,7 @@ public class ExternalInformation : MonoBehaviour
 		
 		Material tempMaterial = new Material ( Shader.Find ( " Diffuse" ));
 		
-		tempGameObject.GetComponent <MeshFilter> ().mesh = objImporter.ImportFile ( "/Users/michaelbethke/Desktop/FishHelmet1.obj" );
+		tempGameObject.GetComponent <MeshFilter> ().mesh = objImporter.ImportFile ( Environment.GetFolderPath ( Environment.SpecialFolder.Desktop ) + Path.DirectorySeparatorChar + "FishHelmet1.obj" );
 		tempGameObject.GetComponent <MeshRenderer> ().material = tempMaterial;
 		
 	}
