@@ -1,11 +1,14 @@
 #pragma strict
 
+var meleeScript	: PlayerMelee;
 var animator	: Animator;
 var alive		: boolean;
+var inControl	: boolean;
 
 var camTrans		: Transform;
 var grounded		: boolean;
 var groundContact	: boolean;
+var reqContactTime	: float;
 var contactTime		: float;
 
 var velocity		: float;
@@ -28,18 +31,23 @@ function Start ()
 
 function Update ()
 {
-	if (alive)
+//	RotationFunc ();
+	
+	if (alive && inControl)
 	{
-		GroundingFunc ();
 		RotationFunc ();
+		GroundingFunc ();
 		MovementUpdate ();
+		AnimationFunc ();
 	}
-	AnimationFunc ();
 }
 
 function FixedUpdate ()
 {
-	MovementFixed ();
+	if (alive && inControl)
+	{
+		MovementFixed ();
+	}
 }
 
 function RotationFunc ()
@@ -49,7 +57,7 @@ function RotationFunc ()
 	targQuat	= targQuat * Quaternion.Euler (0,0,0);
 	targQuat.eulerAngles.x	= 0;
 	targQuat.eulerAngles.z	= 0;
-	transform.rotation	= Quaternion.Slerp (transform.rotation, targQuat, lookTime / Time.deltaTime);
+	transform.rotation	= Quaternion.Slerp (transform.rotation, targQuat, Time.deltaTime / lookTime);
 
 }
 
@@ -86,7 +94,7 @@ function GroundingFunc ()
 {
 	if (groundContact)
 	{
-		contactTime	= 0.075;		
+		contactTime	= reqContactTime;		
 		grounded	= true;
 //		jumpReady	= true;
 	}
@@ -125,8 +133,8 @@ function AnimationFunc ()
 	horVel.y	= 0;
 //	var inputVector	= Vector3 (Input.GetAxis ("Horizontal"), 0, Input.GetAxis ("Vertical")).normalized;
 	var lookVelDif	= Vector3.Angle (transform.forward, horVel.normalized);
-	Debug.DrawRay	(transform.position + Vector3.up, horVel.normalized * 5, Color.red);
-	Debug.DrawRay	(transform.position + Vector3.up, transform.forward * 5, Color.green);
+//	Debug.DrawRay	(transform.position + Vector3.up, horVel.normalized * 5, Color.red);
+//	Debug.DrawRay	(transform.position + Vector3.up, transform.forward * 5, Color.green);
 	animator.SetBool	("Grounded", grounded);
 	animator.SetFloat 	("VelocityHor", (horVel / velocityDenom).magnitude);
 	animator.SetFloat	("LookVelDif", lookVelDif);

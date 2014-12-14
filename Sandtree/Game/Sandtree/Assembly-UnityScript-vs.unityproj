@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{CD701143-6CCE-4A1F-ABB1-7235F61CAED7}</ProjectGuid>
+	<ProjectGuid>{A1B8111F-C8E7-E5DB-E16D-82D6BECEF289}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -46,8 +46,9 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\CamScript.js" />
-     <Compile Include="Assets\Scripts\PlayerMovement.js" />
+     <Compile Include="Assets\Code\Nick\CamScript.js" />
+     <Compile Include="Assets\Code\Nick\PlayerMovement.js" />
+     <Compile Include="Assets\PlayerMelee.js" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity4/Unity4.app/Contents/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
  </Reference>
