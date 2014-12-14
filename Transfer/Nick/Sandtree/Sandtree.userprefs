@@ -1,0 +1,14 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Code\Nick\PlayerMovement.js">
+    <Files>
+      <File FileName="Assets\Code\Nick\PlayerMovement.js" Line="38" Column="19" />
+      <File FileName="Assets\Code\Nick\CamScript.js" Line="4" Column="25" />
+      <File FileName="Assets\PlayerMelee.js" Line="32" Column="3" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
