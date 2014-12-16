@@ -79,6 +79,8 @@ public class InformationManager : MonoBehaviour
 	internal Preferences preferences = new Preferences ();
 	internal SavedGames savedGames = new SavedGames ();
 	
+	internal Helmets helmets = new Helmets ();
+	
 	
 	internal bool NewPreferences ()
 	{
