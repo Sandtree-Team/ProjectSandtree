@@ -41,27 +41,19 @@ public class SavedGame
 	//[XmlElement ( "PlayerID" )]
 	public string playerID;
 	
-	//[XmlElement ( "LastSeen" )]
-	public string lastSeen;
-	
-	//[XmlElement ( "DateModifier" )]
-	public string dateModifier;
-	
 	//[XmlIgnore]
-	public SavedGame () : this ( "0", "0", "lastSeen", "0" ) {}
-	public SavedGame ( string _usingVersion, string _playerID, string _lastSeen, string _dateModifier )
+	public SavedGame () : this ( "0", "0" ) {}
+	public SavedGame ( string _usingVersion, string _playerID )
 	{
 		
 		this.usingVersion = _usingVersion;
 		this.playerID = _playerID;
-		this.lastSeen = _lastSeen;
-		this.dateModifier = _dateModifier;
 	}
 }
 
 
-[XmlRoot ( "Equipment" )]
-public class Equipment
+[XmlRoot ( "Helmets" )]
+public class Helmets
 {
 	
 	[XmlElement ( "Helmet" )]
@@ -72,7 +64,11 @@ public class Equipment
 public class Helmet
 {
 	
+	public string identifier;
+	public string name;
+	public string armourRating;
 	
+	string modelPath;
 }
 
 
