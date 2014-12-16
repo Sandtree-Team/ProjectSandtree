@@ -27,6 +27,7 @@ ModelImporter:
     100042: UpperArm_r
     100044: UpperLeg_l
     100046: UpperLeg_r
+    100048: Cube
     400000: ArmatureNonIK
     400002: BaseShieldObj
     400004: BaseSwordObj
@@ -51,10 +52,12 @@ ModelImporter:
     400042: UpperArm_r
     400044: UpperLeg_l
     400046: UpperLeg_r
+    400048: Cube
     4300000: HelmetCat
     4300002: BaseSwordObj
     4300004: BaseShieldObj
     4300006: Mesh
+    4300008: Cube
     7400000: Default Take
     7400002: FightSwordAndShieldStance
     7400004: Idle
@@ -76,6 +79,7 @@ ModelImporter:
     13700002: BaseSwordObj
     13700004: HelmetCat
     13700006: Mesh
+    13700008: Cube
   materials:
     importMaterials: 1
     materialName: 0

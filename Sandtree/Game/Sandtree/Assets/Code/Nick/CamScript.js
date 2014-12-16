@@ -1,7 +1,9 @@
 ﻿#pragma strict
 
 var playerMovement	: PlayerMovement;
+var playerMelee		: PlayerMelee;
 var inControl	: boolean;
+var hasTarget	: boolean;
 
 var camTargPos	: Vector3;
 var camTargRot	: Vector3;
@@ -20,6 +22,7 @@ function Start ()
 {
 	followTarg	= GameObject.Find (targString).transform;
 	playerMovement	= followTarg.GetComponent (PlayerMovement);
+	playerMelee		= followTarg.GetComponent (PlayerMelee);
 	groundPlane.SetActive (true);
 	camTargPos	= Vector3 (0,4.5,-4.75);
 	camTargRot	= Vector3 (35,0,0);
@@ -32,7 +35,27 @@ function Update ()
 	var ray	= camera1.ScreenPointToRay (Input.mousePosition);
 	if (Physics.Raycast (ray, rayHit, Mathf.Infinity, rayMask))
 	{
-		pointVector	= rayHit.point;
+		if (rayHit.transform.gameObject.tag	== "Enemy")
+		{
+			pointVector	= rayHit.transform.position;
+			if (!hasTarget)
+			{
+				hasTarget	= true;
+				playerMelee.attackTarg	= rayHit.transform;
+//				Debug.Log ("TargetAcquired");
+			}
+		}
+		else
+		{	
+			pointVector	= rayHit.point;
+			if (hasTarget)
+			{
+				hasTarget	= false;
+				playerMelee.attackTarg	= null;
+//				Debug.Log ("TargetLost");
+			}
+		}
+		
 		playerMovement.lookPoint	= pointVector;
 	}
 	

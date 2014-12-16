@@ -2,7 +2,8 @@
   <MonoDevelop.Ide.Workspace />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\PlayerMelee.js">
     <Files>
-      <File FileName="Assets\PlayerMelee.js" Line="70" Column="22" />
+      <File FileName="Assets\PlayerMelee.js" Line="48" Column="28" />
+      <File FileName="Assets\Code\Nick\CamScript.js" Line="45" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
