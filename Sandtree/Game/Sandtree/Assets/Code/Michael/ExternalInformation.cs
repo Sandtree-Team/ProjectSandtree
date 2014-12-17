@@ -176,55 +176,6 @@ public class ExternalInformation : MonoBehaviour
 			ReadCatalogues ();
 		}
 		
-		/*if ( ReadEquipmentMasterlists () != true )
-		{
-			
-			if ( DownloadEquipmentMasterlists ( true ) != true )
-			{
-				
-				UnityEngine.Debug.Log ( "Unable to Write Equipment Masterlists!" );
-			} else {
-				
-				if ( ReadEquipmentMasterlists () != true )
-				{
-					
-					UnityEngine.Debug.LogError ( "Unable to R+WR Equipment Masterlists" );
-				} else {
-					
-					UnityEngine.Debug.Log ( "Successfully Read Equipment Masterlists after having to Write them." );
-				}
-			}
-		} else {
-			
-			UnityEngine.Debug.Log ( "Read Equipment Masterlists on First Try" );
-		}*/
-		
-		//string audioPath = assetsPath + Path.DirectorySeparatorChar + "Audio";
-		
-		//string modelsPath = assetsPath + Path.DirectorySeparatorChar + "Models";
-			//string characterModels = modelsPath + Path.DirectorySeparatorChar + "Character";
-				//string helmetModels = modelsPath + Path.DirectorySeparatorChar + "Helmets";
-		
-		/*string texturesPath = assetsPath + Path.DirectorySeparatorChar + "Textures";
-		
-		if ( Directory.Exists ( audioPath ) == false )
-		{
-			
-			Directory.CreateDirectory ( audioPath );
-		}
-		
-		if ( Directory.Exists ( modelsPath ) == false )
-		{
-			
-			Directory.CreateDirectory ( modelsPath );
-		}
-		
-		if ( Directory.Exists ( texturesPath ) == false )
-		{
-			
-			Directory.CreateDirectory ( texturesPath );
-		}*/
-		
 		
 		//UnityEngine.Debug.Log ( "Begin Loading OBJ" );
 		
@@ -251,6 +202,103 @@ public class ExternalInformation : MonoBehaviour
 #endregion
 		
 	}
+	
+	
+	bool ReadCatalogues ()
+	{
+		
+		if ( File.Exists ( supportPath + Path.DirectorySeparatorChar + "AssetCatalogues" + Path.DirectorySeparatorChar + "ModelsHumanoid.xml" ) == false )
+		{
+			
+			DownloadCatalogues ( "ModelsHumanoid.xml" );
+		}
+		
+		return true;
+	}
+	
+	
+	bool DownloadCatalogues ( string catalogueToDownload )
+	{
+		
+		if ( catalogueToDownload == "all" )
+		{
+			
+			//Download Everything
+		} else {
+			
+			UnityEngine.Debug.Log ( "Attempting Download for " + catalogueToDownload );
+			
+			Uri url = new Uri ( "http://71.63.239.44/shares/USB_Storage/Storage/ProjectSandtree/AssetCatalogues/" + catalogueToDownload );
+			UnityEngine.Debug.Log ( url );
+			
+			try
+			{
+				
+				HttpWebRequest request = WebRequest.Create ( url ) as HttpWebRequest;
+				request.Method = "HEAD";
+				
+				HttpWebResponse response = request.GetResponse() as HttpWebResponse;
+				
+				UnityEngine.Debug.Log ( response.StatusCode );
+				
+				if ( response.StatusCode == HttpStatusCode.OK )
+				{
+					
+					/*try
+					{
+					
+						using ( WebClient client = new WebClient ())
+						{
+						
+							client.DownloadFile ( url, supportPath + Path.DirectorySeparatorChar + "AssetCatalogues" + Path.DirectorySeparatorChar + catalogueToDownload );
+						}
+					} catch ( Exception downloadError )
+					{
+				
+						UnityEngine.Debug.LogError ( "Error Downloading from " + url + " : " + downloadError );
+						Application.Quit ();
+					}*/
+				}
+			} catch ( Exception httpError )
+			{
+
+				UnityEngine.Debug.LogError ( httpError );
+			}
+		}
+		
+		return true;
+	}
+	
+	
+	/*bool DownloadEquipmentMasterlists ()
+	{
+		
+		UnityEngine.Debug.Log ( "Downloading Equipment Masterlist" );
+
+		try {
+			
+			using ( StreamReader streamReader = new StreamReader ( WebRequest.Create ( "http://71.63.239.44/shares/USB_Storage/Temporary/ProjectSandtree/Helmets.xml" ).GetResponse ().GetResponseStream ()))
+			{
+				
+				string xml = streamReader.ReadToEnd ();
+			
+				UnityEngine.Debug.Log( "Downloaded and Read into Memory" );
+			
+				informationManager.helmets = xml.DeserializeXml<Helmets>();
+			
+				UnityEngine.Debug.Log ( "Deserialized" );
+			}
+		} catch ( Exception e ) {
+			
+			UnityEngine.Debug.LogError ( "ERROR: " + e );
+			return false;
+		}
+		
+		return true;
+		
+		//Thread downloadMissingEquipmentThread = new Thread ( new ThreadStart ( DownloadMissingEquipment ));
+		//downloadMissingEquipmentThread.Start ();
+	}*/
 	
 	
 	bool ReadPreferences ()
@@ -355,62 +403,6 @@ public class ExternalInformation : MonoBehaviour
 		}
 		return true;
 	}
-	
-	
-	bool ReadCatalogues ()
-	{
-		
-		
-		
-		return true;
-	}
-	
-	
-	bool DownloadCatalogues ( string cataloguesToDownload )
-	{
-		
-		if ( cataloguesToDownload == "all" )
-		{
-			
-			//Download Everything
-		} else {
-			
-			//Attempt to download http://71.63.239.44/Shares/<cataloguesToDownload>
-		}
-		
-		return true;
-	}
-	
-	
-	/*bool DownloadEquipmentMasterlists ()
-	{
-		
-		UnityEngine.Debug.Log ( "Downloading Equipment Masterlist" );
-
-		try {
-			
-			using ( StreamReader streamReader = new StreamReader ( WebRequest.Create ( "http://71.63.239.44/shares/USB_Storage/Temporary/ProjectSandtree/Helmets.xml" ).GetResponse ().GetResponseStream ()))
-			{
-				
-				string xml = streamReader.ReadToEnd ();
-			
-				UnityEngine.Debug.Log( "Downloaded and Read into Memory" );
-			
-				informationManager.helmets = xml.DeserializeXml<Helmets>();
-			
-				UnityEngine.Debug.Log ( "Deserialized" );
-			}
-		} catch ( Exception e ) {
-			
-			UnityEngine.Debug.LogError ( "ERROR: " + e );
-			return false;
-		}
-		
-		return true;
-		
-		//Thread downloadMissingEquipmentThread = new Thread ( new ThreadStart ( DownloadMissingEquipment ));
-		//downloadMissingEquipmentThread.Start ();
-	}*/
 }
 
 
