@@ -18,6 +18,16 @@ var camTrans	: Transform;
 var pointVector	: Vector3;
 var groundPlane	: GameObject;
 
+var obstructionMask		: LayerMask;
+var obstructionHit		: RaycastHit;
+var obstructionHitHold	: RaycastHit;
+
+var ShaderHold			: Shader;
+var transparent			: Shader;
+var transparencyValue	: float;
+var transparencyHold	: float;
+var obstructionRenderer	: MeshRenderer;
+
 function Start ()
 {
 	followTarg	= GameObject.Find (targString).transform;
@@ -59,6 +69,39 @@ function Update ()
 		playerMovement.lookPoint	= pointVector;
 	}
 	
+	if (Physics.Linecast (camTrans.position, (followTarg.position + (Vector3.up * 1)), obstructionHit, obstructionMask))
+	{
+		if (obstructionHit != obstructionHitHold)
+		{
+			if (obstructionRenderer	!= null)
+			{
+				obstructionRenderer.material.color.a	= transparencyHold;
+				obstructionRenderer.material.shader	= ShaderHold;
+			}
+			
+			obstructionRenderer	= obstructionHit.transform.gameObject.GetComponent (MeshRenderer);
+			ShaderHold			= obstructionRenderer.material.shader;
+			obstructionRenderer.material.shader	= transparent;
+			transparencyHold	= obstructionRenderer.material.color.a;
+			
+			if (transparencyHold > transparencyValue)
+			{
+				obstructionRenderer.material.color.a	= transparencyValue;
+				obstructionHitHold	= obstructionHit;
+			}
+		}
+	}
+	else
+	{
+		if (obstructionRenderer	!= null)
+		{
+			obstructionRenderer.material.color.a	= transparencyHold;
+			obstructionRenderer.material.shader	= ShaderHold;
+			
+//			obstructionHit		= null;
+//			obstructionHitHold	= null;
+		}
+	}
 //	camTrans.localPosition		= Vector3.Lerp  (camTrans.localPosition,    camTargPos, camMoveTime);
 //	camTrans.localEulerAngles	= Vector3.Slerp (camTrans.localEulerAngles, camTargRot, camRotTime);
 /*				//Just For Testing Purposes

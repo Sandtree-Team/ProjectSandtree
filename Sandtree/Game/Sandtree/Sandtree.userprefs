@@ -1,9 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\PlayerMelee.js">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Code\Nick\CamScript.js">
     <Files>
+      <File FileName="Assets\Code\Nick\CamScript.js" Line="89" Column="61" />
       <File FileName="Assets\PlayerMelee.js" Line="48" Column="28" />
-      <File FileName="Assets\Code\Nick\CamScript.js" Line="45" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
