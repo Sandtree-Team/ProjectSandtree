@@ -116,7 +116,7 @@ function VarAssign ()
 			reach		= 1;
 			break;
 		case (2):		//Under Stab
-			attackTime	= 0.6;
+			attackTime	= 0.7;
 			reach		= 1;
 			break;
 		case (3):		//Spin Slash
