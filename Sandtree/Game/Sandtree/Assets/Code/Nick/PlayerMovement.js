@@ -21,7 +21,7 @@ var velocityDenom		: float;
 
 var lookPoint	: Vector3;
 var lookTime	: float;
-var jumpVel		: float;
+var jumpHeight	: float;
 
 function Start ()
 {
@@ -40,6 +40,7 @@ function Update ()
 		MovementUpdate ();
 		AnimationFunc ();
 	}
+//	Debug.Log (rigidbody.velocity.magnitude);
 }
 
 function FixedUpdate ()
@@ -65,7 +66,8 @@ function MovementUpdate ()
 {
 	if (Input.GetButtonDown ("Jump") && grounded)
 	{
-		rigidbody.velocity.y += jumpVel;
+//		rigidbody.velocity.y += jumpVel;
+		rigidbody.velocity.y	= Mathf.Sqrt (2 * Mathf.Abs (Physics.gravity.magnitude) * jumpHeight);
 	}
 }
 
@@ -75,6 +77,7 @@ function MovementFixed ()
 	{
 		var targetVelocity	: Vector3;
 		targetVelocity = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+		targetVelocity = Vector3.ClampMagnitude (targetVelocity, 1);
 		targetVelocity = camTrans.TransformDirection(targetVelocity);
 		targetVelocity *= moveSpeed;
 		targetVelocity *= movementMultiplyer;
