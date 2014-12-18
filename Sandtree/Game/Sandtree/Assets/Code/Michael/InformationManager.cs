@@ -52,6 +52,22 @@ public class SavedGame
 }
 
 
+[XmlRoot ( "AssetCatalogues" )]
+public class AssetCatalogues
+{
+	
+	[XmlElement ( "AssetCatalogue" )]
+	public List<AssetCatalogue> catalogues;
+}
+
+
+public class AssetCatalogue
+{
+	
+	string name;
+}
+
+
 [XmlRoot ( "Helmets" )]
 public class Helmets
 {

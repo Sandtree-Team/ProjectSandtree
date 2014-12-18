@@ -228,8 +228,7 @@ public class ExternalInformation : MonoBehaviour
 			
 			UnityEngine.Debug.Log ( "Attempting Download for " + catalogueToDownload );
 			
-			Uri url = new Uri ( "http://71.63.239.44/shares/USB_Storage/Storage/ProjectSandtree/AssetCatalogues/" + catalogueToDownload );
-			UnityEngine.Debug.Log ( url );
+			Uri url = new Uri ( "https://raw.githubusercontent.com/Sandtree-Team/ProjectSandtree/master/Sandtree/Online/AssetCatalogues/" + catalogueToDownload );
 			
 			try
 			{
@@ -238,8 +237,6 @@ public class ExternalInformation : MonoBehaviour
 				request.Method = "HEAD";
 				
 				HttpWebResponse response = request.GetResponse() as HttpWebResponse;
-				
-				UnityEngine.Debug.Log ( response.StatusCode );
 				
 				if ( response.StatusCode == HttpStatusCode.OK )
 				{
