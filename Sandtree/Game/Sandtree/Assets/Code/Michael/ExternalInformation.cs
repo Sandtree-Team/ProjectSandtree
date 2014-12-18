@@ -179,12 +179,9 @@ public class ExternalInformation : MonoBehaviour
 		{
 			
 			Directory.CreateDirectory ( supportPath + Path.DirectorySeparatorChar + "AssetCatalogues" );
-			DownloadCatalogues ( "all" );
-		} else {
-			
-			ReadCatalogues ();
 		}
 		
+		ReadCatalogues ();
 		
 		//UnityEngine.Debug.Log ( "Begin Loading OBJ" );
 		
@@ -280,50 +277,43 @@ public class ExternalInformation : MonoBehaviour
 	bool DownloadCatalogues ( string catalogueToDownload )
 	{
 		
-		if ( catalogueToDownload == "all" )
+		UnityEngine.Debug.Log ( "Attempting Download for " + catalogueToDownload );
+		
+		Uri url = new Uri ( "http://2catstudios.github.io/ProjectSandtree/AssetCatalogues/" + catalogueToDownload );
+		
+		try
 		{
 			
-			//Download Everything
-		} else {
+			HttpWebRequest request = WebRequest.Create ( url ) as HttpWebRequest;
+			request.Method = "HEAD";
 			
-			UnityEngine.Debug.Log ( "Attempting Download for " + catalogueToDownload );
+			HttpWebResponse response = request.GetResponse() as HttpWebResponse;
 			
-			Uri url = new Uri ( "http://2catstudios.github.io/ProjectSandtree/AssetCatalogues/" + catalogueToDownload );
-			
-			try
+			if ( response.StatusCode == HttpStatusCode.OK )
 			{
 				
-				HttpWebRequest request = WebRequest.Create ( url ) as HttpWebRequest;
-				request.Method = "HEAD";
-				
-				HttpWebResponse response = request.GetResponse() as HttpWebResponse;
-				
-				if ( response.StatusCode == HttpStatusCode.OK )
+				try
 				{
-					
-					try
-					{
-					
-						using ( WebClient client = new WebClient ())
-						{
-						
-							client.DownloadFile ( url, supportPath + Path.DirectorySeparatorChar + "AssetCatalogues" + Path.DirectorySeparatorChar + catalogueToDownload );
-						}
-						
-						UnityEngine.Debug.Log ( "Successfully downloaded " + catalogueToDownload );
-						
-					} catch ( Exception downloadError )
-					{
 				
-						UnityEngine.Debug.LogError ( "Error Downloading from " + url + " : " + downloadError );
-						Application.Quit ();
+					using ( WebClient client = new WebClient ())
+					{
+					
+						client.DownloadFile ( url, supportPath + Path.DirectorySeparatorChar + "AssetCatalogues" + Path.DirectorySeparatorChar + catalogueToDownload );
 					}
+					
+					UnityEngine.Debug.Log ( "Successfully downloaded " + catalogueToDownload );
+					
+				} catch ( Exception downloadError )
+				{
+			
+					UnityEngine.Debug.LogError ( "Error Downloading from " + url + " : " + downloadError );
+					Application.Quit ();
 				}
-			} catch ( Exception httpError )
-			{
-
-				UnityEngine.Debug.LogError ( httpError );
 			}
+		} catch ( Exception httpError )
+		{
+
+			UnityEngine.Debug.LogError ( httpError );
 		}
 		
 		return true;
@@ -337,7 +327,7 @@ public class ExternalInformation : MonoBehaviour
 
 		try {
 			
-			using ( StreamReader streamReader = new StreamReader ( WebRequest.Create ( "http://71.63.239.44/shares/USB_Storage/Temporary/ProjectSandtree/Helmets.xml" ).GetResponse ().GetResponseStream ()))
+			using ( StreamReader streamReader = new StreamReader ( WebRequest.Create ( URL ).GetResponse ().GetResponseStream ()))
 			{
 				
 				string xml = streamReader.ReadToEnd ();
