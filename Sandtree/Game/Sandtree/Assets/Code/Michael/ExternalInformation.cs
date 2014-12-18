@@ -95,7 +95,12 @@ public class ExternalInformation : MonoBehaviour
 #endregion
 #region assets 
 		
-		//assetsPaths[0] = sandtreePath + Path.DirectorySeparatorChar + "Assets" + Path.DirectorySeparatorChar;
+		if ( CreateAssetMasterlist () == false )
+		{
+			
+			UnityEngine.Debug.LogError ( "This should not have happened. Error calling CreateAssetMasterlist!" );
+		}
+		
 		assetsPath = sandtreePath + Path.DirectorySeparatorChar + "Assets"/* + Path.DirectorySeparatorChar*/;
 		
 		if ( Directory.Exists ( assetsPath ) == false )
@@ -104,7 +109,11 @@ public class ExternalInformation : MonoBehaviour
 			Directory.CreateDirectory ( assetsPath );
 		}
 		
-		audioPaths [0] = assetsPath + Path.DirectorySeparatorChar + "Audio";
+		/***************************************************************************/
+/**/	audioPaths [0] = assetsPath + Path.DirectorySeparatorChar + "Audio";			/**/
+/**/	texturesPaths [0] = assetsPath + Path.DirectorySeparatorChar + "Textures";		/**/
+/**/	videosPaths [0] = assetsPath + Path.DirectorySeparatorChar + "Video";			/**/
+		/***************************************************************************/
 		
 		/*
 		ModelsPaths
@@ -162,7 +171,7 @@ public class ExternalInformation : MonoBehaviour
 		while ( modelsPathsIndex < modelsPaths.Length )
 		{
 			
-			UnityEngine.Debug.Log ( modelsPaths [modelsPathsIndex] );
+			//UnityEngine.Debug.Log ( modelsPaths [modelsPathsIndex] );
 			modelsPathsIndex += 1;
 		}
 		
@@ -204,13 +213,64 @@ public class ExternalInformation : MonoBehaviour
 	}
 	
 	
+	bool CreateAssetMasterlist ()
+	{
+		
+		if ( File.Exists ( supportPath + Path.DirectorySeparatorChar + "AssetMasterlist.xml" ))
+		{
+			
+			File.Delete ( supportPath + Path.DirectorySeparatorChar + "AssetMasterlist.xml" );
+		}
+		
+		try
+		{
+			
+			using ( WebClient client = new WebClient ())
+			{
+			
+				client.DownloadFile ( new Uri ( "http://2catstudios.github.io/ProjectSandtree/AssetMasterlist.xml" ), supportPath + Path.DirectorySeparatorChar + "AssetMasterlist.xml" );
+			}
+			
+			using ( StreamReader streamReader = new System.IO.StreamReader ( supportPath + Path.DirectorySeparatorChar + "AssetMasterlist.xml" ))
+			{
+				
+				string xml = streamReader.ReadToEnd();
+				informationManager.assetMasterlist = xml.DeserializeXml<AssetMasterlist>();
+			}
+			
+			UnityEngine.Debug.Log ( informationManager.assetMasterlist.catalogues[0].name );
+			
+			return true;
+		} catch
+		{
+			
+			UnityEngine.Debug.Log ( "Unable to Download AssetMasterlist. FOREACH XML IN ASSETCATEGORIES" );
+			//Populate XML based on available files
+			//Foreach file in Support/AssetCatalogues
+			//return true ?
+		}
+		
+		return false;
+	}
+	
+	
 	bool ReadCatalogues ()
 	{
 		
-		if ( File.Exists ( supportPath + Path.DirectorySeparatorChar + "AssetCatalogues" + Path.DirectorySeparatorChar + "ModelsHumanoid.xml" ) == false )
+		int catalogueIndex = 0;
+		while ( catalogueIndex <= informationManager.assetMasterlist.catalogues.Count - 1 )
 		{
 			
-			DownloadCatalogues ( "ModelsHumanoid.xml" );
+			if ( File.Exists ( supportPath + Path.DirectorySeparatorChar + "AssetCatalogues" + Path.DirectorySeparatorChar + informationManager.assetMasterlist.catalogues[catalogueIndex].name + ".xml" ) == false )
+			{
+			
+				DownloadCatalogues ( informationManager.assetMasterlist.catalogues[catalogueIndex].name + ".xml" );
+			} else {
+				
+				//Read Catalogue
+			} 
+			
+			catalogueIndex += 1;
 		}
 		
 		return true;
@@ -228,7 +288,7 @@ public class ExternalInformation : MonoBehaviour
 			
 			UnityEngine.Debug.Log ( "Attempting Download for " + catalogueToDownload );
 			
-			Uri url = new Uri ( "https://raw.githubusercontent.com/Sandtree-Team/ProjectSandtree/master/Sandtree/Online/AssetCatalogues/" + catalogueToDownload );
+			Uri url = new Uri ( "http://2catstudios.github.io/ProjectSandtree/AssetCatalogues/" + catalogueToDownload );
 			
 			try
 			{
@@ -241,7 +301,7 @@ public class ExternalInformation : MonoBehaviour
 				if ( response.StatusCode == HttpStatusCode.OK )
 				{
 					
-					/*try
+					try
 					{
 					
 						using ( WebClient client = new WebClient ())
@@ -249,12 +309,15 @@ public class ExternalInformation : MonoBehaviour
 						
 							client.DownloadFile ( url, supportPath + Path.DirectorySeparatorChar + "AssetCatalogues" + Path.DirectorySeparatorChar + catalogueToDownload );
 						}
+						
+						UnityEngine.Debug.Log ( "Successfully downloaded " + catalogueToDownload );
+						
 					} catch ( Exception downloadError )
 					{
 				
 						UnityEngine.Debug.LogError ( "Error Downloading from " + url + " : " + downloadError );
 						Application.Quit ();
-					}*/
+					}
 				}
 			} catch ( Exception httpError )
 			{
