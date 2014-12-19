@@ -7,6 +7,12 @@ var hasTarget	: boolean;
 
 var camTargPos	: Vector3;
 var camTargRot	: Vector3;
+@HideInInspector var newTargPos	: Vector3;
+@HideInInspector var newTargRot	: Vector3;
+
+@HideInInspector var camTargPosBase	: Vector3;
+@HideInInspector var camTargRotBase	: Vector3;
+
 var camMoveTime	: float;
 var camRotTime	: float;
 var targString	: String;
@@ -28,19 +34,46 @@ var transparencyValue	: float;
 var transparencyHold	: float;
 var obstructionRenderer	: MeshRenderer;
 
+var shouldSend	: boolean;
+var contextLooking	: boolean;
+var contextAvailable	: boolean;
+
 function Start ()
 {
+	transform.parent	= null;
 	followTarg	= GameObject.Find (targString).transform;
 	playerMovement	= followTarg.GetComponent (PlayerMovement);
 	playerMelee		= followTarg.GetComponent (PlayerMelee);
 	groundPlane.SetActive (true);
-	camTargPos	= Vector3 (0,4.5,-4.75);
-	camTargRot	= Vector3 (35,0,0);
+	camTargPosBase	= camTargPos;
+	camTargRotBase	= camTargRot;
+	yield WaitForSeconds (camRotTime);
+	shouldSend	= true;
 }
 
 function Update ()
 {
 	transform.position = followTarg.position;
+	
+	if (Input.GetButtonDown ("ContextLook") && newTargRot != Vector3.zero && contextAvailable)
+	{
+		contextLooking	= true;
+		camTargPos			= newTargPos;
+		camTargRot			= newTargRot;
+		playerMovement.inControl	= false;
+		shouldSend	= false;
+		playerMovement.lookPoint	= playerMovement.contextLookPoint;
+	}
+	if (Input.GetButtonUp ("ContextLook"))
+	{
+		contextLooking	= false;
+		camTargPos			= camTargPosBase;
+		camTargRot			= camTargRotBase;
+//		newTargPos	= Vector3.zero;
+//		newTargRot	= Vector3.zero;
+		playerMovement.inControl	= true;
+		shouldSend	= true;
+	}
 	
 	var ray	= camera1.ScreenPointToRay (Input.mousePosition);
 	if (Physics.Raycast (ray, rayHit, Mathf.Infinity, rayMask))
@@ -66,7 +99,10 @@ function Update ()
 			}
 		}
 		
-		playerMovement.lookPoint	= pointVector;
+		if (shouldSend)
+		{
+			playerMovement.lookPoint	= pointVector;
+		}
 	}
 	
 	if (Physics.Linecast (camTrans.position, (followTarg.position + (Vector3.up * 1)), obstructionHit, obstructionMask))
@@ -102,8 +138,10 @@ function Update ()
 //			obstructionHitHold	= null;
 		}
 	}
-//	camTrans.localPosition		= Vector3.Lerp  (camTrans.localPosition,    camTargPos, camMoveTime);
-//	camTrans.localEulerAngles	= Vector3.Slerp (camTrans.localEulerAngles, camTargRot, camRotTime);
+	var camTargRotQuat	: Quaternion;
+	camTargRotQuat	= Quaternion.Euler (camTargRot);
+	camTrans.localPosition		= Vector3.Lerp  (camTrans.localPosition,    camTargPos, Time.deltaTime / camMoveTime);
+	camTrans.localRotation		= Quaternion.Lerp (camTrans.localRotation, camTargRotQuat, Time.deltaTime / camRotTime);
 /*				//Just For Testing Purposes
 
 	if (Input.GetKey (KeyCode.E))

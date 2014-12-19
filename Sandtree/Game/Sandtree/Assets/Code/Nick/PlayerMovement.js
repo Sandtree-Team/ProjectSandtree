@@ -2,6 +2,7 @@
 
 var meleeScript	: PlayerMelee;
 var animator	: Animator;
+var camScript	: CamScript;
 var alive		: boolean;
 var inControl	: boolean;
 
@@ -22,25 +23,52 @@ var velocityDenom		: float;
 var lookPoint	: Vector3;
 var lookTime	: float;
 var jumpHeight	: float;
+var contextLookPoint	: Vector3;
 
 function Start ()
 {
 	camTrans	= GameObject.Find ("CamObj").transform;
+	camScript	= GameObject.Find ("CamObj").GetComponent (CamScript);
 	velocityDenom	= moveSpeed;
 }
 
 function Update ()
 {
 //	RotationFunc ();
+	if (alive)
+	{
+		RotationFunc ();
+	}
 	
 	if (alive && inControl)
 	{
-		RotationFunc ();
 		GroundingFunc ();
 		MovementUpdate ();
 		AnimationFunc ();
 	}
 //	Debug.Log (rigidbody.velocity.magnitude);
+}
+
+function OnTriggerEnter (col : Collider)
+{
+	Debug.Log (col.name);
+	
+	camScript.contextAvailable	= true;
+	
+	var contextScript	: ContextSpotScript;
+	contextScript	= col.gameObject.GetComponent (ContextSpotScript);
+	
+	camScript.newTargPos	= contextScript.camPosV3;
+	camScript.newTargRot	= contextScript.camRotV3;
+	contextLookPoint		= contextScript.newLookPoint;
+}
+
+function OnTriggerExit ()
+{
+	camScript.contextAvailable	= false;
+	
+	camScript.newTargPos	= Vector3.zero;
+	camScript.newTargRot	= Vector3.zero;
 }
 
 function FixedUpdate ()
