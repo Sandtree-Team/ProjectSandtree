@@ -6,12 +6,13 @@ var inControl	: boolean;
 var hasTarget	: boolean;
 
 var camTargPos	: Vector3;
-var camTargRot	: Vector3;
+var camTargRot	: Quaternion;
+var camTargRotV3: Vector3;
 @HideInInspector var newTargPos	: Vector3;
-@HideInInspector var newTargRot	: Vector3;
+@HideInInspector var newTargRot	: Quaternion;
 
 @HideInInspector var camTargPosBase	: Vector3;
-@HideInInspector var camTargRotBase	: Vector3;
+@HideInInspector var camTargRotBase	: Quaternion;
 
 var camMoveTime	: float;
 var camRotTime	: float;
@@ -45,6 +46,7 @@ function Start ()
 	playerMovement	= followTarg.GetComponent (PlayerMovement);
 	playerMelee		= followTarg.GetComponent (PlayerMelee);
 	groundPlane.SetActive (true);
+	camTargRot	= Quaternion.Euler (camTargRotV3);
 	camTargPosBase	= camTargPos;
 	camTargRotBase	= camTargRot;
 	yield WaitForSeconds (camRotTime);
@@ -58,7 +60,7 @@ function Update ()
 	if (Input.GetButtonDown ("ContextLook") && newTargRot != Vector3.zero && contextAvailable)
 	{
 		contextLooking	= true;
-		camTargPos			= newTargPos;
+		camTargPos			= transform.InverseTransformPoint (newTargPos);
 		camTargRot			= newTargRot;
 		playerMovement.inControl	= false;
 		shouldSend	= false;
@@ -138,10 +140,10 @@ function Update ()
 //			obstructionHitHold	= null;
 		}
 	}
-	var camTargRotQuat	: Quaternion;
-	camTargRotQuat	= Quaternion.Euler (camTargRot);
+//	var camTargRotQuat	: Quaternion;
+//	camTargRotQuat	= Quaternion.Euler (camTargRot);
 	camTrans.localPosition		= Vector3.Lerp  (camTrans.localPosition,    camTargPos, Time.deltaTime / camMoveTime);
-	camTrans.localRotation		= Quaternion.Lerp (camTrans.localRotation, camTargRotQuat, Time.deltaTime / camRotTime);
+	camTrans.localRotation		= Quaternion.Lerp (camTrans.localRotation, camTargRot, Time.deltaTime / camRotTime);
 /*				//Just For Testing Purposes
 
 	if (Input.GetKey (KeyCode.E))

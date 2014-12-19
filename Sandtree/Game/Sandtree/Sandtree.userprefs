@@ -1,10 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Code\Nick\ContextSpotScript.js">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Code\Nick\PlayerMovement.js">
     <Files>
-      <File FileName="Assets\Code\Nick\ContextSpotScript.js" Line="2" Column="1" />
-      <File FileName="Assets\Code\Nick\CamScript.js" Line="39" Column="32" />
-      <File FileName="Assets\Code\Nick\PlayerMovement.js" Line="56" Column="1" />
+      <File FileName="Assets\Code\Nick\ContextSpotScript.js" Line="13" Column="57" />
+      <File FileName="Assets\Code\Nick\CamScript.js" Line="72" Column="6" />
+      <File FileName="Assets\Code\Nick\PlayerMovement.js" Line="59" Column="38" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

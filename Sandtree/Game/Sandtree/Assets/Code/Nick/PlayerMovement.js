@@ -51,12 +51,12 @@ function Update ()
 
 function OnTriggerEnter (col : Collider)
 {
-	Debug.Log (col.name);
+//	Debug.Log (col.name);
 	
 	camScript.contextAvailable	= true;
 	
 	var contextScript	: ContextSpotScript;
-	contextScript	= col.gameObject.GetComponent (ContextSpotScript);
+	contextScript	= col.transform.parent.GetComponent (ContextSpotScript);
 	
 	camScript.newTargPos	= contextScript.camPosV3;
 	camScript.newTargRot	= contextScript.camRotV3;
@@ -68,7 +68,7 @@ function OnTriggerExit ()
 	camScript.contextAvailable	= false;
 	
 	camScript.newTargPos	= Vector3.zero;
-	camScript.newTargRot	= Vector3.zero;
+	camScript.newTargRot	= Quaternion (0,0,0,0);;
 }
 
 function FixedUpdate ()
