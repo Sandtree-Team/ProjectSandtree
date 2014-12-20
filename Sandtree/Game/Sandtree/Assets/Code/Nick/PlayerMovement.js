@@ -54,6 +54,7 @@ function OnTriggerEnter (col : Collider)
 //	Debug.Log (col.name);
 	
 	camScript.contextAvailable	= true;
+	meleeScript.canAttack	= false;
 	
 	var contextScript	: ContextSpotScript;
 	contextScript	= col.transform.parent.GetComponent (ContextSpotScript);
@@ -66,6 +67,7 @@ function OnTriggerEnter (col : Collider)
 function OnTriggerExit ()
 {
 	camScript.contextAvailable	= false;
+	meleeScript.canAttack	= true;
 	
 	camScript.newTargPos	= Vector3.zero;
 	camScript.newTargRot	= Quaternion (0,0,0,0);;

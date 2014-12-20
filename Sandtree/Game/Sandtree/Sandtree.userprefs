@@ -1,10 +1,13 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Code\Nick\PlayerMovement.js">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\PlayerWeaponControl.js">
     <Files>
-      <File FileName="Assets\Code\Nick\ContextSpotScript.js" Line="13" Column="57" />
-      <File FileName="Assets\Code\Nick\CamScript.js" Line="72" Column="6" />
-      <File FileName="Assets\Code\Nick\PlayerMovement.js" Line="59" Column="38" />
+      <File FileName="Assets\Code\Nick\PlayerMelee.js" Line="1" Column="1" />
+      <File FileName="Assets\Code\Nick\ContextSpotScript.js" Line="1" Column="1" />
+      <File FileName="Assets\Code\Nick\CamScript.js" Line="1" Column="1" />
+      <File FileName="Assets\Code\Nick\PlayerMovement.js" Line="1" Column="1" />
+      <File FileName="Assets\PlayerRanged.js" Line="8" Column="2" />
+      <File FileName="Assets\PlayerWeaponControl.js" Line="26" Column="33" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
