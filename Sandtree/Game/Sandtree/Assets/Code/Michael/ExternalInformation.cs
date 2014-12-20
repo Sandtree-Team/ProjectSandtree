@@ -101,12 +101,20 @@ public class ExternalInformation : MonoBehaviour
 			UnityEngine.Debug.LogError ( "This should not have happened. Error calling CreateAssetMasterlist!" );
 		}
 		
-		assetsPath = sandtreePath + Path.DirectorySeparatorChar + "Assets"/* + Path.DirectorySeparatorChar*/;
+		assetsPath = sandtreePath + Path.DirectorySeparatorChar + "Assets";
 		
 		if ( Directory.Exists ( assetsPath ) == false )
 		{
 			
 			Directory.CreateDirectory ( assetsPath );
+		}
+		
+		localizationPath = assetsPath + Path.DirectorySeparatorChar + "Localizations";
+		
+		if ( Directory.Exists ( localizationPath ) == false )
+		{
+			
+			Directory.CreateDirectory ( localizationPath );
 		}
 		
 		/***************************************************************************/
@@ -235,8 +243,6 @@ public class ExternalInformation : MonoBehaviour
 				informationManager.assetMasterlist = xml.DeserializeXml<AssetMasterlist>();
 			}
 			
-			UnityEngine.Debug.Log ( informationManager.assetMasterlist.catalogues[0].name );
-			
 			return true;
 		} catch
 		{
@@ -249,6 +255,17 @@ public class ExternalInformation : MonoBehaviour
 		
 		return false;
 	}
+	
+	
+	/*
+	Catalogues to Read|
+		Audio
+		Equipment
+		Localizations
+		Models
+		Textures
+		Video
+	*/
 	
 	
 	bool ReadCatalogues ()
