@@ -130,7 +130,7 @@ public class NetworkPrototype : MonoBehaviour
 	void SetupGame ()
 	{
 		
-		gameObject.networkView.RPC ( "InstantiateNetworkPlayer", RPCMode.All, "Hello world" );
+		gameObject.networkView.RPC ( "InstantiateNetworkPlayer", RPCMode.All );
 	}
 	
 	
