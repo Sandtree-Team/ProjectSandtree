@@ -68,11 +68,11 @@ public class AssetCatalogue
 }
 
 
-[XmlRoot ( "Helmets" )]
-public class Helmets
+[XmlRoot ( "Equipment" )]
+public class Equipment
 {
 	
-	[XmlElement ( "Helmet" )]
+	[XmlElement ( "Helmets" )]
 	public List<Helmet> helmets;
 }
 
@@ -96,7 +96,7 @@ public class InformationManager : MonoBehaviour
 	internal SavedGames savedGames = new SavedGames ();
 	
 	internal AssetMasterlist assetMasterlist = new AssetMasterlist ();
-	internal Helmets helmets = new Helmets ();
+	internal Equipment equipment = new Equipment ();
 	
 	
 	internal bool NewPreferences ()

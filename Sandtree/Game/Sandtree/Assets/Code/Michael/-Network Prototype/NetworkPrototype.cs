@@ -59,7 +59,7 @@ public class NetworkPrototype : MonoBehaviour
 	{
 		
 		UnityEngine.Debug.Log ( "Successfully hosting server." );
-		InstantiateNetworkPlayer ();
+		SetupGame ();
 	}
 	
 	
@@ -116,7 +116,7 @@ public class NetworkPrototype : MonoBehaviour
 	{
 			
 		UnityEngine.Debug.Log ( "Successfully connected." );
-		InstantiateNetworkPlayer ();
+		SetupGame ();
 	}
 	
 	
@@ -127,9 +127,17 @@ public class NetworkPrototype : MonoBehaviour
 	}
 	
 	
+	void SetupGame ()
+	{
+		
+		gameObject.networkView.RPC ( "InstantiateNetworkPlayer", RPCMode.All, "Hello world" );
+	}
+	
+	
+	[RPC]
 	void InstantiateNetworkPlayer ()
 	{
 		
-		Network.Instantiate ( networkPlayerPrefab, new Vector3 ( -10, 2, -3 ), Quaternion.identity, UnityEngine.Random.Range ( 0, 1000 ));
+		Instantiate ( networkPlayerPrefab, new Vector3 ( -10, 2, -3 ), Quaternion.identity );
 	}
 }

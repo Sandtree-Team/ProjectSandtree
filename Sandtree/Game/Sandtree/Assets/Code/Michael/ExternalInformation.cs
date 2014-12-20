@@ -271,7 +271,9 @@ public class ExternalInformation : MonoBehaviour
 	bool ReadCatalogues ()
 	{
 		
-		int catalogueIndex = 0;
+		//Make required assetsList
+		
+		/*int catalogueIndex = 0;
 		while ( catalogueIndex <= informationManager.assetMasterlist.catalogues.Count - 1 )
 		{
 			
@@ -285,7 +287,7 @@ public class ExternalInformation : MonoBehaviour
 			} 
 			
 			catalogueIndex += 1;
-		}
+		}*/
 		
 		return true;
 	}

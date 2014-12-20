@@ -41,7 +41,7 @@ var contextAvailable	: boolean;
 
 function Start ()
 {
-	transform.parent	= null;
+//	transform.parent	= null;
 //	followTarg	= GameObject.Find (targString).transform;
 //	playerMovement	= followTarg.GetComponent (PlayerMovement);
 //	playerMelee		= followTarg.GetComponent (PlayerMelee);
