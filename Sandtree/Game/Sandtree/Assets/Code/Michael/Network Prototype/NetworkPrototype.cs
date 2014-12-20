@@ -32,7 +32,7 @@ public class NetworkPrototype : MonoBehaviour
 		if ( BeginHost () == true )
 		{
 			
-			InstantiateNetworkPlayer ();
+			//InstantiateNetworkPlayer ();
 		}
 	}
 	
@@ -59,6 +59,7 @@ public class NetworkPrototype : MonoBehaviour
 	{
 		
 		UnityEngine.Debug.Log ( "Successfully hosting server." );
+		InstantiateNetworkPlayer ();
 	}
 	
 	
@@ -84,7 +85,7 @@ public class NetworkPrototype : MonoBehaviour
 		if ( BeginConnect () == true )
 		{
 			
-			InstantiateNetworkPlayer ();
+			//InstantiateNetworkPlayer ();
 		}
 	}
 	
@@ -115,6 +116,7 @@ public class NetworkPrototype : MonoBehaviour
 	{
 			
 		UnityEngine.Debug.Log ( "Successfully connected." );
+		InstantiateNetworkPlayer ();
 	}
 	
 	
@@ -128,6 +130,6 @@ public class NetworkPrototype : MonoBehaviour
 	void InstantiateNetworkPlayer ()
 	{
 		
-		Instantiate ( networkPlayerPrefab, new Vector3 ( -10, 2, -3 ), Quaternion.identity );
+		Network.Instantiate ( networkPlayerPrefab, new Vector3 ( -10, 2, -3 ), Quaternion.identity, UnityEngine.Random.Range ( 0, 1000 ));
 	}
 }
