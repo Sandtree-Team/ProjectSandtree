@@ -9,6 +9,7 @@ public class NetworkPrototype : MonoBehaviour
 	public string publicIPAddress = "71.63.239.44";
 	string externalIP;
 	
+	public Transform playerPrefab;
 	public Transform networkPlayerPrefab;
 
 	void Start ()
@@ -130,7 +131,8 @@ public class NetworkPrototype : MonoBehaviour
 	void SetupGame ()
 	{
 		
-		gameObject.networkView.RPC ( "InstantiateNetworkPlayer", RPCMode.All );
+		Instantiate ( playerPrefab, new Vector3 ( -10, 2, -3 ), Quaternion.identity );
+		gameObject.networkView.RPC ( "InstantiateNetworkPlayer", RPCMode.OthersBuffered );
 	}
 	
 	
