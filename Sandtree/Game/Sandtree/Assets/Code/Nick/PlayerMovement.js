@@ -27,8 +27,8 @@ var contextLookPoint	: Vector3;
 
 function Start ()
 {
-	camTrans	= GameObject.Find ("CamObj").transform;
-	camScript	= GameObject.Find ("CamObj").GetComponent (CamScript);
+//	camTrans	= GameObject.Find ("CamObj").transform;
+//	camScript	= GameObject.Find ("CamObj").GetComponent (CamScript);
 	velocityDenom	= moveSpeed;
 }
 

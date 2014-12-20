@@ -16,8 +16,8 @@ var reach		: float;
 
 function Start ()
 {
-	movementScript	= GameObject.Find ("PlayerPrototype").GetComponent (PlayerMovement);
-	camScript		= GameObject.Find ("CamObj").GetComponent (CamScript);
+//	movementScript	= GameObject.Find ("PlayerPrototype").GetComponent (PlayerMovement);
+//	camScript		= GameObject.Find ("CamObj").GetComponent (CamScript);
 }
 
 function Update ()

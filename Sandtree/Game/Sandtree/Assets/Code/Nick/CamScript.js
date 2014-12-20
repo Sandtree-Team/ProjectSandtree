@@ -42,9 +42,9 @@ var contextAvailable	: boolean;
 function Start ()
 {
 	transform.parent	= null;
-	followTarg	= GameObject.Find (targString).transform;
-	playerMovement	= followTarg.GetComponent (PlayerMovement);
-	playerMelee		= followTarg.GetComponent (PlayerMelee);
+//	followTarg	= GameObject.Find (targString).transform;
+//	playerMovement	= followTarg.GetComponent (PlayerMovement);
+//	playerMelee		= followTarg.GetComponent (PlayerMelee);
 	groundPlane.SetActive (true);
 	camTargRot	= Quaternion.Euler (camTargRotV3);
 	camTargPosBase	= camTargPos;
