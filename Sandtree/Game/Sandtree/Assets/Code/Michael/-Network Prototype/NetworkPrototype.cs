@@ -12,7 +12,7 @@ public class NetworkPrototype : MonoBehaviour
 	public Transform playerPrefab;
 	public Transform networkPlayerPrefab;
 
-	public Vector3 spawnPosition;
+	public Vector3 spawnPosition = new Vector3 ( -10, 2, -3 );
 
 	void Start ()
 	{
@@ -133,7 +133,7 @@ public class NetworkPrototype : MonoBehaviour
 	void SetupGame ()
 	{
 		
-		Instantiate ( playerPrefab, new Vector3 ( -10, 2, -3 ), Quaternion.identity );
+		Instantiate ( playerPrefab, spawnPosition, Quaternion.identity );
 		gameObject.networkView.RPC ( "InstantiateNetworkPlayer", RPCMode.OthersBuffered );
 	}
 	
@@ -141,7 +141,7 @@ public class NetworkPrototype : MonoBehaviour
 	[RPC]
 	void InstantiateNetworkPlayer ()
 	{
+		
 		Instantiate ( networkPlayerPrefab, spawnPosition, Quaternion.identity );
-//		Instantiate ( networkPlayerPrefab, new Vector3 ( -10, 2, -3 ), Quaternion.identity );
 	}
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Xml;
 using UnityEngine;
 using System.Collections;
@@ -68,6 +69,14 @@ public class AssetCatalogue
 }
 
 
+[XmlRoot ( "Audio" )]
+public class Audio
+{
+	
+	
+}
+
+
 [XmlRoot ( "Equipment" )]
 public class Equipment
 {
@@ -88,6 +97,48 @@ public class Helmet
 }
 
 
+[XmlRoot ( "Localizations" )]
+public class Localizations
+{
+	
+	
+}
+
+
+[XmlRoot ( "Models" )]
+public class Models
+{
+	
+	
+}
+
+
+[XmlRoot ( "Textures" )]
+public class Textures
+{
+	
+	
+}
+
+
+[XmlRoot ( "Videos" )]
+public class Videos
+{
+	
+	
+}
+
+
+public class RequiredCatalogue
+{
+	
+	public string name;
+	public Type type;
+	
+	public RequiredCatalogue () {}
+}
+
+
 public class InformationManager : MonoBehaviour
 {
 	
@@ -96,7 +147,9 @@ public class InformationManager : MonoBehaviour
 	internal SavedGames savedGames = new SavedGames ();
 	
 	internal AssetMasterlist assetMasterlist = new AssetMasterlist ();
+	internal RequiredCatalogue[] requiredCatalogues = new RequiredCatalogue[6];
 	internal Equipment equipment = new Equipment ();
+	
 	
 	
 	internal bool NewPreferences ()

@@ -94,6 +94,32 @@ public class ExternalInformation : MonoBehaviour
 		}// else { UnityEngine.Debug.Log ( "Read SavedGames Successfully" ); }
 #endregion
 #region assets 
+			
+		informationManager.requiredCatalogues[0].name = "Audio";
+		informationManager.requiredCatalogues[0].type = Type.GetType ( "Audio" );
+		
+		informationManager.requiredCatalogues[1].name = "Equipment";
+		informationManager.requiredCatalogues[1].type = Type.GetType ( "Equipment" );
+		
+		informationManager.requiredCatalogues[2].name = "Localizations";
+		informationManager.requiredCatalogues[2].type = Type.GetType ( "Localizations" );
+		
+		informationManager.requiredCatalogues[3].name = "Models";
+		informationManager.requiredCatalogues[3].type = Type.GetType ( "Models" );
+		
+		informationManager.requiredCatalogues[4].name = "Textures";
+		informationManager.requiredCatalogues[4].type = Type.GetType ( "Textures" );
+		
+		informationManager.requiredCatalogues[5].name = "Videos";
+		informationManager.requiredCatalogues[5].type = Type.GetType ( "Videos" );
+		
+		/*requiredCatalogues[0] = "Audio";
+		requiredCatalogues[1] = "Equipment";
+		requiredCatalogues[2] = "Localizations";
+		requiredCatalogues[3] = "Models";
+		requiredCatalogues[4] = "Textures";
+		requiredCatalogues[5] = "Videos";*/
+		
 		
 		if ( CreateAssetMasterlist () == false )
 		{
@@ -260,18 +286,51 @@ public class ExternalInformation : MonoBehaviour
 	/*
 	Catalogues to Read|
 		Audio
-		Equipment
+		Equipment		*
 		Localizations
 		Models
 		Textures
-		Video
+		Videos
 	*/
+	
+	
+	//http://2catstudios.github.io/ProjectSandtree/Assets/Equipment/<MODEL>
 	
 	
 	bool ReadCatalogues ()
 	{
 		
 		//Make required assetsList
+		
+		int requiredCatalogueIndex = 0;
+		while ( requiredCatalogueIndex < informationManager.requiredCatalogues.Length )
+		{
+			
+			if ( File.Exists ( supportPath + Path.DirectorySeparatorChar + "AssetCatalogues" + Path.DirectorySeparatorChar + informationManager.requiredCatalogues[requiredCatalogueIndex].name + ".xml" ) == false )
+			{
+				
+				DownloadCatalogues ( informationManager.requiredCatalogues[requiredCatalogueIndex].name + ".xml" );
+			} else {
+				
+				try {
+			
+					using ( StreamReader streamReader = new StreamReader ( supportPath + Path.DirectorySeparatorChar + "AssetCatalogues" + Path.DirectorySeparatorChar + informationManager.requiredCatalogues[requiredCatalogueIndex].name + ".xml" ))
+					{
+				
+						string xml = streamReader.ReadToEnd ();
+						//informationManager.equipment = xml.DeserializeXml<informationManager.requiredCatalogues[requiredCatalogueIndex].type>();
+			
+						UnityEngine.Debug.Log ( "Deserialized" );
+					}
+				} catch ( Exception e ) {
+			
+					UnityEngine.Debug.LogError ( "ERROR: " + e );
+					return false;
+				}
+			}
+			
+			requiredCatalogueIndex += 1;
+		}
 		
 		/*int catalogueIndex = 0;
 		while ( catalogueIndex <= informationManager.assetMasterlist.catalogues.Count - 1 )
@@ -288,6 +347,13 @@ public class ExternalInformation : MonoBehaviour
 			
 			catalogueIndex += 1;
 		}*/
+		
+		return true;
+	}
+	
+	
+	bool VerifyCatalogues ()
+	{
 		
 		return true;
 	}
