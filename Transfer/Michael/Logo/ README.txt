@@ -1,0 +1,1 @@
+I was bored Sunday night, so I thought I'd try to make a logo. It took all of five minutes, so if you don't like it, please don't hesitate to let me know. It's not really supposed to be final, or anything, just something to go on, maybe.
