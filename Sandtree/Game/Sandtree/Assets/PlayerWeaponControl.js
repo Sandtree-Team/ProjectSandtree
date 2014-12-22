@@ -8,6 +8,7 @@ var bow		: GameObject;
 
 var meleeScript	: PlayerMelee;
 var rangedScript: PlayerRanged;
+var animator	: Animator;
 
 function Start ()
 {
@@ -43,4 +44,5 @@ function InformWeaponType ()
 			rangedScript.canAttack	= true;
 			break;
 	}
+	animator.SetInteger ("WeaponMode", weaponMode);
 }

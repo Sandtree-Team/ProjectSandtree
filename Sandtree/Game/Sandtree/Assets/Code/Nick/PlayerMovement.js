@@ -1,5 +1,6 @@
 #pragma strict
 
+var playerWeapon: PlayerWeaponControl;
 var meleeScript	: PlayerMelee;
 var animator	: Animator;
 var camScript	: CamScript;

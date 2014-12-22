@@ -12,6 +12,8 @@ public class NetworkPrototype : MonoBehaviour
 	public Transform playerPrefab;
 	public Transform networkPlayerPrefab;
 
+	public Vector3 spawnPosition;
+
 	void Start ()
 	{
 		
@@ -139,7 +141,7 @@ public class NetworkPrototype : MonoBehaviour
 	[RPC]
 	void InstantiateNetworkPlayer ()
 	{
-		
-		Instantiate ( networkPlayerPrefab, new Vector3 ( -10, 2, -3 ), Quaternion.identity );
+		Instantiate ( networkPlayerPrefab, spawnPosition, Quaternion.identity );
+//		Instantiate ( networkPlayerPrefab, new Vector3 ( -10, 2, -3 ), Quaternion.identity );
 	}
 }
