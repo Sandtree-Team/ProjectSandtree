@@ -4,11 +4,51 @@
 		<version>1</version>
 	</Meta>
 	
-	<Helmets>
+	<Head>
 		<Helmet>
 			<identifier>FishHelmet1</identifier>
 			<name>Fishius Helmetius</name>
 			<armourRating>5</armourRating>
 		</Helmet>
-	</Helmets>
+	</Head>
+	
+	<Torso>
+		<ChestArmour>
+			<identifier>ChestArmor1</identifier>
+			<name>Armour of Beowulf</name>
+			<armourRating>9001</armourRating>
+		</ChestArmour>
+	</Torso>
+	
+	<Forearm>
+		<Gauntlet>
+			<identifier>ForearmArmour1_r</identifier>
+			<name>Ulna Defender</name>
+			<armourRating>2</armourRating>
+		</Gauntlet>
+	</Forearm>
+	
+	<Shin>
+		<Greave>
+			<identifier>ShinArmor1</identifier>
+			<name>Tibia Trustee</name>
+			<armourRating>2</armourRating>
+		</Greave>
+	</Shin>
+	
+	<Weapons>
+		<Sword>
+			<identifier>CurvedOneHandedSword</identifier>
+			<name>Egeking</name>
+			<baseDamage>30</baseDamage>
+		</Sword>
+	</Weapons>
+	
+	<Shields>
+		<Shield>
+			<identifier>WeirdShield1</identifier>
+			<name>Svalinn</name>
+			<baseDefence>55</baseDefence>
+		</Shield>
+	</Shields>
 </Equipment>
