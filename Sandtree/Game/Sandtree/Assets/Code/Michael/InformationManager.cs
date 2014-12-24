@@ -42,6 +42,10 @@ public class SavedGame
 	//[XmlElement ( "PlayerID" )]
 	public string playerID;
 	
+	/*
+		Save player equipment
+	*/
+	
 	//[XmlIgnore]
 	public SavedGame () : this ( "0", "0" ) {}
 	public SavedGame ( string _usingVersion, string _playerID )

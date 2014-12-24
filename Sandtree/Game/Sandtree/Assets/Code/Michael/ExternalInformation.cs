@@ -98,6 +98,9 @@ public class ExternalInformation : MonoBehaviour
 #endregion
 #region assets 
 		
+		//Thread internetConnectionsThread = new Thread (() => InternetConnections ( preferences.checkForUpdate, preferences.enableOMB ));
+		//internetConnectionsThread.Start ();
+		
 		if ( LoadDefaultAssets () == false )
 		{
 			
