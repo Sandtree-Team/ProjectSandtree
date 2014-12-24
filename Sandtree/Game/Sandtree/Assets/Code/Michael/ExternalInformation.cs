@@ -3,6 +3,7 @@ using System.IO;
 using System.Net;
 using UnityEngine;
 using System.Text;
+using System.Linq;
 using System.Collections;
 using System.Xml.Serialization;
 //Written by Michael Bethke
@@ -65,7 +66,7 @@ public class ExternalInformation : MonoBehaviour
 					UnityEngine.Debug.LogError ( "Unable to R+WR Preferences" );
 				} else { UnityEngine.Debug.Log ( "New Preferences File Created" ); }
 			}
-		}// else { UnityEngine.Debug.Log ( "Read Preferences Successfully" ); }
+		}
 		
 #endregion
 #region savedGames 
@@ -91,35 +92,17 @@ public class ExternalInformation : MonoBehaviour
 					UnityEngine.Debug.LogError ( "Unable to R+WR SavedGames" );
 				} else { UnityEngine.Debug.Log ( "New SavedGames File Created" ); }
 			}
-		}// else { UnityEngine.Debug.Log ( "Read SavedGames Successfully" ); }
+		}
+		
 #endregion
 #region assets 
+		
+		if ( LoadDefaultAssets () == false )
+		{
 			
-		informationManager.requiredCatalogues[0].name = "Audio";
-		informationManager.requiredCatalogues[0].type = Type.GetType ( "Audio" );
-		
-		informationManager.requiredCatalogues[1].name = "Equipment";
-		informationManager.requiredCatalogues[1].type = Type.GetType ( "Equipment" );
-		
-		informationManager.requiredCatalogues[2].name = "Localizations";
-		informationManager.requiredCatalogues[2].type = Type.GetType ( "Localizations" );
-		
-		informationManager.requiredCatalogues[3].name = "Models";
-		informationManager.requiredCatalogues[3].type = Type.GetType ( "Models" );
-		
-		informationManager.requiredCatalogues[4].name = "Textures";
-		informationManager.requiredCatalogues[4].type = Type.GetType ( "Textures" );
-		
-		informationManager.requiredCatalogues[5].name = "Videos";
-		informationManager.requiredCatalogues[5].type = Type.GetType ( "Videos" );
-		
-		/*requiredCatalogues[0] = "Audio";
-		requiredCatalogues[1] = "Equipment";
-		requiredCatalogues[2] = "Localizations";
-		requiredCatalogues[3] = "Models";
-		requiredCatalogues[4] = "Textures";
-		requiredCatalogues[5] = "Videos";*/
-		
+			UnityEngine.Debug.LogError ( "Unable to load default assets. This needs to force a crash." );
+			Application.Quit ();
+		}
 		
 		if ( CreateAssetMasterlist () == false )
 		{
@@ -217,6 +200,12 @@ public class ExternalInformation : MonoBehaviour
 		
 		ReadCatalogues ();
 		
+		if ( MergeAssetLists () == false )
+		{
+			
+			UnityEngine.Debug.LogError ( "Unable to merge lists! This should force shutdown." );
+		}
+		
 		//UnityEngine.Debug.Log ( "Begin Loading OBJ" );
 		
 		/*try
@@ -241,6 +230,64 @@ public class ExternalInformation : MonoBehaviour
 		
 #endregion
 		
+	}
+	
+	
+	bool LoadDefaultAssets ()
+	{
+		
+		try
+		{
+		
+			using ( StreamReader streamReader = new StreamReader ( Application.streamingAssetsPath + Path.DirectorySeparatorChar + "Audio" + Path.DirectorySeparatorChar + "Audio.xml" ))
+			{
+	    	
+				string xml = streamReader.ReadToEnd ();
+				informationManager.audioCatalogue = xml.DeserializeXml<Audio>();
+			}
+			
+			using ( StreamReader streamReader = new StreamReader ( Application.streamingAssetsPath + Path.DirectorySeparatorChar + "Equipment" + Path.DirectorySeparatorChar + "Equipment.xml" ))
+			{
+	    	
+				string xml = streamReader.ReadToEnd ();
+				informationManager.equipmentCatalogue = xml.DeserializeXml<Equipment>();
+			}
+			
+			using ( StreamReader streamReader = new StreamReader ( Application.streamingAssetsPath + Path.DirectorySeparatorChar + "Localizations" + Path.DirectorySeparatorChar + "Localizations.xml" ))
+			{
+	    	
+				string xml = streamReader.ReadToEnd ();
+				informationManager.localizationsCatalogue = xml.DeserializeXml<Localizations>();
+			}
+			
+			using ( StreamReader streamReader = new StreamReader ( Application.streamingAssetsPath + Path.DirectorySeparatorChar + "Models" + Path.DirectorySeparatorChar + "Models.xml" ))
+			{
+	    	
+				string xml = streamReader.ReadToEnd ();
+				informationManager.modelsCatalogue = xml.DeserializeXml<Models>();
+			}
+			
+			using ( StreamReader streamReader = new StreamReader ( Application.streamingAssetsPath + Path.DirectorySeparatorChar + "Textures" + Path.DirectorySeparatorChar + "Textures.xml" ))
+			{
+	    	
+				string xml = streamReader.ReadToEnd ();
+				informationManager.texturesCatalogue = xml.DeserializeXml<Textures>();
+			}
+			
+			using ( StreamReader streamReader = new StreamReader ( Application.streamingAssetsPath + Path.DirectorySeparatorChar + "Videos" + Path.DirectorySeparatorChar + "Videos.xml" ))
+			{
+	    	
+				string xml = streamReader.ReadToEnd ();
+				informationManager.videosCatalogue = xml.DeserializeXml<Videos>();
+			}
+		} catch ( Exception error )
+		{
+			
+			UnityEngine.Debug.LogError ( "Unable to read/deserialize default assets! " + error );
+			return false;
+		}
+		
+		return true;
 	}
 	
 	
@@ -302,7 +349,7 @@ public class ExternalInformation : MonoBehaviour
 		
 		//Make required assetsList
 		
-		int requiredCatalogueIndex = 0;
+		/*int requiredCatalogueIndex = 0;
 		while ( requiredCatalogueIndex < informationManager.requiredCatalogues.Length )
 		{
 			
@@ -330,22 +377,6 @@ public class ExternalInformation : MonoBehaviour
 			}
 			
 			requiredCatalogueIndex += 1;
-		}
-		
-		/*int catalogueIndex = 0;
-		while ( catalogueIndex <= informationManager.assetMasterlist.catalogues.Count - 1 )
-		{
-			
-			if ( File.Exists ( supportPath + Path.DirectorySeparatorChar + "AssetCatalogues" + Path.DirectorySeparatorChar + informationManager.assetMasterlist.catalogues[catalogueIndex].name + ".xml" ) == false )
-			{
-			
-				DownloadCatalogues ( informationManager.assetMasterlist.catalogues[catalogueIndex].name + ".xml" );
-			} else {
-				
-				//Read Catalogue
-			} 
-			
-			catalogueIndex += 1;
 		}*/
 		
 		return true;
@@ -434,6 +465,15 @@ public class ExternalInformation : MonoBehaviour
 		//Thread downloadMissingEquipmentThread = new Thread ( new ThreadStart ( DownloadMissingEquipment ));
 		//downloadMissingEquipmentThread.Start ();
 	}*/
+	
+	
+	bool MergeAssetLists ()
+	{
+		
+		//list = list1.Concat(list2).ToList();
+		
+		return true;
+	}
 	
 	
 	bool ReadPreferences ()
