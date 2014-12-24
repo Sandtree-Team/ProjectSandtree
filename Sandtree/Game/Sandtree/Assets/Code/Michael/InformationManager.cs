@@ -69,11 +69,26 @@ public class AssetCatalogue
 }
 
 
+public class Meta
+{
+	
+	public string version;
+	
+	public Meta () : this ( "0" ) {}
+	public Meta ( string _version )
+	{
+		
+		this.version = _version;
+	}
+}
+
+
 [XmlRoot ( "Audio" )]
 public class Audio
 {
 	
-	
+	[XmlElement ( "Meta" )]
+	public Meta meta = new Meta ();
 }
 
 
@@ -81,8 +96,19 @@ public class Audio
 public class Equipment
 {
 	
+	[XmlElement ( "Meta" )]
+	public Meta meta = new Meta ();
+	
 	[XmlElement ( "Helmets" )]
-	public List<Helmet> helmets;
+	public Helmets helmets = new Helmets ();
+}
+
+
+public class Helmets
+{
+	
+	[XmlElement ( "Helmet" )]
+	public List<Helmet> helmet = new List<Helmet> ();
 }
 
 
@@ -93,13 +119,23 @@ public class Helmet
 	public string name;
 	public string armourRating;
 	
-	string modelPath;
+	public Helmet () : this ( "null", "null", "null" ) {}
+	public Helmet ( string _identifier, string _name, string _armourRating )
+	{
+		
+		this.identifier = _identifier;
+		this.name = _name;
+		this.armourRating = _armourRating;
+	}
 }
 
 
 [XmlRoot ( "Localizations" )]
 public class Localizations
 {
+	
+	[XmlElement ( "Meta" )]
+	public Meta meta = new Meta ();
 	
 	
 }
@@ -109,6 +145,9 @@ public class Localizations
 public class Models
 {
 	
+	[XmlElement ( "Meta" )]
+	public Meta meta = new Meta ();
+	
 	
 }
 
@@ -116,6 +155,9 @@ public class Models
 [XmlRoot ( "Textures" )]
 public class Textures
 {
+	
+	[XmlElement ( "Meta" )]
+	public Meta meta = new Meta ();
 	
 	
 }
@@ -125,17 +167,10 @@ public class Textures
 public class Videos
 {
 	
+	[XmlElement ( "Meta" )]
+	public Meta meta = new Meta ();
 	
-}
-
-
-public class RequiredCatalogue
-{
 	
-	public string name;
-	public Type type;
-	
-	public RequiredCatalogue () {}
 }
 
 
@@ -147,8 +182,13 @@ public class InformationManager : MonoBehaviour
 	internal SavedGames savedGames = new SavedGames ();
 	
 	internal AssetMasterlist assetMasterlist = new AssetMasterlist ();
-	internal RequiredCatalogue[] requiredCatalogues = new RequiredCatalogue[6];
-	internal Equipment equipment = new Equipment ();
+	
+	internal Audio audioCatalogue = new Audio ();
+	internal Equipment equipmentCatalogue = new Equipment ();
+	internal Localizations localizationsCatalogue = new Localizations ();
+	internal Models modelsCatalogue = new Models ();
+	internal Textures texturesCatalogue = new Textures ();
+	internal Videos videosCatalogue = new Videos ();
 	
 	
 	

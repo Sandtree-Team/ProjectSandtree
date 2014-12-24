@@ -52,6 +52,12 @@
      <Compile Include="Assets\Code\Nick\PlayerMovement.js" />
      <Compile Include="Assets\PlayerRanged.js" />
      <Compile Include="Assets\PlayerWeaponControl.js" />
+     <None Include="Assets\StreamingAssets\Models\Models.xml" />
+     <None Include="Assets\StreamingAssets\Videos\Videos.xml" />
+     <None Include="Assets\StreamingAssets\Equipment\Equipment.xml" />
+     <None Include="Assets\StreamingAssets\Audio\Audio.xml" />
+     <None Include="Assets\StreamingAssets\Textures\Textures.xml" />
+     <None Include="Assets\StreamingAssets\Localizations\Localizations.xml" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity4/Unity4.app/Contents/UnityExtensions/Unity/GUISystem/4.6.1/UnityEngine.UI.dll</HintPath>
  </Reference>
