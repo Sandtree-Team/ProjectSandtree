@@ -99,12 +99,27 @@ public class Equipment
 	[XmlElement ( "Meta" )]
 	public Meta meta = new Meta ();
 	
-	[XmlElement ( "Helmets" )]
-	public Helmets helmets = new Helmets ();
+	[XmlElement ( "Head" )]
+	public Head head = new Head ();
+	
+	[XmlElement ( "Torso" )]
+	public Torso torso = new Torso ();
+	
+	[XmlElement ( "Forearm" )]
+	public Forearm forearm = new Forearm ();
+	
+	[XmlElement ( "Shin" )]
+	public Shin shin = new Shin ();
+	
+	[XmlElement ( "Weapons" )]
+	public Weapons weapons = new Weapons ();
+	
+	[XmlElement ( "Shields" )]
+	public Shields shields = new Shields ();
 }
 
 
-public class Helmets
+public class Head
 {
 	
 	[XmlElement ( "Helmet" )]
@@ -126,6 +141,136 @@ public class Helmet
 		this.identifier = _identifier;
 		this.name = _name;
 		this.armourRating = _armourRating;
+	}
+}
+
+
+public class Torso
+{
+	
+	[XmlElement ( "ChestArmour" )]
+	public List<ChestArmour> chestArmour = new List<ChestArmour> ();
+}
+
+
+public class ChestArmour
+{
+	
+	public string identifier;
+	public string name;
+	public string armourRating;
+	
+	public ChestArmour () : this ( "null", "null", "null" ) {}
+	public ChestArmour ( string _identifier, string _name, string _armourRating )
+	{
+		
+		this.identifier = _identifier;
+		this.name = _name;
+		this.armourRating = _armourRating;
+	}
+}
+
+
+public class Forearm
+{
+	
+	[XmlElement ( "Gauntlet" )]
+	public List<Gauntlet> gauntlet = new List<Gauntlet> ();
+}
+
+
+public class Gauntlet
+{
+	
+	public string identifier;
+	public string name;
+	public string armourRating;
+	
+	public Gauntlet () : this ( "null", "null", "null" ) {}
+	public Gauntlet ( string _identifier, string _name, string _armourRating )
+	{
+		
+		this.identifier = _identifier;
+		this.name = _name;
+		this.armourRating = _armourRating;
+	}
+}
+
+
+public class Shin
+{
+	
+	[XmlElement ( "Greave" )]
+	public List<Greave> shinArmour = new List<Greave> ();
+}
+
+
+public class Greave
+{
+	
+	public string identifier;
+	public string name;
+	public string armourRating;
+	
+	public Greave () : this ( "null", "null", "null" ) {}
+	public Greave ( string _identifier, string _name, string _armourRating )
+	{
+		
+		this.identifier = _identifier;
+		this.name = _name;
+		this.armourRating = _armourRating;
+	}
+}
+
+
+public class Weapons
+{
+	
+	[XmlElement ( "Sword" )]
+	public List<Sword> sword = new List<Sword> ();
+}
+
+
+public class Sword
+{
+	
+	public string identifier;
+	public string name;
+	public string baseDamage;
+	
+	public Sword () : this ( "null", "null", "null" ) {}
+	public Sword ( string _identifier, string _name, string _baseDamage )
+	{
+		
+		this.identifier = _identifier;
+		this.name = _name;
+		this.baseDamage = _baseDamage;
+	}
+}
+
+
+public class Shields
+{
+	
+	[XmlElement ( "Shield" )]
+	public List<Shield> shield = new List<Shield> ();
+}
+
+
+public class Shield
+{
+	
+	public string identifier;
+	public string name;
+	public string baseDefence;
+	
+	public Shield () : this ( "null", "null", "null" ) {}
+	public Shield ( string _identifier, string _name, string _baseDefence )
+	{
+		
+		this.identifier = _identifier;
+		this.name = _name;
+		this.baseDefence = _baseDefence;
 	}
 }
 
