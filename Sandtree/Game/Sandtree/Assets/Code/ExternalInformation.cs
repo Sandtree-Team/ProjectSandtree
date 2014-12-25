@@ -146,6 +146,10 @@ public class ExternalInformation : MonoBehaviour
 					[04] Models/Character/Humanoid/BicepL
 					[05] Models/Character/Humanoid/BicepR
 					[06] Models/Character/Humanoid/Chest
+		
+					[07] Models/Character/Humanoid/ElbowL
+					[08] Models/Character/Humanoid/ElbowR
+		
 					[07] Models/Character/Humanoid/FootL
 					[08] Models/Character/Humanoid/FootR
 					[09] Models/Character/Humanoid/ForearmL
@@ -158,6 +162,10 @@ public class ExternalInformation : MonoBehaviour
 					[16] Models/Character/Humanoid/Neck
 					[17] Models/Character/Humanoid/ShinL
 					[18] Models/Character/Humanoid/ShinR
+		
+					[19] Models/Character/Humanoid/ShoulderL
+					[20] Models/Character/Humanoid/ShoulderR
+		
 					[19] Models/Character/Humanoid/ThighL
 					[20] Models/Character/Humanoid/ThighR
 					[21] Models/Character/Humanoid/Waist
@@ -171,22 +179,30 @@ public class ExternalInformation : MonoBehaviour
 		modelsPaths [4] = modelsPaths [2] + Path.DirectorySeparatorChar + "BicepL";
 		modelsPaths [5] = modelsPaths [2] + Path.DirectorySeparatorChar + "BicepR";
 		modelsPaths [6] = modelsPaths [2] + Path.DirectorySeparatorChar + "Chest";
-		modelsPaths [7] = modelsPaths [2] + Path.DirectorySeparatorChar + "FootL";
-		modelsPaths [8] = modelsPaths [2] + Path.DirectorySeparatorChar + "FootR";
-		modelsPaths [9] = modelsPaths [2] + Path.DirectorySeparatorChar + "ForearmL";
-		modelsPaths [10] = modelsPaths [2] + Path.DirectorySeparatorChar + "ForearmR";
-		modelsPaths [11] = modelsPaths [2] + Path.DirectorySeparatorChar + "HandL";
-		modelsPaths [12] = modelsPaths [2] + Path.DirectorySeparatorChar + "HandR";
-		modelsPaths [13] = modelsPaths [2] + Path.DirectorySeparatorChar + "Head";
-		modelsPaths [14] = modelsPaths [2] + Path.DirectorySeparatorChar + "KneeL";
-		modelsPaths [15] = modelsPaths [2] + Path.DirectorySeparatorChar + "KneeR";
-		modelsPaths [16] = modelsPaths [2] + Path.DirectorySeparatorChar + "Neck";
-		modelsPaths [17] = modelsPaths [2] + Path.DirectorySeparatorChar + "ShinL";
-		modelsPaths [18] = modelsPaths [2] + Path.DirectorySeparatorChar + "ShinR";
-		modelsPaths [19] = modelsPaths [2] + Path.DirectorySeparatorChar + "ThighL";
-		modelsPaths [20] = modelsPaths [2] + Path.DirectorySeparatorChar + "ThighR";
-		modelsPaths [21] = modelsPaths [2] + Path.DirectorySeparatorChar + "Waist";
-		modelsPaths [22] = modelsPaths [1] + Path.DirectorySeparatorChar + "NonHumanoid";
+		
+		modelsPaths [7] = modelsPaths [2] + Path.DirectorySeparatorChar + "ElbowL";
+		modelsPaths [8] = modelsPaths [2] + Path.DirectorySeparatorChar + "ElbowR";
+		
+		modelsPaths [9] = modelsPaths [2] + Path.DirectorySeparatorChar + "FootL";
+		modelsPaths [10] = modelsPaths [2] + Path.DirectorySeparatorChar + "FootR";
+		modelsPaths [11] = modelsPaths [2] + Path.DirectorySeparatorChar + "ForearmL";
+		modelsPaths [12] = modelsPaths [2] + Path.DirectorySeparatorChar + "ForearmR";
+		modelsPaths [13] = modelsPaths [2] + Path.DirectorySeparatorChar + "HandL";
+		modelsPaths [14] = modelsPaths [2] + Path.DirectorySeparatorChar + "HandR";
+		modelsPaths [15] = modelsPaths [2] + Path.DirectorySeparatorChar + "Head";
+		modelsPaths [16] = modelsPaths [2] + Path.DirectorySeparatorChar + "KneeL";
+		modelsPaths [17] = modelsPaths [2] + Path.DirectorySeparatorChar + "KneeR";
+		modelsPaths [18] = modelsPaths [2] + Path.DirectorySeparatorChar + "Neck";
+		modelsPaths [19] = modelsPaths [2] + Path.DirectorySeparatorChar + "ShinL";
+		modelsPaths [20] = modelsPaths [2] + Path.DirectorySeparatorChar + "ShinR";
+		
+		modelsPaths [21] = modelsPaths [2] + Path.DirectorySeparatorChar + "ShoulderL";
+		modelsPaths [22] = modelsPaths [2] + Path.DirectorySeparatorChar + "ShoulderR";
+		
+		modelsPaths [23] = modelsPaths [2] + Path.DirectorySeparatorChar + "ThighL";
+		modelsPaths [24] = modelsPaths [2] + Path.DirectorySeparatorChar + "ThighR";
+		modelsPaths [25] = modelsPaths [2] + Path.DirectorySeparatorChar + "Waist";
+		modelsPaths [26] = modelsPaths [1] + Path.DirectorySeparatorChar + "NonHumanoid";
 		
 		int modelsPathsIndex = 0;
 		while ( modelsPathsIndex < modelsPaths.Length )
@@ -332,17 +348,6 @@ public class ExternalInformation : MonoBehaviour
 		
 		return false;
 	}
-	
-	
-	/*
-	Catalogues to Read|
-		Audio
-		Equipment		*
-		Localizations
-		Models
-		Textures
-		Videos
-	*/
 	
 	
 	//http://2catstudios.github.io/ProjectSandtree/Assets/Equipment/<MODEL>
