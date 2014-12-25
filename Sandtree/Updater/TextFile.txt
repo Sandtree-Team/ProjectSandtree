@@ -1,1 +1,0 @@
-The source for the updater application would go here.

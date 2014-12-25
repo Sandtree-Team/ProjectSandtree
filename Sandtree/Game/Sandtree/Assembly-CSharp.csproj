@@ -46,10 +46,11 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Code\Michael\-Network Prototype\NetworkPrototype.cs" />
-     <Compile Include="Assets\Code\Michael\ExternalInformation.cs" />
-     <Compile Include="Assets\Code\Michael\InformationManager.cs" />
-     <Compile Include="Assets\Code\Michael\ObjImporter.cs" />
+     <Compile Include="Assets\Code\-Network Prototype\NetworkPrototype.cs" />
+     <Compile Include="Assets\Code\ExternalInformation.cs" />
+     <Compile Include="Assets\Code\InformationManager.cs" />
+     <Compile Include="Assets\Code\ObjImporter.cs" />
+     <Compile Include="Assets\Code\PlayerStorage.cs" />
      <Compile Include="Assets\Modular\ErrorLog\ErrorLog.cs" />
      <Compile Include="Assets\Modular\ErrorLog\ErrorUI.cs" />
      <None Include="Assets\StreamingAssets\Models\Models.xml" />
