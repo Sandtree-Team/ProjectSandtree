@@ -21,7 +21,7 @@ public class ExternalInformation : MonoBehaviour
 	string localizationPath;
 	
 	string[] audioPaths = new string [1];
-	string[] modelsPaths = new string [23];
+	string[] modelsPaths = new string [16];
 	string[] texturesPaths = new string [1];
 	string[] videosPaths = new string [1];
 	
@@ -134,7 +134,7 @@ public class ExternalInformation : MonoBehaviour
 /**/	audioPaths [0] = assetsPath + Path.DirectorySeparatorChar + "Audio";			/**/
 /**/	texturesPaths [0] = assetsPath + Path.DirectorySeparatorChar + "Textures";		/**/
 /**/	videosPaths [0] = assetsPath + Path.DirectorySeparatorChar + "Video";			/**/
-		/***************************************************************************/
+		/***************************************************************************/	
 		
 		/*
 		ModelsPaths
@@ -143,66 +143,36 @@ public class ExternalInformation : MonoBehaviour
 			[01] Models/Character
 				[02] Models/Character/Humanoid
 					[03] Models/Character/Humanoid/Abdomen
-					[04] Models/Character/Humanoid/BicepL
-					[05] Models/Character/Humanoid/BicepR
-					[06] Models/Character/Humanoid/Chest
-		
-					[07] Models/Character/Humanoid/ElbowL
-					[08] Models/Character/Humanoid/ElbowR
-		
-					[07] Models/Character/Humanoid/FootL
-					[08] Models/Character/Humanoid/FootR
-					[09] Models/Character/Humanoid/ForearmL
-					[10] Models/Character/Humanoid/ForearmR
-					[11] Models/Chatacter/Humanoid/HandL
-					[12] Models/Chatacter/Humanoid/HandR
-					[13] Models/Character/Humanoid/Head
-					[14] Models/Character/Humanoid/KneeL
-					[15] Models/Character/Humanoid/KneeR
-					[16] Models/Character/Humanoid/Neck
-					[17] Models/Character/Humanoid/ShinL
-					[18] Models/Character/Humanoid/ShinR
-		
-					[19] Models/Character/Humanoid/ShoulderL
-					[20] Models/Character/Humanoid/ShoulderR
-		
-					[19] Models/Character/Humanoid/ThighL
-					[20] Models/Character/Humanoid/ThighR
-					[21] Models/Character/Humanoid/Waist
-				[22] Models/Character/NonHumanoid
+					[04] Models/Character/Humanoid/Biceps
+					[05] Models/Character/Humanoid/Chest
+					[06] Models/Character/Humanoid/Feet
+					[07] Models/Character/Humanoid/Forearms
+					[08] Models/Chatacter/Humanoid/Hands
+					[09] Models/Character/Humanoid/Head
+					[10] Models/Character/Humanoid/Neck
+					[11] Models/Character/Humanoid/Shins
+					[12] Models/Character/Humanoid/Shoulders
+					[13] Models/Character/Humanoid/Thighs
+					[14] Models/Character/Humanoid/Waist
+				[15] Models/Character/NonHumanoid
 		*/
 		
 		modelsPaths [0] = assetsPath + Path.DirectorySeparatorChar + "Models";
 		modelsPaths [1] = modelsPaths [0] + Path.DirectorySeparatorChar + "Character";
 		modelsPaths [2] = modelsPaths [1] + Path.DirectorySeparatorChar + "Humanoid";
 		modelsPaths [3] = modelsPaths [2] + Path.DirectorySeparatorChar + "Abdomen";
-		modelsPaths [4] = modelsPaths [2] + Path.DirectorySeparatorChar + "BicepL";
-		modelsPaths [5] = modelsPaths [2] + Path.DirectorySeparatorChar + "BicepR";
-		modelsPaths [6] = modelsPaths [2] + Path.DirectorySeparatorChar + "Chest";
-		
-		modelsPaths [7] = modelsPaths [2] + Path.DirectorySeparatorChar + "ElbowL";
-		modelsPaths [8] = modelsPaths [2] + Path.DirectorySeparatorChar + "ElbowR";
-		
-		modelsPaths [9] = modelsPaths [2] + Path.DirectorySeparatorChar + "FootL";
-		modelsPaths [10] = modelsPaths [2] + Path.DirectorySeparatorChar + "FootR";
-		modelsPaths [11] = modelsPaths [2] + Path.DirectorySeparatorChar + "ForearmL";
-		modelsPaths [12] = modelsPaths [2] + Path.DirectorySeparatorChar + "ForearmR";
-		modelsPaths [13] = modelsPaths [2] + Path.DirectorySeparatorChar + "HandL";
-		modelsPaths [14] = modelsPaths [2] + Path.DirectorySeparatorChar + "HandR";
-		modelsPaths [15] = modelsPaths [2] + Path.DirectorySeparatorChar + "Head";
-		modelsPaths [16] = modelsPaths [2] + Path.DirectorySeparatorChar + "KneeL";
-		modelsPaths [17] = modelsPaths [2] + Path.DirectorySeparatorChar + "KneeR";
-		modelsPaths [18] = modelsPaths [2] + Path.DirectorySeparatorChar + "Neck";
-		modelsPaths [19] = modelsPaths [2] + Path.DirectorySeparatorChar + "ShinL";
-		modelsPaths [20] = modelsPaths [2] + Path.DirectorySeparatorChar + "ShinR";
-		
-		modelsPaths [21] = modelsPaths [2] + Path.DirectorySeparatorChar + "ShoulderL";
-		modelsPaths [22] = modelsPaths [2] + Path.DirectorySeparatorChar + "ShoulderR";
-		
-		modelsPaths [23] = modelsPaths [2] + Path.DirectorySeparatorChar + "ThighL";
-		modelsPaths [24] = modelsPaths [2] + Path.DirectorySeparatorChar + "ThighR";
-		modelsPaths [25] = modelsPaths [2] + Path.DirectorySeparatorChar + "Waist";
-		modelsPaths [26] = modelsPaths [1] + Path.DirectorySeparatorChar + "NonHumanoid";
+		modelsPaths [4] = modelsPaths [2] + Path.DirectorySeparatorChar + "Biceps";
+		modelsPaths [5] = modelsPaths [2] + Path.DirectorySeparatorChar + "Chest";
+		modelsPaths [6] = modelsPaths [2] + Path.DirectorySeparatorChar + "Feet";
+		modelsPaths [07] = modelsPaths [2] + Path.DirectorySeparatorChar + "Forearms";
+		modelsPaths [08] = modelsPaths [2] + Path.DirectorySeparatorChar + "Hands";
+		modelsPaths [09] = modelsPaths [2] + Path.DirectorySeparatorChar + "Head";
+		modelsPaths [10] = modelsPaths [2] + Path.DirectorySeparatorChar + "Neck";
+		modelsPaths [11] = modelsPaths [2] + Path.DirectorySeparatorChar + "Shins";
+		modelsPaths [12] = modelsPaths [2] + Path.DirectorySeparatorChar + "Shoulders";
+		modelsPaths [13] = modelsPaths [2] + Path.DirectorySeparatorChar + "Thighs";
+		modelsPaths [14] = modelsPaths [2] + Path.DirectorySeparatorChar + "Waist";
+		modelsPaths [15] = modelsPaths [1] + Path.DirectorySeparatorChar + "NonHumanoid";
 		
 		int modelsPathsIndex = 0;
 		while ( modelsPathsIndex < modelsPaths.Length )
