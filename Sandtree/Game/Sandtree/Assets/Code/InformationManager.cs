@@ -281,7 +281,7 @@ public class Hands
 {
 	
 	[XmlElement ( "Armour" )]
-	public List<HandArmour> handArmoud = new List<HandArmour> ();
+	public List<HandArmour> handArmour = new List<HandArmour> ();
 }
 
 

@@ -220,6 +220,41 @@ public class ExternalInformation : MonoBehaviour
 		
 #endregion
 		
+		
+	}
+	
+	
+	internal bool TESTequipArmour ( CurrentEquipment equipmentToLoad )
+	{
+		
+		//int assetIndex = 0;
+		//while ( assetIndex < 19 )
+		//{
+			
+			try
+			{
+			
+				ObjImporter objImporter = new ObjImporter ();
+				GameObject tempGameObject = new GameObject ();
+				tempGameObject.AddComponent <MeshFilter> ();
+				tempGameObject.AddComponent <MeshRenderer> ();
+			
+				Material tempMaterial = new Material ( Shader.Find ( " Diffuse" ));
+			
+				tempGameObject.GetComponent <MeshFilter> ().mesh = objImporter.ImportFile ( Application.streamingAssetsPath + Path.DirectorySeparatorChar + "Models" + Path.DirectorySeparatorChar + "Equipment" + Path.DirectorySeparatorChar + equipmentToLoad.headArmour.identifier + ".obj" );
+				tempGameObject.GetComponent <MeshRenderer> ().material = tempMaterial;
+			} catch ( Exception error )
+			{
+			
+				UnityEngine.Debug.Log ( "Error in importing OBJ, " + error );
+			
+				//Attempt to download broken asset
+			}
+			
+			//assetIndex += 1;
+			//}
+		
+		return true;
 	}
 	
 	
@@ -320,7 +355,7 @@ public class ExternalInformation : MonoBehaviour
 	}
 	
 	
-	//http://2catstudios.github.io/ProjectSandtree/Assets/Equipment/<MODEL>
+	//http://2catstudios.github.io/ProjectSandtree/Assets/Temp/<MODEL>
 	
 	
 	bool ReadCatalogues ()
@@ -515,7 +550,7 @@ public class ExternalInformation : MonoBehaviour
 	
 		try {
 			
-			StreamReader savesReader = new System.IO.StreamReader ( savedGamesPath + Path.DirectorySeparatorChar + "SavedGames.xml" );
+			StreamReader savesReader = new System.IO.StreamReader ( savedGamesPath + Path.DirectorySeparatorChar + "SavedGames.xml" ); //Make file name <Name of Character>
 			string savesXML = savesReader.ReadToEnd();
 			savesReader.Close();
 			

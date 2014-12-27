@@ -4,7 +4,7 @@ using System.Collections;
 public class Player
 {
 	
-	public float sizeModifier = 0.0f;
+	public float sizeModifier = 1.0f;
 	
 	public CurrentEquipment currentEquipment = new CurrentEquipment ();
 	public Inventory inventory = new Inventory ();
@@ -15,18 +15,18 @@ public class CurrentEquipment
 {
 	
 	/*
-	Abdomen		- Baulds / Culet
-	Biceps		- Rerebrace / Brassart
-	Chest		- Brigandine / Haubergeon / Cuirass / Pixane / Plackart / Faulds / Culet / Besagew
-	Feet		- Sabaton / Solleret
-	Forearms	- Vambrace / Gauntlet
-	Hands		- Glove?
-	Head		- Coif / Helm / Bassinet / Armet / Sallet / Barbute / Burgonet
-	Neck		- Aventail / Gorget / Bevor
-	Shins		- Chausses / Schynbald / Greave
-	Shoulders	- Spaulder / Pauldron / Gardbrace
-	Thighs		- Cuisse / Lame
-	Waist		- Belt?
+	Abdomen
+	Biceps
+	Chest
+	Feet
+	Forearms
+	Hands
+	Head
+	Neck
+	Shins
+	Shoulders
+	Thighs
+	Waist
 	*/
 	
 	public AbdomenArmour abdomenArmour = new AbdomenArmour ();
@@ -96,6 +96,22 @@ public class Inventory
 
 public class PlayerManager : MonoBehaviour
 {
+	
+	InformationManager informationManager;
 
 	internal Player player = new Player ();
+	
+	
+	void Start ()
+	{
+		
+		informationManager = GameObject.FindGameObjectWithTag ( "Manager" ).GetComponent<InformationManager> ();
+		player.currentEquipment = new CurrentEquipment ( informationManager.equipmentCatalogue.abdomen.abdomenArmour[0], informationManager.equipmentCatalogue.biceps.bicepArmour[0], informationManager.equipmentCatalogue.biceps.bicepArmour[1], informationManager.equipmentCatalogue.chest.chestArmour[0], informationManager.equipmentCatalogue.feet.footArmour[0], informationManager.equipmentCatalogue.feet.footArmour[1], informationManager.equipmentCatalogue.forearms.forearmArmour[0], informationManager.equipmentCatalogue.forearms.forearmArmour[1], informationManager.equipmentCatalogue.hands.handArmour[0], informationManager.equipmentCatalogue.hands.handArmour[1], informationManager.equipmentCatalogue.head.headArmour[0], null, /*informationManager.equipmentCatalogue.neck.neckArmour[0]*/ informationManager.equipmentCatalogue.shins.shinArmour[0], informationManager.equipmentCatalogue.shins.shinArmour[1], informationManager.equipmentCatalogue.shoulders.shoulderArmour[0], informationManager.equipmentCatalogue.shoulders.shoulderArmour[1], informationManager.equipmentCatalogue.thighs.thighArmour[0], informationManager.equipmentCatalogue.thighs.thighArmour[1], informationManager.equipmentCatalogue.waist.waistArmour[0] );
+		
+		if ( GameObject.FindGameObjectWithTag ( "Manager" ).GetComponent<ExternalInformation> ().TESTequipArmour ( player.currentEquipment ) != true )
+		{
+			
+			UnityEngine.Debug.LogError ( "Unable to equip test armour!" );
+		}
+	}
 }

@@ -4,37 +4,155 @@
 		<version>1</version>
 	</Meta>
 	
-	<Head>
-		<Helmet>
-			<identifier>FishHelmet1</identifier>
-			<name>Fishius Helmetius</name>
+	
+	<Abdomen>
+		<Armour>
+			<identifier>TestAbdomen</identifier>
+			<name>Abdomen Test Armour</name>
 			<armourRating>5</armourRating>
-		</Helmet>
+		</Armour>
+	</Abdomen>
+	
+	<Biceps>
+		<Armour>
+			<identifier>TestBicepL</identifier>
+			<name>BicepL Test Armour</name>
+			<side>0</side>
+			<armourRating>3</armourRating>
+		</Armour>
+		
+		<Armour>
+			<identifier>TestBicepR</identifier>
+			<name>BicepR Test Armour</name>
+			<side>1</side>
+			<armourRating>3</armourRating>
+		</Armour>
+	</Biceps>
+	
+	<Chest>
+		<Armour>
+			<identifier>TestChest</identifier>
+			<name>Chest Test Armour</name>
+			<armourRating>7</armourRating>
+		</Armour>
+	</Chest>
+	
+	<Feet>
+		<Armour>
+			<identifier>TestFootL</identifier>
+			<name>FootL Test Armour</name>
+			<side>0</side>
+			<armourRating>1</armourRating>
+		</Armour>
+		
+		<Armour>
+			<identifier>TestFootR</identifier>
+			<name>FootR Test Armour</name>
+			<side>1</side>
+			<armourRating>1</armourRating>
+		</Armour>
+	</Feet>
+	
+	<Forearms>
+		<Armour>
+			<identifier>TestForearmL</identifier>
+			<name>ForearmL Test Armour</name>
+			<side>0</side>
+			<armourRating>1</armourRating>
+		</Armour>
+		
+		<Armour>
+			<identifier>TestForearmR</identifier>
+			<name>ForearmR Test Armour</name>
+			<side>1</side>
+			<armourRating>1</armourRating>
+		</Armour>
+	</Forearms>
+	
+	<Hands>
+		<Armour>
+			<identifier>TestHandL</identifier>
+			<name>HandL Test Armour</name>
+			<side>0</side>
+			<armourRating>2</armourRating>
+		</Armour>
+		
+		<Armour>
+			<identifier>TestHandR</identifier>
+			<name>HandR Test Armour</name>
+			<side>1</side>
+			<armourRating>2</armourRating>
+		</Armour>
+	</Hands>
+	
+	<Head>
+		<Armour>
+			<identifier>TestHelmet</identifier>
+			<name>Helmet Test Armour</name>
+			<armourRating>9</armourRating>
+		</Armour>
 	</Head>
 	
-	<Torso>
-		<ChestArmour>
-			<identifier>ChestArmor1</identifier>
-			<name>Armour of Beowulf</name>
-			<armourRating>9001</armourRating>
-		</ChestArmour>
-	</Torso>
+	<Neck>
+		
+	</Neck>
 	
-	<Forearm>
-		<Gauntlet>
-			<identifier>ForearmArmour1_r</identifier>
-			<name>Ulna Defender</name>
+	<Shins>
+		<Armour>
+			<identifier>TestShinL</identifier>
+			<name>ShinL Test Armour</name>
+			<side>0</side>
 			<armourRating>2</armourRating>
-		</Gauntlet>
-	</Forearm>
+		</Armour>
+		
+		<Armour>
+			<identifier>TestShinR</identifier>
+			<name>ShinR Test Armour</name>
+			<side>1</side>
+			<armourRating>2</armourRating>
+		</Armour>
+	</Shins>
 	
-	<Shin>
-		<Greave>
-			<identifier>ShinArmor1</identifier>
-			<name>Tibia Trustee</name>
+	<Shoulders>
+		<Armour>
+			<identifier>TestShoulderL</identifier>
+			<name>ShoulderL Test Armour</name>
+			<side>0</side>
+			<armourRating>3</armourRating>
+		</Armour>
+		
+		<Armour>
+			<identifier>TestShoulderR</identifier>
+			<name>ShoulderR Test Armour</name>
+			<side>1</side>
+			<armourRating>3</armourRating>
+		</Armour>
+	</Shoulders>
+	
+	<Thighs>
+		<Armour>
+			<identifier>TestThighL</identifier>
+			<name>ThighL Test Armour</name>
+			<side>0</side>
+			<armourRating>3</armourRating>
+		</Armour>
+		
+		<Armour>
+			<identifier>TestThighR</identifier>
+			<name>ThighR Test Armour</name>
+			<side>1</side>
+			<armourRating>3</armourRating>
+		</Armour>
+	</Thighs>
+	
+	<Waist>
+		<Armour>
+			<identifier>TestWaist</identifier>
+			<name>Waist Test Armour</name>
 			<armourRating>2</armourRating>
-		</Greave>
-	</Shin>
+		</Armour>
+	</Waist>
+	
 	
 	<Weapons>
 		<Sword>
