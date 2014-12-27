@@ -220,39 +220,54 @@ public class ExternalInformation : MonoBehaviour
 		
 #endregion
 		
-		
 	}
 	
 	
-	internal bool TESTequipArmour ( CurrentEquipment equipmentToLoad )
+	internal bool TESTequipArmour ( GameObject playerObject, CurrentEquipment equipmentToLoad )
 	{
 		
-		//int assetIndex = 0;
-		//while ( assetIndex < 19 )
-		//{
+		/*foreach ( Transform bone in playerObject.GetComponentInChildren<SkinnedMeshRenderer> ().bones )
+		{
 			
-			try
+			UnityEngine.Debug.Log ( bone );
+		}*/
+		
+		int assetIndex = 0;
+		while ( assetIndex < GameObject.FindGameObjectWithTag ( "TEMPTestChar" ).GetComponent<PlayerManager> ().player.currentEquipment.currentArmour.Count )
+		{
+			
+			if ( equipmentToLoad.currentArmour[assetIndex] != null )
 			{
-			
-				ObjImporter objImporter = new ObjImporter ();
-				GameObject tempGameObject = new GameObject ();
-				tempGameObject.AddComponent <MeshFilter> ();
-				tempGameObject.AddComponent <MeshRenderer> ();
-			
-				Material tempMaterial = new Material ( Shader.Find ( " Diffuse" ));
-			
-				tempGameObject.GetComponent <MeshFilter> ().mesh = objImporter.ImportFile ( Application.streamingAssetsPath + Path.DirectorySeparatorChar + "Models" + Path.DirectorySeparatorChar + "Equipment" + Path.DirectorySeparatorChar + equipmentToLoad.headArmour.identifier + ".obj" );
-				tempGameObject.GetComponent <MeshRenderer> ().material = tempMaterial;
-			} catch ( Exception error )
-			{
-			
-				UnityEngine.Debug.Log ( "Error in importing OBJ, " + error );
-			
-				//Attempt to download broken asset
+				
+				try
+				{
+				
+					ObjImporter objImporter = new ObjImporter ();
+					GameObject tempGameObject = new GameObject ();
+					tempGameObject.AddComponent <MeshFilter> ();
+					tempGameObject.AddComponent <MeshRenderer> ();
+				
+					Material tempMaterial = new Material ( Shader.Find ( " Diffuse" ));
+				
+					tempGameObject.GetComponent <MeshFilter> ().mesh = objImporter.ImportFile ( Application.streamingAssetsPath + Path.DirectorySeparatorChar + "Models" + Path.DirectorySeparatorChar + "Equipment" + Path.DirectorySeparatorChar + equipmentToLoad.currentArmour[assetIndex].identifier + ".obj" );
+					tempGameObject.GetComponent <MeshRenderer> ().material = tempMaterial;
+					
+					tempGameObject.name = equipmentToLoad.currentArmour[assetIndex].name;
+					tempGameObject.transform.parent = Array.Find ( playerObject.GetComponentInChildren<SkinnedMeshRenderer> ().bones, obj => obj.name == equipmentToLoad.currentArmour[assetIndex].bone );
+					tempGameObject.transform.localPosition = new Vector3 ( 0, 0, 0 );
+					tempGameObject.transform.localRotation = Quaternion.identity;
+					
+				} catch ( Exception error )
+				{
+				
+					UnityEngine.Debug.Log ( "Error in importing OBJ, " + error );
+				
+					//Attempt to download broken asset
+				}
 			}
 			
-			//assetIndex += 1;
-			//}
+			assetIndex += 1;
+		}
 		
 		return true;
 	}
@@ -276,6 +291,8 @@ public class ExternalInformation : MonoBehaviour
 	    	
 				string xml = streamReader.ReadToEnd ();
 				informationManager.equipmentCatalogue = xml.DeserializeXml<Equipment>();
+				
+				//UnityEngine.Debug.Log ( informationManager.equipmentCatalogue.armour.waistArmour[0].name );
 			}
 			
 			using ( StreamReader streamReader = new StreamReader ( Application.streamingAssetsPath + Path.DirectorySeparatorChar + "Localizations" + Path.DirectorySeparatorChar + "Localizations.xml" ))

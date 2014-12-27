@@ -103,7 +103,58 @@ public class Equipment
 	[XmlElement ( "Meta" )]
 	public Meta meta = new Meta ();
 	
+	[XmlElement ( "Armour" )]
+	public AllArmour armour = new AllArmour ();
+	
+	[XmlElement ( "Weapons" )]
+	public Weapons weapons = new Weapons ();
+	
+	[XmlElement ( "Shields" )]
+	public Shields shields = new Shields ();
+}
+
+
+public class AllArmour
+{
+	
 	[XmlElement ( "Abdomen" )]
+	public List<Armour> abdomenArmour = new List<Armour> ();
+	
+	[XmlElement ( "Bicep" )]
+	public List<Armour> bicepArmour = new List<Armour> ();
+	
+	[XmlElement ( "Chest" )]
+	public List<Armour> chestArmour = new List<Armour> ();
+	
+	[XmlElement ( "Foot" )]
+	public List<Armour> footArmour = new List<Armour> ();
+	
+	[XmlElement ( "Forearm" )]
+	public List<Armour> forearmArmour = new List<Armour> ();
+	
+	[XmlElement ( "Hand" )]
+	public List<Armour> handArmour = new List<Armour> ();
+	
+	[XmlElement ( "Head" )]
+	public List<Armour> headArmour = new List<Armour> ();
+	
+	[XmlElement ( "Neck" )]
+	public List<Armour> neckArmour = new List<Armour> ();
+	
+	[XmlElement ( "Shin" )]
+	public List<Armour> shinArmour = new List<Armour> ();
+	
+	[XmlElement ( "Shoulder" )]
+	public List<Armour> shoulderArmour = new List<Armour> ();
+	
+	[XmlElement ( "Thigh" )]
+	public List<Armour> thighArmour = new List<Armour> ();
+	
+	[XmlElement ( "Waist" )]
+	public List<Armour> waistArmour = new List<Armour> ();
+	
+#region OldSystem
+	/*[XmlElement ( "Abdomen" )]
 	public Abdomen abdomen = new Abdomen ();
 	
 	[XmlElement ( "Biceps" )]
@@ -137,65 +188,47 @@ public class Equipment
 	public Thighs thighs = new Thighs ();
 	
 	[XmlElement ( "Waist" )]
-	public Waist waist = new Waist ();
-	
-	[XmlElement ( "Weapons" )]
-	public Weapons weapons = new Weapons ();
-	
-	[XmlElement ( "Shields" )]
-	public Shields shields = new Shields ();
+	public Waist waist = new Waist ();*/
+#endregion
 }
 
 
-public class Abdomen
-{
-	
-	[XmlElement ( "Armour" )]
-	public List<AbdomenArmour> abdomenArmour = new List<AbdomenArmour> ();
-}
-
-
-public class AbdomenArmour
+public class Armour
 {
 	
 	public string identifier;
+	public string bone;
 	public string name;
+	public string side;
 	public string armourRating;
 	
-	public AbdomenArmour () : this ( "null", "null", "null" ) {}
-	public AbdomenArmour ( string _identifier, string _name, string _armourRating )
+	public Armour () : this ( "null", "null", "null", "null", "null" ) {}
+	public Armour ( string _identifier, string _bone, string _name, string _side, string _armourRating )
 	{
 		
 		this.identifier = _identifier;
+		this.bone = _bone;
 		this.name = _name;
+		this.side = _side;
 		this.armourRating = _armourRating;
 	}
 }
 
+
+#region OldSystem
+/*
+public class Abdomen
+{
+	
+	[XmlElement ( "Armour" )]
+	public List<Armour> abdomenArmour = new List<Armour> ();
+}
 
 public class Biceps
 {
 	
 	[XmlElement ( "Armour" )]
-	public List<BicepArmour> bicepArmour = new List<BicepArmour> ();
-}
-
-
-public class BicepArmour
-{
-	
-	public string identifier;
-	public string name;
-	public string armourRating;
-	
-	public BicepArmour () : this ( "null", "null", "null" ) {}
-	public BicepArmour ( string _identifier, string _name, string _armourRating )
-	{
-		
-		this.identifier = _identifier;
-		this.name = _name;
-		this.armourRating = _armourRating;
-	}
+	public List<Armour> bicepArmour = new List<Armour> ();
 }
 
 
@@ -203,25 +236,7 @@ public class Chest
 {
 	
 	[XmlElement ( "Armour" )]
-	public List<ChestArmour> chestArmour = new List<ChestArmour> ();
-}
-
-
-public class ChestArmour
-{
-	
-	public string identifier;
-	public string name;
-	public string armourRating;
-	
-	public ChestArmour () : this ( "null", "null", "null" ) {}
-	public ChestArmour ( string _identifier, string _name, string _armourRating )
-	{
-		
-		this.identifier = _identifier;
-		this.name = _name;
-		this.armourRating = _armourRating;
-	}
+	public List<Armour> chestArmour = new List<Armour> ();
 }
 
 
@@ -229,25 +244,7 @@ public class Feet
 {
 	
 	[XmlElement ( "Armour" )]
-	public List<FootArmour> footArmour = new List<FootArmour> ();
-}
-
-
-public class FootArmour
-{
-	
-	public string identifier;
-	public string name;
-	public string armourRating;
-	
-	public FootArmour () : this ( "null", "null", "null" ) {}
-	public FootArmour ( string _identifier, string _name, string _armourRating )
-	{
-		
-		this.identifier = _identifier;
-		this.name = _name;
-		this.armourRating = _armourRating;
-	}
+	public List<Armour> footArmour = new List<Armour> ();
 }
 
 
@@ -255,25 +252,7 @@ public class Forearms
 {
 	
 	[XmlElement ( "Armour" )]
-	public List<ForearmArmour> forearmArmour = new List<ForearmArmour> ();
-}
-
-
-public class ForearmArmour
-{
-	
-	public string identifier;
-	public string name;
-	public string armourRating;
-	
-	public ForearmArmour () : this ( "null", "null", "null" ) {}
-	public ForearmArmour ( string _identifier, string _name, string _armourRating )
-	{
-		
-		this.identifier = _identifier;
-		this.name = _name;
-		this.armourRating = _armourRating;
-	}
+	public List<Armour> forearmArmour = new List<Armour> ();
 }
 
 
@@ -281,25 +260,7 @@ public class Hands
 {
 	
 	[XmlElement ( "Armour" )]
-	public List<HandArmour> handArmour = new List<HandArmour> ();
-}
-
-
-public class HandArmour
-{
-	
-	public string identifier;
-	public string name;
-	public string armourRating;
-	
-	public HandArmour () : this ( "null", "null", "null" ) {}
-	public HandArmour ( string _identifier, string _name, string _armourRating )
-	{
-		
-		this.identifier = _identifier;
-		this.name = _name;
-		this.armourRating = _armourRating;
-	}
+	public List<Armour> handArmour = new List<Armour> ();
 }
 
 
@@ -307,25 +268,7 @@ public class Head
 {
 	
 	[XmlElement ( "Armour" )]
-	public List<HeadArmour> headArmour = new List<HeadArmour> ();
-}
-
-
-public class HeadArmour
-{
-	
-	public string identifier;
-	public string name;
-	public string armourRating;
-	
-	public HeadArmour () : this ( "null", "null", "null" ) {}
-	public HeadArmour ( string _identifier, string _name, string _armourRating )
-	{
-		
-		this.identifier = _identifier;
-		this.name = _name;
-		this.armourRating = _armourRating;
-	}
+	public List<Armour> headArmour = new List<Armour> ();
 }
 
 
@@ -333,25 +276,7 @@ public class Neck
 {
 	
 	[XmlElement ( "Armour" )]
-	public List<NeckArmour> neckArmour = new List<NeckArmour> ();
-}
-
-
-public class NeckArmour
-{
-	
-	public string identifier;
-	public string name;
-	public string armourRating;
-	
-	public NeckArmour () : this ( "null", "null", "null" ) {}
-	public NeckArmour ( string _identifier, string _name, string _armourRating )
-	{
-		
-		this.identifier = _identifier;
-		this.name = _name;
-		this.armourRating = _armourRating;
-	}
+	public List<Armour> neckArmour = new List<Armour> ();
 }
 
 
@@ -359,25 +284,7 @@ public class Shins
 {
 	
 	[XmlElement ( "Armour" )]
-	public List<ShinArmour> shinArmour = new List<ShinArmour> ();
-}
-
-
-public class ShinArmour
-{
-	
-	public string identifier;
-	public string name;
-	public string armourRating;
-	
-	public ShinArmour () : this ( "null", "null", "null" ) {}
-	public ShinArmour ( string _identifier, string _name, string _armourRating )
-	{
-		
-		this.identifier = _identifier;
-		this.name = _name;
-		this.armourRating = _armourRating;
-	}
+	public List<Armour> shinArmour = new List<Armour> ();
 }
 
 
@@ -385,25 +292,7 @@ public class Shoulders
 {
 	
 	[XmlElement ( "Armour" )]
-	public List<ShoulderArmour> shoulderArmour = new List<ShoulderArmour> ();
-}
-
-
-public class ShoulderArmour
-{
-	
-	public string identifier;
-	public string name;
-	public string armourRating;
-	
-	public ShoulderArmour () : this ( "null", "null", "null" ) {}
-	public ShoulderArmour ( string _identifier, string _name, string _armourRating )
-	{
-		
-		this.identifier = _identifier;
-		this.name = _name;
-		this.armourRating = _armourRating;
-	}
+	public List<Armour> shoulderArmour = new List<Armour> ();
 }
 
 
@@ -411,25 +300,7 @@ public class Thighs
 {
 	
 	[XmlElement ( "Armour" )]
-	public List<ThighArmour> thighArmour = new List<ThighArmour> ();
-}
-
-
-public class ThighArmour
-{
-	
-	public string identifier;
-	public string name;
-	public string armourRating;
-	
-	public ThighArmour () : this ( "null", "null", "null" ) {}
-	public ThighArmour ( string _identifier, string _name, string _armourRating )
-	{
-		
-		this.identifier = _identifier;
-		this.name = _name;
-		this.armourRating = _armourRating;
-	}
+	public List<Armour> thighArmour = new List<Armour> ();
 }
 
 
@@ -437,27 +308,9 @@ public class Waist
 {
 	
 	[XmlElement ( "Armour" )]
-	public List<WaistArmour> waistArmour = new List<WaistArmour> ();
+	public List<Armour> waistArmour = new List<Armour> ();
 }
-
-
-public class WaistArmour
-{
-	
-	public string identifier;
-	public string name;
-	public string armourRating;
-	
-	public WaistArmour () : this ( "null", "null", "null" ) {}
-	public WaistArmour ( string _identifier, string _name, string _armourRating )
-	{
-		
-		this.identifier = _identifier;
-		this.name = _name;
-		this.armourRating = _armourRating;
-	}
-}
-
+*/
 
 public class Weapons
 {
@@ -509,7 +362,7 @@ public class Shield
 		this.baseDefence = _baseDefence;
 	}
 }
-
+#endregion
 
 [XmlRoot ( "Localizations" )]
 public class Localizations

@@ -1,8 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 //Written by Michael Bethke
 public class Player
 {
+	
+	internal GameObject playerObject;
 	
 	public float sizeModifier = 1.0f;
 	
@@ -14,76 +17,52 @@ public class Player
 public class CurrentEquipment
 {
 	
-	/*
-	Abdomen
-	Biceps
-	Chest
-	Feet
-	Forearms
-	Hands
-	Head
-	Neck
-	Shins
-	Shoulders
-	Thighs
-	Waist
-	*/
+	public List<Armour> currentArmour = new List<Armour> () { null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null };
 	
-	public AbdomenArmour abdomenArmour = new AbdomenArmour ();
-	
-	public BicepArmour bicepArmourLeft = new BicepArmour ();
-	public BicepArmour bicepArmourRight = new BicepArmour ();
-	
-	public ChestArmour chestArmour = new ChestArmour ();
-	
-	public FootArmour footArmourLeft = new FootArmour ();
-	public FootArmour footArmourRight = new FootArmour ();
-	
-	public ForearmArmour forearmArmourLeft = new ForearmArmour ();
-	public ForearmArmour forearmArmourRight = new ForearmArmour ();
-	
-	public HandArmour handArmourLeft = new HandArmour ();
-	public HandArmour handArmourRight = new HandArmour ();
-	
-	public HeadArmour headArmour = new HeadArmour ();
-	
-	public NeckArmour neckArmour = new NeckArmour ();
-	
-	public ShinArmour shinArmourLeft = new ShinArmour ();
-	public ShinArmour shinArmourRight = new ShinArmour ();
-	
-	public ShoulderArmour shoulderArmourLeft = new ShoulderArmour ();
-	public ShoulderArmour shoulderArmourRight = new ShoulderArmour ();
-	
-	public ThighArmour thighArmourLeft = new ThighArmour ();
-	public ThighArmour thighArmourRight = new ThighArmour ();
-	
-	public WaistArmour waistArmour = new WaistArmour ();
-	
-	
-	//public CurrentEquipment () : this ( null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null ) {} //19
-	public CurrentEquipment ( AbdomenArmour _abdomenArmour = null, BicepArmour _bicepArmourLeft = null, BicepArmour _bicepArmourRight = null, ChestArmour _chestArmour = null, FootArmour _footArmourLeft = null, FootArmour _footArmourRight = null, ForearmArmour _forearmArmourLeft = null, ForearmArmour _forearmArmourRight = null, HandArmour _handArmourLeft = null, HandArmour _handArmourRight = null, HeadArmour _headArmour = null, NeckArmour _neckArmour = null, ShinArmour _shinArmourLeft = null, ShinArmour _shinArmourRight = null, ShoulderArmour _shoulderArmourLeft = null, ShoulderArmour _shoulderArmourRight = null, ThighArmour _thighArmourLeft = null, ThighArmour _thighArmourRight = null, WaistArmour _waistArmour = null )
+	public CurrentEquipment ( Armour _headArmour = null, Armour _neckArmour = null, Armour _chestArmour = null, Armour _shoulderArmourLeft = null, Armour _shoulderArmourRight = null, Armour _bicepArmourLeft = null, Armour _bicepArmourRight = null, 
+		Armour _forearmArmourLeft = null, Armour _forearmArmourRight = null, Armour _handArmourLeft = null, Armour _handArmourRight = null, Armour _abdomenArmour = null, Armour _waistArmour = null, Armour _thighArmourLeft = null, Armour _thighArmourRight = null, 
+			Armour _shinArmourLeft = null, Armour _shinArmourRight = null, Armour _footArmourLeft = null, Armour _footArmourRight = null )
 	{
+
+		this.currentArmour[0] = _headArmour ?? this.currentArmour[0];
+		this.currentArmour[1] = _neckArmour ?? this.currentArmour[1];
+		this.currentArmour[2] = _chestArmour ?? this.currentArmour[2];
+		this.currentArmour[3] = _shoulderArmourLeft ?? this.currentArmour[3];
+		this.currentArmour[4] = _shoulderArmourRight ?? this.currentArmour[4];
+		this.currentArmour[5] = _bicepArmourLeft ?? this.currentArmour[5];
+		this.currentArmour[6] = _bicepArmourRight ?? this.currentArmour[6];
+		this.currentArmour[7] = _forearmArmourLeft ?? this.currentArmour[7];
+		this.currentArmour[8] = _forearmArmourRight ?? this.currentArmour[8];
+		this.currentArmour[9] = _handArmourLeft ?? this.currentArmour[9];
+		this.currentArmour[10] = _handArmourRight ?? this.currentArmour[10];
+		this.currentArmour[11] = _abdomenArmour ?? this.currentArmour[11];
+		this.currentArmour[12] = _waistArmour ?? this.currentArmour[12];
+		this.currentArmour[13] = _thighArmourLeft ?? this.currentArmour[13];
+		this.currentArmour[14] = _thighArmourRight ?? this.currentArmour[14];
+		this.currentArmour[15] = _shinArmourLeft ?? this.currentArmour[15];
+		this.currentArmour[16] = _shinArmourRight ?? this.currentArmour[16];
+		this.currentArmour[17] = _footArmourLeft ?? this.currentArmour[17];
+		this.currentArmour[18] = _footArmourRight ?? this.currentArmour [18];
 		
-		this.abdomenArmour = _abdomenArmour ?? this.abdomenArmour;
-		this.bicepArmourLeft = _bicepArmourLeft ?? this.bicepArmourLeft;
-		this.bicepArmourRight = _bicepArmourRight ?? this.bicepArmourRight;
-		this.chestArmour = _chestArmour ?? this.chestArmour;
-		this.footArmourLeft = _footArmourLeft ?? this.footArmourLeft;
-		this.footArmourRight = _footArmourRight ?? this.footArmourRight;
-		this.forearmArmourLeft = _forearmArmourLeft ?? this.forearmArmourLeft;
-		this.forearmArmourRight = _forearmArmourRight ?? this.forearmArmourRight;
-		this.handArmourLeft = _handArmourLeft ?? this.handArmourLeft;
-		this.handArmourRight = _handArmourRight ?? this.handArmourRight;
-		this.headArmour = _headArmour ?? this.headArmour;
-		this.neckArmour = _neckArmour ?? this.neckArmour;
-		this.shinArmourLeft = _shinArmourLeft ?? this.shinArmourLeft;
-		this.shinArmourRight = _shinArmourRight ?? this.shinArmourRight;
-		this.shoulderArmourLeft = _shoulderArmourLeft ?? this.shoulderArmourLeft;
-		this.shoulderArmourRight = _shoulderArmourRight ?? this.shoulderArmourRight;
-		this.thighArmourLeft = _thighArmourLeft ?? this.thighArmourLeft;
-		this.thighArmourRight = _thighArmourRight ?? this.thighArmourRight;
-		this.waistArmour = _waistArmour ?? this.waistArmour;
+		/*this.currentArmour.abdomenArmour = _abdomenArmour ?? this.currentArmour.abdomenArmour;
+		this.currentArmour.bicepArmourLeft = _bicepArmourLeft ?? this.currentArmour.bicepArmourLeft;
+		this.currentArmour.bicepArmourRight = _bicepArmourRight ?? this.currentArmour.bicepArmourRight;
+		this.currentArmour.chestArmour = _chestArmour ?? this.currentArmour.chestArmour;
+		this.currentArmour.footArmourLeft = _footArmourLeft ?? this.currentArmour.footArmourLeft;
+		this.currentArmour.footArmourRight = _footArmourRight ?? this.currentArmour.footArmourRight;
+		this.currentArmour.forearmArmourLeft = _forearmArmourLeft ?? this.currentArmour.forearmArmourLeft;
+		this.currentArmour.forearmArmourRight = _forearmArmourRight ?? this.currentArmour.forearmArmourRight;
+		this.currentArmour.handArmourLeft = _handArmourLeft ?? this.currentArmour.handArmourLeft;
+		this.currentArmour.handArmourRight = _handArmourRight ?? this.currentArmour.handArmourRight;
+		this.currentArmour.headArmour = _headArmour ?? this.currentArmour.headArmour;
+		this.currentArmour.neckArmour = _neckArmour ?? this.currentArmour.neckArmour;
+		this.currentArmour.shinArmourLeft = _shinArmourLeft ?? this.currentArmour.shinArmourLeft;
+		this.currentArmour.shinArmourRight = _shinArmourRight ?? this.currentArmour.shinArmourRight;
+		this.currentArmour.shoulderArmourLeft = _shoulderArmourLeft ?? this.currentArmour.shoulderArmourLeft;
+		this.currentArmour.shoulderArmourRight = _shoulderArmourRight ?? this.currentArmour.shoulderArmourRight;
+		this.currentArmour.thighArmourLeft = _thighArmourLeft ?? this.currentArmour.thighArmourLeft;
+		this.currentArmour.thighArmourRight = _thighArmourRight ?? this.currentArmour.thighArmourRight;
+		this.currentArmour.waistArmour = _waistArmour ?? this.currentArmour.waistArmour;*/
 	}
 }
 
@@ -93,6 +72,7 @@ public class Inventory
 	
 	
 }
+
 
 public class PlayerManager : MonoBehaviour
 {
@@ -106,9 +86,12 @@ public class PlayerManager : MonoBehaviour
 	{
 		
 		informationManager = GameObject.FindGameObjectWithTag ( "Manager" ).GetComponent<InformationManager> ();
-		player.currentEquipment = new CurrentEquipment ( informationManager.equipmentCatalogue.abdomen.abdomenArmour[0], informationManager.equipmentCatalogue.biceps.bicepArmour[0], informationManager.equipmentCatalogue.biceps.bicepArmour[1], informationManager.equipmentCatalogue.chest.chestArmour[0], informationManager.equipmentCatalogue.feet.footArmour[0], informationManager.equipmentCatalogue.feet.footArmour[1], informationManager.equipmentCatalogue.forearms.forearmArmour[0], informationManager.equipmentCatalogue.forearms.forearmArmour[1], informationManager.equipmentCatalogue.hands.handArmour[0], informationManager.equipmentCatalogue.hands.handArmour[1], informationManager.equipmentCatalogue.head.headArmour[0], null, /*informationManager.equipmentCatalogue.neck.neckArmour[0]*/ informationManager.equipmentCatalogue.shins.shinArmour[0], informationManager.equipmentCatalogue.shins.shinArmour[1], informationManager.equipmentCatalogue.shoulders.shoulderArmour[0], informationManager.equipmentCatalogue.shoulders.shoulderArmour[1], informationManager.equipmentCatalogue.thighs.thighArmour[0], informationManager.equipmentCatalogue.thighs.thighArmour[1], informationManager.equipmentCatalogue.waist.waistArmour[0] );
 		
-		if ( GameObject.FindGameObjectWithTag ( "Manager" ).GetComponent<ExternalInformation> ().TESTequipArmour ( player.currentEquipment ) != true )
+		player.playerObject = gameObject;
+		
+		player.currentEquipment = new CurrentEquipment ( informationManager.equipmentCatalogue.armour.abdomenArmour[0], informationManager.equipmentCatalogue.armour.bicepArmour[0], informationManager.equipmentCatalogue.armour.bicepArmour[1], informationManager.equipmentCatalogue.armour.chestArmour[0], informationManager.equipmentCatalogue.armour.footArmour[0], informationManager.equipmentCatalogue.armour.footArmour[1], informationManager.equipmentCatalogue.armour.forearmArmour[0], informationManager.equipmentCatalogue.armour.forearmArmour[1], informationManager.equipmentCatalogue.armour.handArmour[0], informationManager.equipmentCatalogue.armour.handArmour[1], informationManager.equipmentCatalogue.armour.headArmour[0], null, /*informationManager.equipmentCatalogue.armour.neckArmour[0]*/ informationManager.equipmentCatalogue.armour.shinArmour[0], informationManager.equipmentCatalogue.armour.shinArmour[1], informationManager.equipmentCatalogue.armour.shoulderArmour[0], informationManager.equipmentCatalogue.armour.shoulderArmour[1], informationManager.equipmentCatalogue.armour.thighArmour[0], informationManager.equipmentCatalogue.armour.thighArmour[1], informationManager.equipmentCatalogue.armour.waistArmour[0] );
+		
+		if ( GameObject.FindGameObjectWithTag ( "Manager" ).GetComponent<ExternalInformation> ().TESTequipArmour ( player.playerObject, player.currentEquipment ) != true )
 		{
 			
 			UnityEngine.Debug.LogError ( "Unable to equip test armour!" );
