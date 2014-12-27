@@ -4,154 +4,144 @@
 		<version>1</version>
 	</Meta>
 	
-	
-	<Abdomen>
-		<Armour>
+	<Armour>
+		<Abdomen>
 			<identifier>TestAbdomen</identifier>
+			<bone>Stomach</bone>
 			<name>Abdomen Test Armour</name>
 			<armourRating>5</armourRating>
-		</Armour>
-	</Abdomen>
-	
-	<Biceps>
-		<Armour>
+		</Abdomen>
+		
+		<Bicep>
 			<identifier>TestBicepL</identifier>
+			<bone>UpperArm_l</bone>
 			<name>BicepL Test Armour</name>
 			<side>0</side>
 			<armourRating>3</armourRating>
-		</Armour>
-		
-		<Armour>
+		</Bicep>
+		<Bicep>
 			<identifier>TestBicepR</identifier>
+			<bone>UpperArm_r</bone>
 			<name>BicepR Test Armour</name>
 			<side>1</side>
 			<armourRating>3</armourRating>
-		</Armour>
-	</Biceps>
-	
-	<Chest>
-		<Armour>
+		</Bicep>
+		
+		<Chest>
 			<identifier>TestChest</identifier>
+			<bone>Chest</bone>
 			<name>Chest Test Armour</name>
 			<armourRating>7</armourRating>
-		</Armour>
-	</Chest>
-	
-	<Feet>
-		<Armour>
+		</Chest>
+		
+		<Foot>
 			<identifier>TestFootL</identifier>
+			<bone>Foot_l</bone>
 			<name>FootL Test Armour</name>
 			<side>0</side>
 			<armourRating>1</armourRating>
-		</Armour>
-		
-		<Armour>
+		</Foot>
+			
+		<Foot>
 			<identifier>TestFootR</identifier>
+			<bone>Foot_r</bone>
 			<name>FootR Test Armour</name>
 			<side>1</side>
 			<armourRating>1</armourRating>
-		</Armour>
-	</Feet>
-	
-	<Forearms>
-		<Armour>
+		</Foot>
+		
+		<Forearm>
 			<identifier>TestForearmL</identifier>
+			<bone>LowerArm_l</bone>
 			<name>ForearmL Test Armour</name>
 			<side>0</side>
 			<armourRating>1</armourRating>
-		</Armour>
-		
-		<Armour>
+		</Forearm>
+		<Forearm>
 			<identifier>TestForearmR</identifier>
+			<bone>LowerArm_r</bone>
 			<name>ForearmR Test Armour</name>
 			<side>1</side>
 			<armourRating>1</armourRating>
-		</Armour>
-	</Forearms>
-	
-	<Hands>
-		<Armour>
+		</Forearm>
+		
+		<Hand>
 			<identifier>TestHandL</identifier>
+			<bone>Hand_l</bone>
 			<name>HandL Test Armour</name>
 			<side>0</side>
 			<armourRating>2</armourRating>
-		</Armour>
-		
-		<Armour>
+		</Hand>
+		<Hand>
 			<identifier>TestHandR</identifier>
+			<bone>Hand_r</bone>
 			<name>HandR Test Armour</name>
 			<side>1</side>
 			<armourRating>2</armourRating>
-		</Armour>
-	</Hands>
-	
-	<Head>
-		<Armour>
+		</Hand>
+		
+		<Head>
 			<identifier>TestHelmet</identifier>
+			<bone>Head</bone>
 			<name>Helmet Test Armour</name>
 			<armourRating>9</armourRating>
-		</Armour>
-	</Head>
-	
-	<Neck>
+		</Head>
 		
-	</Neck>
-	
-	<Shins>
-		<Armour>
+		<Neck>
+		</Neck>
+		
+		<Shin>
 			<identifier>TestShinL</identifier>
+			<bone>LowerLeg_l</bone>
 			<name>ShinL Test Armour</name>
 			<side>0</side>
 			<armourRating>2</armourRating>
-		</Armour>
-		
-		<Armour>
+		</Shin>
+		<Shin>
 			<identifier>TestShinR</identifier>
+			<bone>LowerLeg_r</bone>
 			<name>ShinR Test Armour</name>
 			<side>1</side>
 			<armourRating>2</armourRating>
-		</Armour>
-	</Shins>
-	
-	<Shoulders>
-		<Armour>
+		</Shin>
+		
+		<Shoulder>
 			<identifier>TestShoulderL</identifier>
+			<bone>Chest</bone>
 			<name>ShoulderL Test Armour</name>
 			<side>0</side>
 			<armourRating>3</armourRating>
-		</Armour>
-		
-		<Armour>
+		</Shoulder>
+		<Shoulder>
 			<identifier>TestShoulderR</identifier>
+			<bone>Chest</bone>
 			<name>ShoulderR Test Armour</name>
 			<side>1</side>
 			<armourRating>3</armourRating>
-		</Armour>
-	</Shoulders>
-	
-	<Thighs>
-		<Armour>
+		</Shoulder>
+		
+		<Thigh>
 			<identifier>TestThighL</identifier>
+			<bone>UpperLeg_l</bone>
 			<name>ThighL Test Armour</name>
 			<side>0</side>
 			<armourRating>3</armourRating>
-		</Armour>
-		
-		<Armour>
+		</Thigh>
+		<Thigh>
 			<identifier>TestThighR</identifier>
+			<bone>UpperLeg_r</bone>
 			<name>ThighR Test Armour</name>
 			<side>1</side>
 			<armourRating>3</armourRating>
-		</Armour>
-	</Thighs>
-	
-	<Waist>
-		<Armour>
+		</Thigh>
+		
+		<Waist>
 			<identifier>TestWaist</identifier>
+			<bone>Pelvis</bone>
 			<name>Waist Test Armour</name>
 			<armourRating>2</armourRating>
-		</Armour>
-	</Waist>
+		</Waist>
+	</Armour>
 	
 	
 	<Weapons>
