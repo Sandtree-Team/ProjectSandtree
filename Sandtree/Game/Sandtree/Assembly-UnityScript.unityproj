@@ -52,6 +52,7 @@
      <Compile Include="Assets\Code\PlayerMovement.js" />
      <Compile Include="Assets\Code\PlayerRanged.js" />
      <Compile Include="Assets\Code\PlayerWeaponControl.js" />
+     <Compile Include="Assets\SkyScript.js" />
      <None Include="Assets\StreamingAssets\Models\Models.xml" />
      <None Include="Assets\StreamingAssets\Videos\Videos.xml" />
      <None Include="Assets\StreamingAssets\Equipment\Equipment.xml" />

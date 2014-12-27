@@ -1,8 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Code\PlayerMovement.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\SkyScript.js">
     <Files>
-      <File FileName="Assets\Code\PlayerMovement.js" Line="70" Column="1" />
+      <File FileName="Assets\SkyScript.js" Line="5" Column="48" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
