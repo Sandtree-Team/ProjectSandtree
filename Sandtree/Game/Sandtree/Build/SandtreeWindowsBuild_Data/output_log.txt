@@ -6,37 +6,17 @@ Direct3D:
     Vendor:   ATI
     VRAM:     1017 MB
 Begin MonoManager ReloadAssembly
-Platform assembly: C:\Users\Nick\Desktop\Sandtree\Build\SandtreeWindowsBuild_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\Users\Nick\Desktop\Sandtree\Build\SandtreeWindowsBuild_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Users\Nick\Desktop\Sandtree\Build\SandtreeWindowsBuild_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading C:\Users\Nick\Desktop\Sandtree\Build\SandtreeWindowsBuild_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: C:\Users\Nick\Desktop\Sandtree\Build\SandtreeWindowsBuild_Data\Managed\Assembly-UnityScript.dll (this message is harmless)
-Loading C:\Users\Nick\Desktop\Sandtree\Build\SandtreeWindowsBuild_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
-Platform assembly: C:\Users\Nick\Desktop\Sandtree\Build\SandtreeWindowsBuild_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading C:\Users\Nick\Desktop\Sandtree\Build\SandtreeWindowsBuild_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-- Completed reload, in  0.070 seconds
+Platform assembly: C:\Users\Nick\Documents\GitHub\ProjectSandtree\Sandtree\Game\Sandtree\Build\SandtreeWindowsBuild_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Nick\Documents\GitHub\ProjectSandtree\Sandtree\Game\Sandtree\Build\SandtreeWindowsBuild_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Nick\Documents\GitHub\ProjectSandtree\Sandtree\Game\Sandtree\Build\SandtreeWindowsBuild_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Nick\Documents\GitHub\ProjectSandtree\Sandtree\Game\Sandtree\Build\SandtreeWindowsBuild_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Nick\Documents\GitHub\ProjectSandtree\Sandtree\Game\Sandtree\Build\SandtreeWindowsBuild_Data\Managed\Assembly-UnityScript.dll (this message is harmless)
+Loading C:\Users\Nick\Documents\GitHub\ProjectSandtree\Sandtree\Game\Sandtree\Build\SandtreeWindowsBuild_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
+Platform assembly: C:\Users\Nick\Documents\GitHub\ProjectSandtree\Sandtree\Game\Sandtree\Build\SandtreeWindowsBuild_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Nick\Documents\GitHub\ProjectSandtree\Sandtree\Game\Sandtree\Build\SandtreeWindowsBuild_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+- Completed reload, in  0.077 seconds
 desktop: 1920x1080 60Hz; virtual: 3200x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
-Platform assembly: C:\Users\Nick\Desktop\Sandtree\Build\SandtreeWindowsBuild_Data\Managed\System.Core.dll (this message is harmless)
-NAT: True
-UnityEngine.Debug:Internal_Log(Int32, String, Object)
-UnityEngine.Debug:Log(Object)
-NetworkPrototype:BeginHost() (at C:\Users\Nick\Documents\GitHub\ProjectSandtree\Sandtree\Game\Sandtree\Assets\Code\Michael\-Network Prototype\NetworkPrototype.cs:46)
-NetworkPrototype:TryHost() (at C:\Users\Nick\Documents\GitHub\ProjectSandtree\Sandtree\Game\Sandtree\Assets\Code\Michael\-Network Prototype\NetworkPrototype.cs:35)
-NetworkPrototype:Start() (at C:\Users\Nick\Documents\GitHub\ProjectSandtree\Sandtree\Game\Sandtree\Assets\Code\Michael\-Network Prototype\NetworkPrototype.cs:27)
- 
-(Filename: C Line: 0)
-
-Successfully hosting server.
-UnityEngine.Debug:Internal_Log(Int32, String, Object)
-UnityEngine.Debug:Log(Object)
-NetworkPrototype:OnServerInitialized() (at C:\Users\Nick\Documents\GitHub\ProjectSandtree\Sandtree\Game\Sandtree\Assets\Code\Michael\-Network Prototype\NetworkPrototype.cs:64)
-UnityEngine.Network:InitializeServer(Int32, Int32, Boolean)
-NetworkPrototype:BeginHost() (at C:\Users\Nick\Documents\GitHub\ProjectSandtree\Sandtree\Game\Sandtree\Assets\Code\Michael\-Network Prototype\NetworkPrototype.cs:55)
-NetworkPrototype:TryHost() (at C:\Users\Nick\Documents\GitHub\ProjectSandtree\Sandtree\Game\Sandtree\Assets\Code\Michael\-Network Prototype\NetworkPrototype.cs:35)
-NetworkPrototype:Start() (at C:\Users\Nick\Documents\GitHub\ProjectSandtree\Sandtree\Game\Sandtree\Assets\Code\Michael\-Network Prototype\NetworkPrototype.cs:27)
- 
-(Filename: C Line: 0)
-
-Platform assembly: C:\Users\Nick\Desktop\Sandtree\Build\SandtreeWindowsBuild_Data\Managed\Boo.Lang.dll (this message is harmless)
+Platform assembly: C:\Users\Nick\Documents\GitHub\ProjectSandtree\Sandtree\Game\Sandtree\Build\SandtreeWindowsBuild_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Nick\Documents\GitHub\ProjectSandtree\Sandtree\Game\Sandtree\Build\SandtreeWindowsBuild_Data\Managed\Boo.Lang.dll (this message is harmless)

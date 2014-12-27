@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Equipment xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<Meta>
+		<version>1</version>
+	</Meta>
+	
+	
+	<Abdomen>
+		<Armour>
+			<identifier>TestAbdomen</identifier>
+			<name>Abdomen Test Armour</name>
+			<armourRating>5</armourRating>
+		</Armour>
+	</Abdomen>
+	
+	<Biceps>
+		<Armour>
+			<identifier>TestBicepL</identifier>
+			<name>BicepL Test Armour</name>
+			<side>0</side>
+			<armourRating>3</armourRating>
+		</Armour>
+		
+		<Armour>
+			<identifier>TestBicepR</identifier>
+			<name>BicepR Test Armour</name>
+			<side>1</side>
+			<armourRating>3</armourRating>
+		</Armour>
+	</Biceps>
+	
+	<Chest>
+		<Armour>
+			<identifier>TestChest</identifier>
+			<name>Chest Test Armour</name>
+			<armourRating>7</armourRating>
+		</Armour>
+	</Chest>
+	
+	<Feet>
+		<Armour>
+			<identifier>TestFootL</identifier>
+			<name>FootL Test Armour</name>
+			<side>0</side>
+			<armourRating>1</armourRating>
+		</Armour>
+		
+		<Armour>
+			<identifier>TestFootR</identifier>
+			<name>FootR Test Armour</name>
+			<side>1</side>
+			<armourRating>1</armourRating>
+		</Armour>
+	</Feet>
+	
+	<Forearms>
+		<Armour>
+			<identifier>TestForearmL</identifier>
+			<name>ForearmL Test Armour</name>
+			<side>0</side>
+			<armourRating>1</armourRating>
+		</Armour>
+		
+		<Armour>
+			<identifier>TestForearmR</identifier>
+			<name>ForearmR Test Armour</name>
+			<side>1</side>
+			<armourRating>1</armourRating>
+		</Armour>
+	</Forearms>
+	
+	<Hands>
+		<Armour>
+			<identifier>TestHandL</identifier>
+			<name>HandL Test Armour</name>
+			<side>0</side>
+			<armourRating>2</armourRating>
+		</Armour>
+		
+		<Armour>
+			<identifier>TestHandR</identifier>
+			<name>HandR Test Armour</name>
+			<side>1</side>
+			<armourRating>2</armourRating>
+		</Armour>
+	</Hands>
+	
+	<Head>
+		<Armour>
+			<identifier>TestHelmet</identifier>
+			<name>Helmet Test Armour</name>
+			<armourRating>9</armourRating>
+		</Armour>
+	</Head>
+	
+	<Neck>
+		
+	</Neck>
+	
+	<Shins>
+		<Armour>
+			<identifier>TestShinL</identifier>
+			<name>ShinL Test Armour</name>
+			<side>0</side>
+			<armourRating>2</armourRating>
+		</Armour>
+		
+		<Armour>
+			<identifier>TestShinR</identifier>
+			<name>ShinR Test Armour</name>
+			<side>1</side>
+			<armourRating>2</armourRating>
+		</Armour>
+	</Shins>
+	
+	<Shoulders>
+		<Armour>
+			<identifier>TestShoulderL</identifier>
+			<name>ShoulderL Test Armour</name>
+			<side>0</side>
+			<armourRating>3</armourRating>
+		</Armour>
+		
+		<Armour>
+			<identifier>TestShoulderR</identifier>
+			<name>ShoulderR Test Armour</name>
+			<side>1</side>
+			<armourRating>3</armourRating>
+		</Armour>
+	</Shoulders>
+	
+	<Thighs>
+		<Armour>
+			<identifier>TestThighL</identifier>
+			<name>ThighL Test Armour</name>
+			<side>0</side>
+			<armourRating>3</armourRating>
+		</Armour>
+		
+		<Armour>
+			<identifier>TestThighR</identifier>
+			<name>ThighR Test Armour</name>
+			<side>1</side>
+			<armourRating>3</armourRating>
+		</Armour>
+	</Thighs>
+	
+	<Waist>
+		<Armour>
+			<identifier>TestWaist</identifier>
+			<name>Waist Test Armour</name>
+			<armourRating>2</armourRating>
+		</Armour>
+	</Waist>
+	
+	
+	<Weapons>
+		<Sword>
+			<identifier>CurvedOneHandedSword</identifier>
+			<name>Egeking</name>
+			<baseDamage>30</baseDamage>
+		</Sword>
+	</Weapons>
+	
+	<Shields>
+		<Shield>
+			<identifier>WeirdShield1</identifier>
+			<name>Svalinn</name>
+			<baseDefence>55</baseDefence>
+		</Shield>
+	</Shields>
+</Equipment>

@@ -54,15 +54,18 @@ function OnTriggerEnter (col : Collider)
 {
 //	Debug.Log (col.name);
 	
-	camScript.contextAvailable	= true;
-	meleeScript.canAttack	= false;
-	
-	var contextScript	: ContextSpotScript;
-	contextScript	= col.transform.parent.GetComponent (ContextSpotScript);
-	
-	camScript.newTargPos	= contextScript.camPosV3;
-	camScript.newTargRot	= contextScript.camRotV3;
-	contextLookPoint		= contextScript.newLookPoint;
+	if (col.gameObject.tag	== "ContextSpot")
+	{
+		camScript.contextAvailable	= true;
+		meleeScript.canAttack	= false;
+		
+		var contextScript	: ContextSpotScript;
+		contextScript	= col.transform.parent.GetComponent (ContextSpotScript);
+		
+		camScript.newTargPos	= contextScript.camPosV3;
+		camScript.newTargRot	= contextScript.camRotV3;
+		contextLookPoint		= contextScript.newLookPoint;
+	}
 }
 
 function OnTriggerExit ()
