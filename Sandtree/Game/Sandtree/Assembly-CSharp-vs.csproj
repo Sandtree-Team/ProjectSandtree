@@ -50,7 +50,7 @@
      <Compile Include="Assets\Code\ExternalInformation.cs" />
      <Compile Include="Assets\Code\InformationManager.cs" />
      <Compile Include="Assets\Code\ObjImporter.cs" />
-     <Compile Include="Assets\Code\PlayerStorage.cs" />
+     <Compile Include="Assets\Code\PlayerManager.cs" />
      <Compile Include="Assets\Modular\ErrorLog\ErrorLog.cs" />
      <Compile Include="Assets\Modular\ErrorLog\ErrorUI.cs" />
      <None Include="Assets\StreamingAssets\Models\Models.xml" />

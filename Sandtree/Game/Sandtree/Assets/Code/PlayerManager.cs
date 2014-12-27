@@ -1,6 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 //Written by Michael Bethke
+public class Player
+{
+	
+	public float sizeModifier = 0.0f;
+	
+	public CurrentEquipment currentEquipment = new CurrentEquipment ();
+	public Inventory inventory = new Inventory ();
+}
+
+
 public class CurrentEquipment
 {
 	
@@ -51,7 +61,7 @@ public class CurrentEquipment
 	public WaistArmour waistArmour = new WaistArmour ();
 	
 	
-	//public CurrentEquipment () : this ( null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null ) {}
+	//public CurrentEquipment () : this ( null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null ) {} //19
 	public CurrentEquipment ( AbdomenArmour _abdomenArmour = null, BicepArmour _bicepArmourLeft = null, BicepArmour _bicepArmourRight = null, ChestArmour _chestArmour = null, FootArmour _footArmourLeft = null, FootArmour _footArmourRight = null, ForearmArmour _forearmArmourLeft = null, ForearmArmour _forearmArmourRight = null, HandArmour _handArmourLeft = null, HandArmour _handArmourRight = null, HeadArmour _headArmour = null, NeckArmour _neckArmour = null, ShinArmour _shinArmourLeft = null, ShinArmour _shinArmourRight = null, ShoulderArmour _shoulderArmourLeft = null, ShoulderArmour _shoulderArmourRight = null, ThighArmour _thighArmourLeft = null, ThighArmour _thighArmourRight = null, WaistArmour _waistArmour = null )
 	{
 		
@@ -84,8 +94,8 @@ public class Inventory
 	
 }
 
-public class PlayerStorage : MonoBehaviour
+public class PlayerManager : MonoBehaviour
 {
 
-	internal CurrentEquipment currentEquipment = new CurrentEquipment ();
+	internal Player player = new Player ();
 }
