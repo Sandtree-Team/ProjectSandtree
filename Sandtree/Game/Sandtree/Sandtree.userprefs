@@ -1,9 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\SkyScript.js">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Code\CamScript.js">
     <Files>
-      <File FileName="Assets\Shaders\LearningShader.shader" Line="4" Column="47" />
-      <File FileName="Assets\SkyScript.js" Line="9" Column="1" />
+      <File FileName="Assets\Code\CamScript.js" Line="114" Column="35" />
+      <File FileName="Assets\Code\ContextSpotScript.js" Line="1" Column="1" />
+      <File FileName="Assets\Code\PlayerMovement.js" Line="66" Column="49" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
