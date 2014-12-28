@@ -57,6 +57,7 @@
      <None Include="Assets\StreamingAssets\Videos\Videos.xml" />
      <None Include="Assets\StreamingAssets\Equipment\Equipment.xml" />
      <None Include="Assets\StreamingAssets\Audio\Audio.xml" />
+     <None Include="Assets\Shaders\LearningShader.shader" />
      <None Include="Assets\StreamingAssets\Textures\Textures.xml" />
      <None Include="Assets\StreamingAssets\Localizations\Localizations.xml" />
  <Reference Include="UnityEngine.UI">
