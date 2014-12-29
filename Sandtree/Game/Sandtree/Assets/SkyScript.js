@@ -7,15 +7,10 @@ var sun		: Light;
 var reverse	: Light;
 var low		: Light;
 
-var sk1	: Color;
-var su1	: Color;
-var re1	: Color;
-var lo1	: Color;
-
-var sk2	: Color;
-var su2	: Color;
-var re2	: Color;
-var lo2	: Color;
+var skArray	: Color [];
+var suArray	: Color [];
+var reArray : Color [];
+var loArray : Color [];
 
 function Start ()
 {
@@ -25,23 +20,16 @@ function Start ()
 function SkySet ()
 {
 	sky.enabled	= true;
-	switch (skySetMode)
+	if (skySetMode != 0)
 	{
-		case (0):
-			sky.enabled	= false;
-			sun.color	= Color.white;
-			break;
-		case (1):
-			sky.material.color	= sk1;
-			sun.color			= su1;
-			reverse.color		= re1;
-			low.color			= lo1;
-			break;
-		case (2):
-			sky.material.color	= sk2;
-			sun.color			= su2;
-			reverse.color		= re2;
-			low.color			= lo2;
-			break;
+		sky.material.color	= skArray [skySetMode -1];
+		sun.color			= suArray [skySetMode -1];
+		reverse.color		= reArray [skySetMode -1];
+		low.color			= loArray [skySetMode -1];
+	}
+	else
+	{
+		sky.enabled	= false;
+		sun.color	= Color.white;
 	}
 }
