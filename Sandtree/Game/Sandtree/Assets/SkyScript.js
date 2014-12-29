@@ -17,6 +17,20 @@ function Start ()
 	SkySet ();
 }
 
+function Update ()
+{
+	if (Input.GetKeyDown (KeyCode.P) && (skySetMode < skArray.Length))
+	{
+		skySetMode ++;
+		SkySet ();
+	}
+	if (Input.GetKeyDown (KeyCode.O) && (skySetMode > 0))
+	{
+		skySetMode --;
+		SkySet ();
+	}
+}
+
 function SkySet ()
 {
 	sky.enabled	= true;
