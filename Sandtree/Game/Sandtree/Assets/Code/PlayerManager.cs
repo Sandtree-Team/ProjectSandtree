@@ -19,9 +19,7 @@ public class CurrentEquipment
 	
 	public List<Armour> currentArmour = new List<Armour> () { null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null };
 	
-	public CurrentEquipment ( Armour _headArmour = null, Armour _neckArmour = null, Armour _chestArmour = null, Armour _shoulderArmourLeft = null, Armour _shoulderArmourRight = null, Armour _bicepArmourLeft = null, Armour _bicepArmourRight = null, 
-		Armour _forearmArmourLeft = null, Armour _forearmArmourRight = null, Armour _handArmourLeft = null, Armour _handArmourRight = null, Armour _abdomenArmour = null, Armour _waistArmour = null, Armour _thighArmourLeft = null, Armour _thighArmourRight = null, 
-			Armour _shinArmourLeft = null, Armour _shinArmourRight = null, Armour _footArmourLeft = null, Armour _footArmourRight = null )
+	public CurrentEquipment ( Armour _headArmour = null, Armour _neckArmour = null, Armour _chestArmour = null, Armour _shoulderArmourLeft = null, Armour _shoulderArmourRight = null, Armour _bicepArmourLeft = null, Armour _bicepArmourRight = null, Armour _forearmArmourLeft = null, Armour _forearmArmourRight = null, Armour _handArmourLeft = null, Armour _handArmourRight = null, Armour _abdomenArmour = null, Armour _waistArmour = null, Armour _thighArmourLeft = null, Armour _thighArmourRight = null, Armour _shinArmourLeft = null, Armour _shinArmourRight = null, Armour _footArmourLeft = null, Armour _footArmourRight = null )
 	{
 
 		this.currentArmour[0] = _headArmour ?? this.currentArmour[0];

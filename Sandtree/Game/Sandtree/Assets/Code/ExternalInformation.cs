@@ -226,12 +226,6 @@ public class ExternalInformation : MonoBehaviour
 	internal bool TESTequipArmour ( GameObject playerObject, CurrentEquipment equipmentToLoad )
 	{
 		
-		/*foreach ( Transform bone in playerObject.GetComponentInChildren<SkinnedMeshRenderer> ().bones )
-		{
-			
-			UnityEngine.Debug.Log ( bone );
-		}*/
-		
 		int assetIndex = 0;
 		while ( assetIndex < GameObject.FindGameObjectWithTag ( "TEMPTestChar" ).GetComponent<PlayerManager> ().player.currentEquipment.currentArmour.Count )
 		{
