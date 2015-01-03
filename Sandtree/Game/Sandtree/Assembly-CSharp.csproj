@@ -49,10 +49,17 @@
      <Compile Include="Assets\Code\-Loading Prototype\Bridge.cs" />
      <Compile Include="Assets\Code\-Loading Prototype\GUIManager.cs" />
      <Compile Include="Assets\Code\-Network Prototype\NetworkPrototype.cs" />
+     <Compile Include="Assets\Code\CamScript.cs" />
+     <Compile Include="Assets\Code\ContextSpotScript.cs" />
      <Compile Include="Assets\Code\ExternalInformation.cs" />
      <Compile Include="Assets\Code\InformationManager.cs" />
      <Compile Include="Assets\Code\ObjImporter.cs" />
      <Compile Include="Assets\Code\PlayerManager.cs" />
+     <Compile Include="Assets\Code\PlayerMelee.cs" />
+     <Compile Include="Assets\Code\PlayerMovement.cs" />
+     <Compile Include="Assets\Code\PlayerRanged.cs" />
+     <Compile Include="Assets\Code\PlayerWeaponControl.cs" />
+     <Compile Include="Assets\Code\SkyScript.cs" />
      <Compile Include="Assets\Modular\ErrorLog\ErrorLog.cs" />
      <Compile Include="Assets\Modular\ErrorLog\ErrorUI.cs" />
      <None Include="Assets\StreamingAssets\Models\Models.xml" />

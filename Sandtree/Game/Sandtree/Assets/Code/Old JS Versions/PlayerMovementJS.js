@@ -1,3 +1,4 @@
+/*
 #pragma strict
 
 var playerWeapon: PlayerWeaponControl;
@@ -25,7 +26,7 @@ var lookPoint	: Vector3;
 var lookTime	: float;
 var jumpHeight	: float;
 var contextLookPoint	: Vector3;
-
+/*
 function Start ()
 {
 //	camTrans	= GameObject.Find ("CamObj").transform;
@@ -177,3 +178,4 @@ function AnimationFunc ()
 	animator.SetFloat	("LookVelDif", lookVelDif);
 //	Debug.Log	(lookVelDif);
 }
+*/

@@ -1,6 +1,7 @@
-﻿#pragma strict
+﻿/*
+#pragma strict
 
-var playerMovement	: PlayerMovement;
+//var playerMovement	: PlayerMovement;
 var playerMelee		: PlayerMelee;
 var inControl	: boolean;
 var hasTarget	: boolean;
@@ -62,10 +63,10 @@ function Update ()
 		contextLooking	= true;
 		camTargPos			= transform.InverseTransformPoint (newTargPos);
 		camTargRot			= newTargRot;
-		playerMovement.inControl	= false;
-		shouldSend	= false;
-		playerMovement.lookPoint	= playerMovement.contextLookPoint;
-	}
+		/* Bring Back */ //playerMovement.inControl	= false;
+/*		shouldSend	= false;		*/
+		/* Bring Back */ //playerMovement.lookPoint	= playerMovement.contextLookPoint;
+/*	}
 	if (Input.GetButtonUp ("ContextLook"))
 	{
 		contextLooking	= false;
@@ -73,8 +74,8 @@ function Update ()
 		camTargRot			= camTargRotBase;
 //		newTargPos	= Vector3.zero;
 //		newTargRot	= Vector3.zero;
-		playerMovement.inControl	= true;
-		shouldSend	= true;
+		/* Bring Back */ //playerMovement.inControl	= true;
+/*		shouldSend	= true;
 	}
 	
 	var ray	= camera1.ScreenPointToRay (Input.mousePosition);
@@ -103,8 +104,8 @@ function Update ()
 		
 		if (shouldSend)
 		{
-			playerMovement.lookPoint	= pointVector;
-		}
+			/* Bring Back */ //playerMovement.lookPoint	= pointVector;
+/*		}
 	}
 	
 	if (Physics.Linecast (camTrans.position, (followTarg.position + (Vector3.up * 1)), obstructionHit, obstructionMask))
@@ -151,4 +152,4 @@ function Update ()
 	if (Input.GetKey (KeyCode.Q))
 	{	transform.eulerAngles.y -= (60 * Time.deltaTime);	}
 */
-}
+//}

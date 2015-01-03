@@ -1,8 +1,16 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\SkyScript.js">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Code\SkyScript.cs">
     <Files>
-      <File FileName="Assets\SkyScript.js" Line="29" Column="16" />
+      <File FileName="Assets\Code\PlayerMovement.cs" Line="16" Column="20" />
+      <File FileName="Assets\Code\CamScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Code\ContextSpotScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Code\PlayerMelee.cs" Line="1" Column="1" />
+      <File FileName="Assets\Code\PlayerRanged.cs" Line="1" Column="1" />
+      <File FileName="Assets\Code\PlayerWeaponControl.cs" Line="1" Column="1" />
+      <File FileName="Assets\Code\Old JS Versions\PlayerMovementJS.js" Line="7" Column="1" />
+      <File FileName="Assets\Code\SkyScript JS.js" Line="3" Column="1" />
+      <File FileName="Assets\Code\SkyScript.cs" Line="4" Column="23" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

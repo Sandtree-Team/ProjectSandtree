@@ -1,6 +1,6 @@
-﻿#pragma strict
+﻿/*#pragma strict
 
-var movementScript	: PlayerMovement;
+//var movementScript	: PlayerMovement;
 var camScript		: CamScript;
 var animator		: Animator;
 
@@ -51,8 +51,8 @@ function TargetedAttackFunc ()
 		VarAssign	();
 		
 		canAttack					= false;
-		movementScript.inControl	= false;
-		camScript.inControl			= false;
+		/* Bring Back */ //movementScript.inControl	= false;
+/*		camScript.inControl			= false;
 		
 		var velYStore	= rigidbody.velocity.y;
 		var clickVector	: Vector3;
@@ -72,8 +72,8 @@ function TargetedAttackFunc ()
 		yield WaitForSeconds (attackTime * 0.5);
 		animator.SetInteger ("AttackInt", 0);
 		canAttack					= true;
-		movementScript.inControl	= true;
-		camScript.inControl			= true;
+		/* Bring Back */ //movementScript.inControl	= true;
+/*		camScript.inControl			= true;
 		attackTarg			= null;
 		camScript.hasTarget	= false;
 	}
@@ -87,8 +87,8 @@ function UntargetedAttackFunc ()
 	VarAssign	();
 	
 	canAttack					= false;
-	movementScript.inControl	= false;
-	camScript.inControl			= false;
+	/* Bring Back */ //movementScript.inControl	= false;
+/*	camScript.inControl			= false;
 	
 	var velYStore	= rigidbody.velocity.y;
 	var clickVector	: Vector3;
@@ -103,8 +103,8 @@ function UntargetedAttackFunc ()
 	yield WaitForSeconds (attackTime * 0.5);
 	animator.SetInteger ("AttackInt", 0);
 	canAttack					= true;
-	movementScript.inControl	= true;
-	camScript.inControl			= true;
+	/* Bring Back */ //movementScript.inControl	= true;
+/*	camScript.inControl			= true;
 }
 
 function VarAssign ()
@@ -125,3 +125,4 @@ function VarAssign ()
 			break;
 	}
 }
+*/

@@ -46,13 +46,13 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Code\CamScript.js" />
-     <Compile Include="Assets\Code\ContextSpotScript.js" />
-     <Compile Include="Assets\Code\PlayerMelee.js" />
-     <Compile Include="Assets\Code\PlayerMovement.js" />
-     <Compile Include="Assets\Code\PlayerRanged.js" />
-     <Compile Include="Assets\Code\PlayerWeaponControl.js" />
-     <Compile Include="Assets\SkyScript.js" />
+     <Compile Include="Assets\Code\Old JS Versions\CamScript JS.js" />
+     <Compile Include="Assets\Code\Old JS Versions\ContextSpotScript JS.js" />
+     <Compile Include="Assets\Code\Old JS Versions\PlayerMelee JS.js" />
+     <Compile Include="Assets\Code\Old JS Versions\PlayerMovementJS.js" />
+     <Compile Include="Assets\Code\Old JS Versions\PlayerRanged JS.js" />
+     <Compile Include="Assets\Code\Old JS Versions\PlayerWeaponControl JS.js" />
+     <Compile Include="Assets\Code\SkyScript JS.js" />
      <None Include="Assets\StreamingAssets\Models\Models.xml" />
      <None Include="Assets\StreamingAssets\Videos\Videos.xml" />
      <None Include="Assets\StreamingAssets\Equipment\Equipment.xml" />

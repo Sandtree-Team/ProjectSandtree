@@ -1,4 +1,5 @@
-﻿#pragma strict
+﻿/*
+#pragma strict
 
 var weaponMode	: int;
 
@@ -46,3 +47,4 @@ function InformWeaponType ()
 	}
 	animator.SetInteger ("WeaponMode", weaponMode);
 }
+*/
