@@ -29,24 +29,27 @@ public class PlayerMelee : MonoBehaviour {
 		{
 			if (canAttack)
 			{
+				//Debug.Log ("AttackAttempt");
 				if (attackTarg != null)
-				{	TargetedAttackFunc ();	}
+				{	StartCoroutine (TargetedAttackFunc ());	}
 				else
-				{	UntargetedAttackFunc ();	}
+				{	
+					//Debug.Log ("UnargetCheck");
+					StartCoroutine (UntargetedAttackFunc ());	}
 			}
 		}
 	}
-	
+
 	IEnumerator TargetedAttackFunc ()
 	{
 		attackDis	= Vector3.Distance (attackTarg.position, transform.position);
 		if (attackDis > attackRange)
 		{
-			UntargetedAttackFunc ();
+			StartCoroutine (UntargetedAttackFunc ());
 		}
 		else
 		{
-			//		Debug.Log ("TargetedAttack");
+					//Debug.Log ("TargetedAttack");
 			Vector3 rigVelStore = rigidbody.velocity;
 			rigVelStore.x = 0;
 			rigVelStore.z = 0;
@@ -93,7 +96,7 @@ public class PlayerMelee : MonoBehaviour {
 	
 	IEnumerator UntargetedAttackFunc ()
 	{
-		//	Debug.Log ("UntargetedAttack");
+			//Debug.Log ("UntargetedAttack");
 		attackInt	= Random.Range (1,4);
 		animator.SetInteger	("AttackInt", attackInt);
 		VarAssign	();
