@@ -60,8 +60,10 @@
      <Compile Include="Assets\Code\PlayerRanged.cs" />
      <Compile Include="Assets\Code\PlayerWeaponControl.cs" />
      <Compile Include="Assets\Code\SkyScript.cs" />
+     <Compile Include="Assets\EnemyPatrolScript.cs" />
      <Compile Include="Assets\Modular\ErrorLog\ErrorLog.cs" />
      <Compile Include="Assets\Modular\ErrorLog\ErrorUI.cs" />
+     <Compile Include="Assets\PatrolObjectScript.cs" />
      <None Include="Assets\StreamingAssets\Models\Models.xml" />
      <None Include="Assets\StreamingAssets\Videos\Videos.xml" />
      <None Include="Assets\StreamingAssets\Equipment\Equipment.xml" />
