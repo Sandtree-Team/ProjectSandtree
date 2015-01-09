@@ -39,12 +39,12 @@ public class EnemyPatrolScript : MonoBehaviour {
 
 	void Update () {
 
+		GroundingFunc ();
 		if (shouldPatrol)
 		{
-			GroundingFunc ();
 			StartCoroutine (MoveTo ());
-			AnimationFunc ();
 		}
+		AnimationFunc ();
 	}
 
 	void FixedUpdate ()
@@ -79,6 +79,7 @@ public class EnemyPatrolScript : MonoBehaviour {
 		
 		if (col.gameObject.tag == "PatrolObject" && holdObj != col.gameObject)
 		{
+			shouldPatrol = true;
 			holdObj = col.gameObject;
 			PatrolVisualizer informer = col.gameObject.GetComponent <PatrolVisualizer>();
 
