@@ -6,6 +6,13 @@ public class PatrolVisualizer : MonoBehaviour
 {
 	
 	public List<Vector3> patrolWaypoints = new List<Vector3> ();
+	//public List<float> patrolPauses = new List<float> ();
+	public float [] patrolPauses;
+
+	void Start ()
+	{
+		renderer.enabled = false;
+	}
 
 	void OnDrawGizmos ()
 	{

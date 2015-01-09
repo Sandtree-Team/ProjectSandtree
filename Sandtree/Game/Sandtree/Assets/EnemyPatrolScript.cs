@@ -12,8 +12,8 @@ public class EnemyPatrolScript : MonoBehaviour {
 	//public Transform [] waypoints;
 	
 	private List<Vector3> waypoints = new List<Vector3> ();
-	
-	public float [] pauses;
+	float [] pauses;
+
 	public Vector3 targPos;
 	GameObject holdObj;
 	public float turnTime;
@@ -83,7 +83,7 @@ public class EnemyPatrolScript : MonoBehaviour {
 			PatrolVisualizer informer = col.gameObject.GetComponent <PatrolVisualizer>();
 
 			waypoints = informer.patrolWaypoints;
-			//pauses = informer.pauses;
+			pauses = informer.patrolPauses;
 
 			waypointInt = 0;
 			targPos = waypoints [waypointInt];
@@ -122,15 +122,18 @@ public class EnemyPatrolScript : MonoBehaviour {
 			}
 			speed = 0;
 
+			//Debug.Log (waypointInt);
+
 			if (waypointInt != 0)
 			{
-				//yield return new WaitForSeconds (pauses [waypointInt - 1]);
-				yield return new WaitForSeconds ( waypointInt );
+					//this one is the intended behavior
+				yield return new WaitForSeconds (pauses [waypointInt - 1]);
+				//yield return new WaitForSeconds ( waypointInt );
 			}
 			else
 			{
-				//yield return new WaitForSeconds (pauses [pauses.Length -1]);
-				yield return new WaitForSeconds ( waypointInt );
+				yield return new WaitForSeconds (pauses [pauses.Length -1]);
+				//yield return new WaitForSeconds ( waypointInt );
 			}
 			speed = speedBase;
 		}
