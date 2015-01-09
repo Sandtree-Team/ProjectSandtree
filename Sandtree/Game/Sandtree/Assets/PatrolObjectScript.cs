@@ -11,6 +11,7 @@ public class PatrolObjectScript : MonoBehaviour {
 		foreach (Transform waypoint in waypoints)
 		{
 			waypoint.renderer.enabled = false;
+			renderer.enabled = false;
 		}
 	}
 }
