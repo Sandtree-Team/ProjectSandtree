@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class EnemyPatrolScript : MonoBehaviour {
 
@@ -8,7 +9,10 @@ public class EnemyPatrolScript : MonoBehaviour {
 	public Animator animator;
 	public float speed;
 	float speedBase;
-	public Transform [] waypoints;
+	//public Transform [] waypoints;
+	
+	private List<Vector3> waypoints = new List<Vector3> ();
+	
 	public float [] pauses;
 	public Vector3 targPos;
 	GameObject holdObj;
@@ -51,6 +55,8 @@ public class EnemyPatrolScript : MonoBehaviour {
 		}
 	}
 
+	/* Original TriggerEnter function, based on physical objects
+	
 	void OnTriggerEnter (Collider col)
 	{
 //		Debug.Log (col.gameObject.tag);
@@ -66,7 +72,24 @@ public class EnemyPatrolScript : MonoBehaviour {
 			waypointInt = 0;
 			targPos = waypoints [waypointInt].position;
 		}
+	}*/
+	
+	void OnTriggerEnter (Collider col)
+	{
+		
+		if (col.gameObject.tag == "PatrolObject" && holdObj != col.gameObject)
+		{
+			holdObj = col.gameObject;
+			PatrolVisualizer informer = col.gameObject.GetComponent <PatrolVisualizer>();
+
+			waypoints = informer.patrolWaypoints;
+			//pauses = informer.pauses;
+
+			waypointInt = 0;
+			targPos = waypoints [waypointInt];
+		}
 	}
+		
 
 	IEnumerator MoveTo ()
 	{
@@ -84,28 +107,30 @@ public class EnemyPatrolScript : MonoBehaviour {
 
 		if (Vector3.Distance (pos, targPos) < allowence)
 		{
-			if (waypoints.Length - 1 > waypointInt)
+			if (waypoints.Count - 1 > waypointInt)
 			{
 				waypointInt += 1;
 				//targPos = transform.position;
 				//yield return new WaitForSeconds (pauses [waypointInt]);
-				targPos = waypoints [waypointInt].position;
+				targPos = waypoints [waypointInt];
 			}
 			else
 			{
 				waypointInt = 0;
 				//yield return new WaitForSeconds (pauses [waypointInt]);
-				targPos = waypoints [waypointInt].position;
+				targPos = waypoints [waypointInt];
 			}
 			speed = 0;
 
 			if (waypointInt != 0)
 			{
-				yield return new WaitForSeconds (pauses [waypointInt - 1]);
+				//yield return new WaitForSeconds (pauses [waypointInt - 1]);
+				yield return new WaitForSeconds ( waypointInt );
 			}
 			else
 			{
-				yield return new WaitForSeconds (pauses [pauses.Length -1]);
+				//yield return new WaitForSeconds (pauses [pauses.Length -1]);
+				yield return new WaitForSeconds ( waypointInt );
 			}
 			speed = speedBase;
 		}
